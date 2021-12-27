@@ -1,0 +1,29 @@
+{
+  "languageTool.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true,
+    "source.fixAll.markdownlint": true
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "eslint.alwaysShowStatus": true,
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.options": {
+    "extensions": [".js", ".ts", ".tsx", ".md", ".json", ".html"]
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "markdown",
+    "json",
+
+  ],
+  "files.eol": "\r\n",
+  "jest.autoRun": "off",
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.bracketPairColorization.enabled": true
+}

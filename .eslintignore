@@ -1,0 +1,9 @@
+**/vendor/*.js
+coverage
+lib
+node_modules
+package
+package.json
+package-lock.json
+.eslintrc.json
+tsconfig.json
