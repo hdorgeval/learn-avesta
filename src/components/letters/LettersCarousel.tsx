@@ -1,6 +1,19 @@
 import { LetterA, LetterAA, LetterB, LetterC, LetterD, LetterE, LetterF, LetterG, LetterH, LetterT } from '.';
 
 export const LettersCarousel: React.FC = () => {
+  const letters = [
+    <LetterA fill="#f5a425" />,
+    <LetterB fill="#f5a425" />,
+    <LetterC fill="#f5a425" />,
+    <LetterD fill="#f5a425" />,
+    <LetterE fill="#f5a425" />,
+    <LetterF fill="#f5a425" />,
+    <LetterG fill="#f5a425" />,
+    <LetterH fill="#f5a425" />,
+    <LetterT fill="#f5a425" />,
+    <LetterAA fill="#f5a425" />,
+  ];
+
   return (
     <div
       id="carouselExampleIndicators"
@@ -8,100 +21,26 @@ export const LettersCarousel: React.FC = () => {
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="3"
-          aria-label="Slide 4"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="4"
-          aria-label="Slide 5"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="5"
-          aria-label="Slide 6"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="6"
-          aria-label="Slide 7"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="7"
-          aria-label="Slide 8"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="8"
-          aria-label="Slide 9"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="9"
-          aria-label="Slide 10"
-        ></button>
+        {letters.map((_, i) => (
+          <button
+            key={`${i}`}
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to={`${i}`}
+            className={i === 0 ? "active" : ""}
+            aria-current={i === 0 ? "true" : "false"}
+            aria-label={`Slide ${i + 1}`}
+          ></button>
+        ))}
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <LetterA fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterB fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterC fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterD fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterE fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterF fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterG fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterH fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterT fill="#f5a425" />
-        </div>
-        <div className="carousel-item">
-          <LetterAA fill="#f5a425" />
-        </div>
+        {letters.map((letter, i) => (
+          <div 
+            key={`${i}`}
+            className={`carousel-item ${i === 0 ? 'active' : ''}`}>
+            {letter}
+          </div>
+        ))} 
       </div>
       <button
         className="carousel-control-prev"
