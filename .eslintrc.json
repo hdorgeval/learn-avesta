@@ -8,7 +8,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    "prettier",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript"
@@ -56,22 +56,6 @@
     ],
     "semi": ["error", "always"]
   },
-  "overrides": [
-    {
-      "files": [
-        "src/**/index.ts"
-      ],
-      "rules": {
-        "no-multiple-empty-lines": [
-          "error",
-          {
-            "max": 1,
-            "maxEOF": 2
-          }
-        ]
-      }
-    }
-  ],
   "settings": {
     "import/extensions": [".js", ".ts", ".tsx", ".json", ".html"]
   }
