@@ -8,3 +8,4 @@ export * from './LetterF';
 export * from './LetterG';
 export * from './LetterH';
 export * from './LettersCarousel';
+export * from './LetterT';
