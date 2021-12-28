@@ -1,5 +1,6 @@
 export * from './Carrier';
 export * from './LetterA';
+export * from './LetterAA';
 export * from './LetterB';
 export * from './LetterC';
 export * from './LetterD';
@@ -9,3 +10,4 @@ export * from './LetterG';
 export * from './LetterH';
 export * from './LettersCarousel';
 export * from './LetterT';
+

@@ -1,4 +1,4 @@
-import { LetterA, LetterB, LetterC, LetterD, LetterE, LetterF, LetterG, LetterH, LetterT } from '.';
+import { LetterA, LetterAA, LetterB, LetterC, LetterD, LetterE, LetterF, LetterG, LetterH, LetterT } from '.';
 
 export const LettersCarousel: React.FC = () => {
   return (
@@ -64,6 +64,12 @@ export const LettersCarousel: React.FC = () => {
           data-bs-slide-to="8"
           aria-label="Slide 9"
         ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="9"
+          aria-label="Slide 10"
+        ></button>
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
@@ -92,6 +98,9 @@ export const LettersCarousel: React.FC = () => {
         </div>
         <div className="carousel-item">
           <LetterT fill="#f5a425" />
+        </div>
+        <div className="carousel-item">
+          <LetterAA fill="#f5a425" />
         </div>
       </div>
       <button
