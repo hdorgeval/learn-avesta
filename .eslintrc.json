@@ -56,6 +56,22 @@
     ],
     "semi": ["error", "always"]
   },
+  "overrides": [
+    {
+      "files": [
+        "src/**/index.ts",
+      ],
+      "rules": {
+        "no-multiple-empty-lines": [
+          "error",
+          {
+            "max": 1,
+            "maxEOF": 2
+          }
+        ],
+      }
+    }
+  ],
   "settings": {
     "import/extensions": [".js", ".ts", ".tsx", ".json", ".html"]
   }
