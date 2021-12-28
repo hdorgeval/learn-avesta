@@ -62,15 +62,7 @@ export const App: FC = () => {
           </a>
         </div>
       </footer>
-      {/* <div className="bg-black">
-        <LetterC fill="#f5a425" />
-        <LetterA fill="#f5a425" />
-        <LetterB fill="#f5a425" />
-        <LetterC fill="#f5a425" />
-        <LetterB fill="#f5a425" />
-        <LetterD fill="#f5a425" />
-        <LetterE fill="#f5a425" />
-      </div> */}
+      {/* <Carrier /> */}
     </>
   );
 };
