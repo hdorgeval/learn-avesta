@@ -59,7 +59,7 @@
   "overrides": [
     {
       "files": [
-        "src/**/index.ts",
+        "src/**/index.ts"
       ],
       "rules": {
         "no-multiple-empty-lines": [
@@ -68,7 +68,7 @@
             "max": 1,
             "maxEOF": 2
           }
-        ],
+        ]
       }
     }
   ],
