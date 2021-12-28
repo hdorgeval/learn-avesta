@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { FC } from 'react';
 import './App.css';
 import landingPageVideo from './assets/videos/course-video.mp4';
-import { LettersCarousel } from './components/carousel-of-letters/LettersCarousel';
+import { LettersCarousel } from './components/letters';
 
 export const App: FC = () => {
   return (
