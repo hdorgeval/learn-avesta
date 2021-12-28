@@ -1,6 +1,7 @@
 **/vendor/*.js
 coverage
 lib
+dist
 node_modules
 package
 package.json
