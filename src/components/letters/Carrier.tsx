@@ -1,4 +1,4 @@
-import { LetterA, LetterB, LetterC, LetterD, LetterE, LetterF, LetterG } from '.';
+import { LetterA, LetterB, LetterC, LetterD, LetterE, LetterF, LetterG, LetterH } from '.';
 
 export const Carrier: React.FC = () => {
   return (
@@ -13,6 +13,8 @@ export const Carrier: React.FC = () => {
       <LetterD fill="#f5a425" />
       <LetterE fill="#f5a425" />
       <LetterF fill="#f5a425" />
+      <LetterA fill="#f5a425" />
+      <LetterH fill="#f5a425" />
     </div>
   );
 };

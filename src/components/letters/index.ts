@@ -6,4 +6,5 @@ export * from './LetterD';
 export * from './LetterE';
 export * from './LetterF';
 export * from './LetterG';
+export * from './LetterH';
 export * from './LettersCarousel';
