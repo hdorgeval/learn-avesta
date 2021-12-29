@@ -1,4 +1,4 @@
-import { LetterA, LetterAA, LetterB, LetterC, LetterD, LetterE, LetterF, LetterG, LetterH, LetterR, LetterT, LetterV } from '.';
+import { LetterA, LetterAA, LetterB, LetterC, LetterD, LetterDj, LetterE, LetterF, LetterG, LetterH, LetterR, LetterT, LetterV } from '.';
 
 export const LettersCarousel: React.FC = () => {
   const letters = [
@@ -14,6 +14,7 @@ export const LettersCarousel: React.FC = () => {
     <LetterAA fill="#f5a425" />,
     <LetterR fill="#f5a425" />,
     <LetterV fill="#f5a425" />,
+    <LetterDj fill="#f5a425" />,
   ];
 
   return (

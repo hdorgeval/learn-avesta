@@ -4,6 +4,7 @@ import {
   LetterB,
   LetterC,
   LetterD,
+  LetterDj,
   LetterE,
   LetterF,
   LetterG,
@@ -33,6 +34,8 @@ export const Carrier: React.FC = () => {
       <LetterT fill="#f5a425" />
       <LetterA fill="#f5a425" />
       <LetterV fill="#f5a425" />
+      <LetterA fill="#f5a425" />
+      <LetterDj fill="#f5a425" />
     </div>
   );
 };
