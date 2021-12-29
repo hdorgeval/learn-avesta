@@ -1,4 +1,4 @@
-import { LetterA, LetterAA, LetterB, LetterC, LetterD, LetterE, LetterF, LetterG, LetterH, LetterT } from '.';
+import { LetterA, LetterAA, LetterB, LetterC, LetterD, LetterE, LetterF, LetterG, LetterH, LetterR, LetterT } from '.';
 
 export const LettersCarousel: React.FC = () => {
   const letters = [
@@ -12,6 +12,7 @@ export const LettersCarousel: React.FC = () => {
     <LetterH fill="#f5a425" />,
     <LetterT fill="#f5a425" />,
     <LetterAA fill="#f5a425" />,
+    <LetterR fill="#f5a425" />,
   ];
 
   return (
@@ -33,7 +34,7 @@ export const LettersCarousel: React.FC = () => {
           ></button>
         ))}
       </div>
-      <div className="carousel-inner">
+      <div className="carousel-inner overflow-visible">
         {letters.map((letter, i) => (
           <div 
             key={`${i}`}
