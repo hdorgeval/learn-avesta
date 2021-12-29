@@ -11,4 +11,5 @@ export * from './LetterH';
 export * from './LetterR';
 export * from './LettersCarousel';
 export * from './LetterT';
+export * from './LetterV';
 
