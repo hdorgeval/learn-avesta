@@ -34,11 +34,12 @@ export const LettersCarousel: React.FC = () => {
           ></button>
         ))}
       </div>
-      <div className="carousel-inner overflow-visible">
+      <div className="carousel-inner overflow-visible mt-0 pt-0" style={{maxHeight: '50px', minHeight: '50px'}}>
         {letters.map((letter, i) => (
           <div 
             key={`${i}`}
-            className={`carousel-item ${i === 0 ? 'active' : ''}`}>
+            className={`carousel-item ${i === 0 ? 'active' : ''}`}
+          >
             {letter}
           </div>
         ))} 
