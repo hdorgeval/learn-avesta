@@ -1,5 +1,7 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
+import letterEhSound from '../../assets/sounds/letter-eh.mp3';
 import { LetterOwnProps } from './LetterA';
+import { useAudioFromUrl } from './useAudioFromUrl';
 
 /**
  * Letter E like in "André"
@@ -8,6 +10,9 @@ import { LetterOwnProps } from './LetterA';
  * @alias: ē
  */
 export const LetterEh: FC<LetterOwnProps> = ({ fill }) => {
+  const [startAudio] = useAudioFromUrl(letterEhSound);
+  const handleClick = useCallback(() => startAudio(), [startAudio]);
+  
   return (
     <span
       style={{
@@ -19,6 +24,7 @@ export const LetterEh: FC<LetterOwnProps> = ({ fill }) => {
         xmlnsXlink="http://www.w3.org/2000/svg"
         width="39"
         height="49"
+        onClick={handleClick}
       >
         <g className="avesta-char">
           <path
