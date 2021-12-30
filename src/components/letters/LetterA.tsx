@@ -1,16 +1,21 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 export interface LetterOwnProps {
   fill: string | 'none';
+  zoom?: number ;
 }
-export const LetterA: FC<LetterOwnProps> = ({ fill }) => {
+export const LetterA: FC<LetterOwnProps> = ({ fill, zoom }) => {
+  const appliedZoom = React.useMemo(() => zoom || 1, [zoom]);
+  const scale = React.useMemo(() => {
+    return `scale(${appliedZoom*0.18} ${appliedZoom*0.18})`;
+  }, [appliedZoom]);
   return (
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/2000/svg"
-        width="30"
-        height="25"
+        width={30*appliedZoom}
+        height={25*appliedZoom}
       >
         <g className="avesta-char">
           <path
@@ -21,7 +26,7 @@ export const LetterA: FC<LetterOwnProps> = ({ fill }) => {
             strokeLinejoin="round"
             strokeMiterlimit="10"
             strokeWidth="3"
-            transform="scale(0.18 0.18)"
+            transform={scale}
           />
         </g>
       </svg>
