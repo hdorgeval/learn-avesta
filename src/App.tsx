@@ -65,6 +65,7 @@ export const App: FC = () => {
               <Drawer/>
             </div>
             <div className="text-disabled text-light">Train yourself by drawing over the above letter</div>
+            <div className="text-disabled text-light">Draw from right to left ! </div>
           </div>
         </section>
       </div>
