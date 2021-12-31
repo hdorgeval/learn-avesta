@@ -21,6 +21,8 @@ export const LettersCarousel: React.FC = () => {
     <LetterX fill="#f5a425" />,
   ];
 
+  const shuffledLetters = letters.sort(() => Math.random() - 0.5);
+
   return (
     <div
       id="carouselExampleIndicators"
@@ -28,7 +30,7 @@ export const LettersCarousel: React.FC = () => {
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators">
-        {letters.map((_, i) => (
+        {shuffledLetters.map((_, i) => (
           <button
             key={`${i}`}
             type="button"
@@ -41,7 +43,7 @@ export const LettersCarousel: React.FC = () => {
         ))}
       </div>
       <div className="carousel-inner overflow-visible mt-0 pt-0" style={{maxHeight: '50px', minHeight: '50px'}}>
-        {letters.map((letter, i) => (
+        {shuffledLetters.map((letter, i) => (
           <div 
             key={`${i}`}
             className={`carousel-item ${i === 0 ? 'active' : ''}`}
