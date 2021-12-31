@@ -29,7 +29,7 @@ a {
   top: 0;
 }
 
-.main-header .navbar-brand em {
+.navbar-brand em {
   font-style: normal;
   color: #f5a425;
 }
@@ -70,4 +70,11 @@ a {
   top: 30%;
   bottom: 50%;
   transform: translate(-50%, -50%);
+}
+
+section.coming-soon {
+  background-image: url(./assets/images/coming-soon-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px 0px;
 }

@@ -1,6 +1,5 @@
 import { getStroke, StrokeOptions } from "perfect-freehand";
 import React from "react";
-import { LetterA } from ".";
 
 export interface DrawingPoint {
   x: number;
@@ -24,7 +23,7 @@ export function getSvgPathFromStroke(stroke: number[][]): string {
   return d.join(" ");
 }
 
-export const DrawingSurface: React.FC = () => {
+export const DrawingSurface: React.FC = ({children}) => {
   const [points, setPoints] = React.useState<DrawingPoint[]>([]);
   const options = React.useMemo<StrokeOptions>(() => {
     return {
@@ -72,9 +71,9 @@ export const DrawingSurface: React.FC = () => {
   const pathData = React.useMemo(() => getSvgPathFromStroke(stroke), [stroke]);
 
   return (
-    <div className="position-relative">
-      <div className="position-absolute" style={{opacity:0.5}}>
-        <LetterA fill="#f5a425" zoom={5}/>
+    <div className="position-relative w-100">
+      <div className="position-absolute" >
+        {children}
       </div>
       <div className="position-absolute">
         <svg
@@ -92,3 +91,5 @@ export const DrawingSurface: React.FC = () => {
     </div>
   );
 };
+
+DrawingSurface.displayName = 'DrawingSurface';
