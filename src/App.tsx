@@ -58,10 +58,10 @@ export const App: FC = () => {
 
         <section className="section bg-dark coming-soon" id="learnToDrawSection" data-section="section2">
           <div className="container-fluid" style={{minHeight: '150px'}}>
-            <div className="navbar-brand fw-bold text-uppercase text-light" >
+            <div className="fw-bold text-uppercase text-light" >
               <i className="bi bi-brush me-2"></i> Learn to <em>draw</em> Avesta characters 
             </div>
-            <div className="mt-4" style={{minHeight: '150px', height: '150px'}}>
+            <div className="mt-4 ms-4" style={{minHeight: '150px', height: '150px'}}>
               <Drawer/>
             </div>
             <div className="text-disabled text-light">Train yourself by drawing over the above letter</div>
