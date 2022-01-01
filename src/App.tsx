@@ -5,9 +5,13 @@ import { FC } from 'react';
 import './App.css';
 import landingPageVideo from './assets/videos/course-video.mp4';
 import { Drawer } from './components/drawings';
+import { useAnalytics } from './components/hooks';
 import { LettersCarousel } from './components/letters';
 
 export const App: FC = () => {
+  const [addEvent] = useAnalytics();
+  addEvent('load-app');  
+  
   return (
     <>
       <header className="main-header clearfix bg-dark" role="header">
