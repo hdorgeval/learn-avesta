@@ -1,5 +1,6 @@
 import { getStroke, StrokeOptions } from "perfect-freehand";
 import React from "react";
+import { useAnalytics } from "../hooks";
 
 export interface DrawingPoint {
   x: number;
@@ -24,6 +25,7 @@ export function getSvgPathFromStroke(stroke: number[][]): string {
 }
 
 export const DrawingSurface: React.FC = ({children}) => {
+  const [addEvent] = useAnalytics();
   const [points, setPoints] = React.useState<DrawingPoint[]>([]);
   const options = React.useMemo<StrokeOptions>(() => {
     return {
@@ -53,7 +55,8 @@ export const DrawingSurface: React.FC = ({children}) => {
       x:nativeEvent.offsetX, y:nativeEvent.offsetY, pressure:e.pressure
     };
     setPoints([firstPoint]);
-  }, []);
+    addEvent('drawing');
+  }, [addEvent]);
 
   const handlePointerMove = React.useCallback((e:React.PointerEvent<SVGElement>) => {
     if (e.buttons !== 1) {

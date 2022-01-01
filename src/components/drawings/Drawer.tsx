@@ -1,4 +1,5 @@
 import { CSSProperties, useCallback, useMemo, useState } from "react";
+import { useAnalytics } from "../hooks";
 import { LetterA, LetterB } from "../letters";
 import { LetterName } from "../letters/LetterNames";
 import { DrawingSurface } from "./DrawingSurface";
@@ -33,6 +34,7 @@ export const useLetterInDrawingSurface = ({letter, zoom}:useLetterProps ) => {
 };
 
 export const Drawer: React.FC = () => {
+  const [addEvent] = useAnalytics();
   const [currentCharacter, setCurrentCharacter] = useState<LetterName>('A');
   const closeModal = useCallback(() => {
     const closeButton = document.getElementById('modalLetterPickerCloseButton');
@@ -42,14 +44,18 @@ export const Drawer: React.FC = () => {
       
   }
   , []);
+
   const handlePickLetterA = useCallback(() => {
     setCurrentCharacter('A');
     closeModal();
-  }, [closeModal]);
+    addEvent('letter-picker-a');
+  }, [addEvent, closeModal]);
   const handlePickLetterB = useCallback(() => {
     setCurrentCharacter('B');
     closeModal();
-  }, [closeModal]);
+    addEvent('letter-picker-b');
+  }, [addEvent, closeModal]);
+  
   const zoomFactorInDrawer = useMemo((): number => {
     switch (currentCharacter) {
       case 'B':
