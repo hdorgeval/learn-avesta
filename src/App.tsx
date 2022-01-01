@@ -30,6 +30,7 @@ export const App: FC = () => {
             <div className="collapse navbar-collapse" id="appNavBar">
               <div className="navbar-nav">
                 <a className="nav-link active" aria-current="page" href="#homeSection">Home</a>
+                <a className="nav-link" aria-current="page" href="#learnToDrawSection">Draw</a>
                 
               </div>
             </div>
@@ -47,10 +48,9 @@ export const App: FC = () => {
               <div className="text-light text-uppercase h5 fw-bold mt-3">
               The language of the divine vision
               </div>
-              <button type="button" className="btn btn-lg btn-primary mt-3" disabled>
+              <a className="btn btn-lg btn-primary mt-3" href="#learnToDrawSection">
                 <div className="text-uppercase fw-bold">Discover more</div>
-                <div className="fs-7">(will be available soon)</div>
-              </button>
+              </a>
               <LettersCarousel />
             </div>
           </div>
