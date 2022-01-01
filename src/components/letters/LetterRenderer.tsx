@@ -1,6 +1,8 @@
-import { CSSProperties, FC, useMemo } from 'react';
+import { CSSProperties, FC, useCallback, useMemo } from 'react';
+import { useAudioFromUrl } from './useAudioFromUrl';
 
 export interface LetterRendererOwnProps {
+  audioUrl?: string;
   style?: CSSProperties;
   overridenStyle?: CSSProperties;
   svg: {
@@ -22,7 +24,8 @@ export interface LetterRendererOwnProps {
 /**
  * Letter Renderer
  */
-export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenStyle, svg }) => {
+export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenStyle, svg, audioUrl }) => {
+  const [startAudio] = useAudioFromUrl(audioUrl);
   const appliedZoom = useMemo(() => svg.zoom || 1, [svg.zoom]);
   const appliedFill = useMemo(() => svg.path.fill || '#f5a425', [svg.path.fill]);
   const appliedStroke = useMemo(() => svg.path.stroke || '#000000', [svg.path.stroke]);
@@ -33,6 +36,13 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
       ...overridenStyle
     };
   },[overridenStyle, style]);
+  
+  const handleClick = useCallback(() => {
+    if (audioUrl) {
+      startAudio();
+    }
+  }, [audioUrl, startAudio]);
+  
   return (
     <span
       style={appliedStyle}
@@ -43,6 +53,7 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
         width={`${svg.width * appliedZoom}`}
         height={`${svg.height * appliedZoom}`}
         overflow="visible"
+        onClick={handleClick}
       >
         <g className="avesta-char">
           <path

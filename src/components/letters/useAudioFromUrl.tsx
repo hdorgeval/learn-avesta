@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-export const useAudioFromUrl = (url: string) => {
+export const useAudioFromUrl = (url: string | undefined) => {
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
 
