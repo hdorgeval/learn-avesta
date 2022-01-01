@@ -86,9 +86,6 @@ export const App: FC = () => {
         </div>
       </footer>
       {/* <Carrier /> */}
-      {/* <div>
-        <DrawingSurface />
-      </div> */}
     </>
   );
 };
