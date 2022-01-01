@@ -17,7 +17,7 @@ export const App: FC = () => {
               <em>Learn</em> Avesta
             </a>
             <button
-              className="navbar-toggler"
+              className="navbar-toggler px-2"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#appNavBar"
@@ -25,7 +25,7 @@ export const App: FC = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon fs-1 fw-bold"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="appNavBar">
               <div className="navbar-nav">
