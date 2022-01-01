@@ -38,7 +38,7 @@ export const DrawingSurface: React.FC = ({children}) => {
         cap: true
       },
       end: {
-        taper: 100,
+        taper: 50,
         easing: (t) => t,
         cap: true
       }
@@ -72,10 +72,10 @@ export const DrawingSurface: React.FC = ({children}) => {
 
   return (
     <div className="position-relative w-100">
-      <div className="position-absolute" >
+      <div className="position-absolute left-0 end-0 pe-4" >
         {children}
       </div>
-      <div className="position-absolute">
+      <div className="position-absolute left-0 end-0">
         <svg
           width="100%"
           onPointerDown={handlePointerDown}

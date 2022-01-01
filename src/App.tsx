@@ -61,11 +61,9 @@ export const App: FC = () => {
             <div className="fw-bold text-uppercase text-light" >
               <i className="bi bi-brush me-2"></i> Learn to <em>draw</em> Avesta characters 
             </div>
-            <div className="mt-4 ms-4" style={{minHeight: '150px', height: '150px'}}>
+            <div className="mt-4">
               <Drawer/>
             </div>
-            <div className="text-disabled text-light">Train yourself by drawing over the above letter</div>
-            <div className="text-disabled text-light">Draw from right to left ! </div>
           </div>
         </section>
       </div>
