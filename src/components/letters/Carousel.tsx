@@ -1,4 +1,20 @@
-import { LetterA, LetterAA, LetterB, LetterC, LetterD, LetterDj, LetterE, LetterEh, LetterF, LetterG, LetterH, LetterR, LetterS, LetterT, LetterV, LetterX, LetterZ } from '.';
+import { LetterA } from "./LetterA";
+import { LetterAA } from "./LetterAA";
+import { LetterB } from "./LetterB";
+import { LetterC } from "./LetterC";
+import { LetterD } from "./LetterD";
+import { LetterDj } from "./LetterDj";
+import { LetterE } from "./LetterE";
+import { LetterEh } from "./LetterEh";
+import { LetterF } from "./LetterF";
+import { LetterG } from "./LetterG";
+import { LetterH } from "./LetterH";
+import { LetterR } from "./LetterR";
+import { LetterS } from "./LetterS";
+import { LetterT } from "./LetterT";
+import { LetterV } from "./LetterV";
+import { LetterX } from "./LetterX";
+import { LetterZ } from "./LetterZ";
 
 export const LettersCarousel: React.FC = () => {
   const letters = [
