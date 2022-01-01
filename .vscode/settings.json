@@ -6,6 +6,7 @@
     "source.fixAll.markdownlint": true
   },
   "editor.formatOnPaste": true,
+  "editor.guides.indentation": true,
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "eslint.alwaysShowStatus": true,
