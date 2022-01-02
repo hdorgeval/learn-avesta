@@ -1,5 +1,5 @@
 import { CSSProperties, FC, useCallback, useMemo } from 'react';
-import { useAudioFromUrl } from './useAudioFromUrl';
+import { useAudioFromUrl } from '../hooks';
 
 export interface LetterRendererOwnProps {
   audioUrl?: string;

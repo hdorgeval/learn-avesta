@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 import letterEhSound from '../../assets/sounds/letter-eh.mp3';
+import { useAudioFromUrl } from '../hooks';
 import { LetterOwnProps } from './LetterA';
-import { useAudioFromUrl } from './useAudioFromUrl';
 
 /**
  * Letter E like in "André"
