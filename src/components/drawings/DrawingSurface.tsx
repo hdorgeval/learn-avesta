@@ -29,18 +29,18 @@ export const DrawingSurface: React.FC = ({children}) => {
   const [points, setPoints] = React.useState<DrawingPoint[]>([]);
   const options = React.useMemo<StrokeOptions>(() => {
     return {
-      size: 16,
+      size: 11,
       thinning: 0.5,
       smoothing: 0.5,
       streamline: 0.5,
       easing: (t) => t,
       start: {
-        taper: 0,
+        taper: 19,
         easing: (t) => t,
         cap: true
       },
       end: {
-        taper: 50,
+        taper: 40,
         easing: (t) => t,
         cap: true
       }
