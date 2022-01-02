@@ -1,7 +1,9 @@
 import { CSSProperties, FC, useCallback, useMemo } from 'react';
 import { useAudioFromUrl } from '../hooks';
+import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis';
 
 export interface LetterRendererOwnProps {
+  textToSpeech?: string;
   audioUrl?: string;
   style?: CSSProperties;
   overridenStyle?: CSSProperties;
@@ -24,8 +26,10 @@ export interface LetterRendererOwnProps {
 /**
  * Letter Renderer
  */
-export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenStyle, svg, audioUrl }) => {
+export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenStyle, svg, audioUrl, textToSpeech }) => {
   const [startAudio] = useAudioFromUrl(audioUrl);
+  const [speak] = useSpeechSynthesis();
+
   const appliedZoom = useMemo(() => svg.zoom || 1, [svg.zoom]);
   const appliedFill = useMemo(() => svg.path.fill || '#f5a425', [svg.path.fill]);
   const appliedStroke = useMemo(() => svg.path.stroke || '#000000', [svg.path.stroke]);
@@ -38,10 +42,14 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
   },[overridenStyle, style]);
   
   const handleClick = useCallback(() => {
+    if (textToSpeech) {
+      speak(textToSpeech);
+      return;
+    }
     if (audioUrl) {
       startAudio();
     }
-  }, [audioUrl, startAudio]);
+  }, [audioUrl, speak, startAudio, textToSpeech]);
   
   return (
     <span

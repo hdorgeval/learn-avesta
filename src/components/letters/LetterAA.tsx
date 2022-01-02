@@ -4,6 +4,7 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterAA: FC<LetterOwnProps> = ({ fill,overridenStyle, zoom  }) => {
   const props: LetterRendererOwnProps = {
+    textToSpeech: '/a-long/',
     style: {
       marginLeft: '-0px',
     },

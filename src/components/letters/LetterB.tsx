@@ -1,8 +1,15 @@
 import { FC } from 'react';
 import { LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
+/**
+ * Letter B 
+ * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
+ * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0078.mp3
+ * @alias: b
+ */
 export const LetterB: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
   const props: LetterRendererOwnProps = {
+    textToSpeech: '/b/',
     style: {
       marginLeft: '-45px',
     },

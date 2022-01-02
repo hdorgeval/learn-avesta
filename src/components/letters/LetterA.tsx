@@ -10,6 +10,7 @@ export interface LetterOwnProps {
 export const LetterA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
   
   const props: LetterRendererOwnProps = {
+    textToSpeech: '/a/',
     style: {
       marginLeft: '-0px',
     },
