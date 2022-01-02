@@ -18,7 +18,7 @@ function  toSpeechRequest(text: string): SpeechRequest {
     case '/a/':
       return {
         text: 'ah',
-        pitch: 0.9,
+        pitch: 0.3,
         rate: 1.6
       }; 
 
