@@ -81,9 +81,11 @@ export const DrawingSurface: React.FC = ({children}) => {
       <div className="position-absolute left-0 end-0">
         <svg
           width="100%"
+          height="100%"
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           style={{ touchAction: 'none' }}
+          overflow="visible"
         >
           <g className="avesta-char">
             {points && <path d={pathData} fill="black" stroke="black"/>}

@@ -1,6 +1,6 @@
 import { CSSProperties, useCallback, useMemo, useState } from "react";
 import { useAnalytics } from "../hooks";
-import { LetterA, LetterB } from "../letters";
+import { LetterA, LetterAA, LetterB, LetterX } from "../letters";
 import { LetterName } from "../letters/LetterNames";
 import { DrawingSurface } from "./DrawingSurface";
 
@@ -17,8 +17,10 @@ export const useLetter = ({letter, zoom}:useLetterProps ) => {
       return <LetterA zoom={zoom} overridenStyle={{marginLeft: '-0px'}}/>;
     case 'B':
       return <><LetterB zoom={zoom} /></>;
+    case 'X':
+      return <><LetterX zoom={zoom} /></>;
     default:
-      break;
+      throw new Error(`Letter ${letter} is not yet supported`);
   }
 };
 
@@ -28,8 +30,10 @@ export const useLetterInDrawingSurface = ({letter, zoom}:useLetterProps ) => {
       return <LetterA zoom={zoom} overridenStyle={{marginLeft: '-0px'}}/>;
     case 'B':
       return <><LetterA zoom={zoom} overridenStyle={{marginRight: '-140px'}}/><LetterB zoom={zoom} overridenStyle={{marginLeft: '-0px'}}/></>;
+    case 'X':
+      return <><LetterAA zoom={zoom} overridenStyle={{marginRight: '0px'}}/><LetterX zoom={zoom} overridenStyle={{marginLeft: '-0px'}}/></>;
     default:
-      break;
+      throw new Error(`Letter ${letter} is not yet supported`);
   }
 };
 
@@ -55,10 +59,18 @@ export const Drawer: React.FC = () => {
     closeModal();
     addEvent('letter-picker-b');
   }, [addEvent, closeModal]);
+
+  const handlePickLetterX = useCallback(() => {
+    setCurrentCharacter('X');
+    closeModal();
+    addEvent('letter-picker-x');
+  }, [addEvent, closeModal]);
   
   const zoomFactorInDrawer = useMemo((): number => {
     switch (currentCharacter) {
       case 'B':
+        return 3;
+      case 'X':
         return 3;
             
       default:
@@ -91,7 +103,8 @@ export const Drawer: React.FC = () => {
             <div className="modal-body">
               <div className="d-grid gap-2 d-md-block">
                 <button className="btn btn-primary" type="button" onClick={handlePickLetterA}><LetterA zoom={1}/></button>
-                <button className="btn btn-primary" type="button" onClick={handlePickLetterB}><LetterB fill="#f5a425" zoom={1}/></button>
+                <button className="btn btn-primary" type="button" onClick={handlePickLetterB}><LetterB zoom={1}/></button>
+                <button className="btn btn-primary" type="button" onClick={handlePickLetterX}><LetterX zoom={1}/></button>
               </div>
             </div>
             <div className="modal-footer">
