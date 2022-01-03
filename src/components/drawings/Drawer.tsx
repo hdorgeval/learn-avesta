@@ -101,10 +101,11 @@ export const Drawer: React.FC = () => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <div className="d-grid gap-2 d-md-block">
-                <button className="btn btn-primary" type="button" onClick={handlePickLetterA}><LetterA zoom={1}/></button>
-                <button className="btn btn-primary" type="button" onClick={handlePickLetterB}><LetterB zoom={1}/></button>
-                <button className="btn btn-primary" type="button" onClick={handlePickLetterX}><LetterX zoom={1}/></button>
+              <div className="d-grid gap-2 d-xl-block overflow-scroll" style={{maxHeight: '200px'}}>
+                <button className="btn btn-primary btn-large w-100 mb-xl-1" type="button" onClick={handlePickLetterA}><LetterA zoom={1}/></button>
+                <button className="btn btn-primary btn-large w-100 mb-xl-1" type="button" onClick={handlePickLetterB}><LetterB zoom={1}/></button>
+                <button className="btn btn-primary btn-large w-100 mb-xl-1" type="button" onClick={handlePickLetterX}><LetterX zoom={1}/></button>
+                <button className="btn btn-info btn-large btn-dark w-100 disabled" type="button" >More letters coming soon</button>
               </div>
             </div>
             <div className="modal-footer">
