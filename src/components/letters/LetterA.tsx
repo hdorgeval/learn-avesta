@@ -11,6 +11,8 @@ export interface LetterOwnProps {
 export interface LetterPronunciation {
   'fr'?: string;
   'en'?: string;
+  'es'?: string;
+  'de'?: string;
 }
 
 export const LetterATranscription = 'a';
