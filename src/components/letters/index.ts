@@ -1,5 +1,5 @@
-export * from './Carousel';
 export * from './Carrier';
+export * from './Explorer';
 export * from './LetterA';
 export * from './LetterAA';
 export * from './LetterB';

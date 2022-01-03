@@ -16,7 +16,7 @@ import { LetterV } from "./LetterV";
 import { LetterX } from "./LetterX";
 import { LetterZ } from "./LetterZ";
 
-export const LettersCarousel: React.FC = () => {
+export const Explorer: React.FC = () => {
   const letters = [
     <LetterA fill="#f5a425" />,
     <LetterB fill="#f5a425" />,
@@ -90,4 +90,4 @@ export const LettersCarousel: React.FC = () => {
   );
 };
 
-LettersCarousel.displayName = 'LettersCarousel';
+Explorer.displayName = 'LettersCarousel';
