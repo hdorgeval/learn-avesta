@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterDTranscription = 'b';
+export const LetterDTranscription = 'd';
 export const letterDPronunciation: LetterPronunciation = {
   'fr': 'like the letter d in date',
   'en': 'like the letter d in dad'
