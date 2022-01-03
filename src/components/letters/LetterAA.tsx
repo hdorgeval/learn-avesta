@@ -1,8 +1,28 @@
 import { FC } from 'react';
-import { LetterOwnProps } from './LetterA';
+import { LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterAA: FC<LetterOwnProps> = ({ fill,overridenStyle, zoom  }) => {
+export const LetterAATranscription = 'ɑ̄';
+export const letterAAPronunciation: LetterPronunciation = {
+  'en': 'like the letter a in father'
+};
+
+export const useLetterAA = () => {
+  const pronunciation = letterAAPronunciation;
+  const transcription = LetterAATranscription;
+  const render = (props: LetterOwnProps) => {
+    return <LetterAA {...props} />;
+  };
+
+  return [pronunciation,transcription,render];
+};
+/**
+ * Letter A long 
+ * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
+ * @audio:  
+ * @alias: ɑ̄
+ */
+export const LetterAA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom  }) => {
   const props: LetterRendererOwnProps = {
     textToSpeech: '/a-long/',
     style: {
