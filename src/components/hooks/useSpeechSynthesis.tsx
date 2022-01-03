@@ -31,6 +31,11 @@ export const phoneticSpeechSynthesis  : Record<string, SpeechRequest> ={
     text: 'd',
     pitch: 1,
     rate: 1
+  },
+  '/j/': {
+    text: 'djea',
+    pitch: 1,
+    rate: 1
   }
 };
 
