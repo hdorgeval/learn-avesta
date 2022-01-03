@@ -29,6 +29,10 @@ export const phoneticSpeechSynthesis  : Record<string, SpeechRequest> ={
   }
 };
 
+function isPhonetic(text: string): boolean {
+  return text.startsWith('/') && text.endsWith('/');
+}
+
 /**
  * translate, if needed, phonetical text to speech
  * @see https://mdn.github.io/web-speech-api/speak-easy-synthesis/index.html
@@ -37,6 +41,11 @@ function  toSpeechRequest(text: string): SpeechRequest {
   if (phoneticSpeechSynthesis[text]) {
     return phoneticSpeechSynthesis[text];
   }
+
+  if (isPhonetic(text)) {
+    throw new Error(`Unsupported phonetic sequence: ${text}. Maybe you forgot to update the phoneticSpeechSynthesis object?`);
+  }
+
   return {
     text,
     pitch: 1,
