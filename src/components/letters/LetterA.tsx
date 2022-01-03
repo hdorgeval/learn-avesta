@@ -7,6 +7,28 @@ export interface LetterOwnProps {
   overridenStyle?: CSSProperties;
 
 }
+
+export interface LetterPronunciation {
+  'fr'?: string;
+  'en'?: string;
+}
+
+export const LetterATranscription = 'a';
+export const letterAPronunciation: LetterPronunciation = {
+  'fr': 'like the letter a in baguette',
+  'en': 'like the letter a in cat'
+};
+
+export const useLetterA = () => {
+  const pronunciation = letterAPronunciation;
+  const transcription = LetterATranscription;
+  const render = (props: LetterOwnProps) => {
+    return <LetterA {...props} />;
+  };
+
+  return [pronunciation,transcription,render];
+};
+
 export const LetterA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
   
   const props: LetterRendererOwnProps = {
