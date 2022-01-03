@@ -57,6 +57,11 @@ export const phoneticSpeechSynthesis  : Record<string, SpeechRequest> ={
     pitch: 1,
     rate: 1
   },
+  '/h/': {
+    text: 'h',
+    pitch: 1,
+    rate: 1
+  },
 };
 
 function isPhonetic(text: string): boolean {
