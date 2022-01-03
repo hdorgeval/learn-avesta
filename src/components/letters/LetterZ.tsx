@@ -1,7 +1,21 @@
 import { FC } from 'react';
-import letterZSound from '../../assets/sounds/letter-z.mp3';
-import { LetterOwnProps } from './LetterA';
+import { LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
+
+export const LetterZTranscription = 'z';
+export const letterZPronunciation: LetterPronunciation = {
+  'fr': 'like the letter z in zoro',
+  'en': 'like the letter z in zoo'
+};
+export const useLetterZ = () => {
+  const pronunciation = letterZPronunciation;
+  const transcription = LetterZTranscription;
+  const render = (props: LetterOwnProps) => {
+    return <LetterZ {...props} />;
+  };
+
+  return [pronunciation,transcription,render];
+};
 
 /**
  * Letter Z 
@@ -11,7 +25,7 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
  */
 export const LetterZ: FC<LetterOwnProps> = ({ fill ,overridenStyle, zoom}) => {
   const props: LetterRendererOwnProps = {
-    audioUrl: letterZSound,
+    textToSpeech: '/z/',
     style: {
       marginLeft: '-15px',
     },
