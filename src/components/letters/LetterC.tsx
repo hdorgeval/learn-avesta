@@ -5,7 +5,7 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const LetterCTranscription = 'c';
 export const letterCPronunciation: LetterPronunciation = {
   'fr': 'like the sequence tch in atchoum',
-  'en': 'like the sequence ch in chair'
+  'en': 'like the sequence ch in chair, church, check'
 };
 
 export const useLetterC = () => {
