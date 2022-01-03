@@ -6,7 +6,7 @@ import './App.css';
 import landingPageVideo from './assets/videos/course-video.mp4';
 import { Drawer } from './components/drawings';
 import { useAnalytics } from './components/hooks';
-import { LettersCarousel } from './components/letters';
+import { Explorer } from './components/letters';
 
 export const App: FC = () => {
   const [addEvent] = useAnalytics();
@@ -55,7 +55,7 @@ export const App: FC = () => {
               <a className="btn btn-lg btn-primary mt-3" href="#learnToDrawSection">
                 <div className="text-uppercase fw-bold">Discover more</div>
               </a>
-              <LettersCarousel />
+              <Explorer />
             </div>
           </div>
         </section>
