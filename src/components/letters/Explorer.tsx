@@ -1,21 +1,24 @@
 import { useCallback, useMemo, useState } from "react";
-import { useLetters } from "../hooks";
+import { useAnalytics, useLetters } from "../hooks";
 import { Letter, LetterPronunciation } from "./LetterA";
 
 export const Explorer: React.FC = () => {
   const [selectedLetter, setSelectedLetter] = useState<Letter | undefined>(undefined);
   const letters = useLetters();
+  const [addEvent] = useAnalytics();
   const shuffledLetters = useMemo(() => {
     return letters.sort(() => Math.random() - 0.5);
   }, [letters]);
 
   const handleClickOnLetter = useCallback((letter: Letter) => {
     setSelectedLetter(letter);
-  },[]);
+    addEvent('explore-letter');
+  },[addEvent]);
 
   const goBackToCarousel = useCallback(() => {
     setSelectedLetter(undefined);
-  } , []);
+    addEvent('go-back-to-alphabet-explorer');
+  } , [addEvent]);
   
   const translateCountryCode = useCallback((countryCode: string) => {
     const key = countryCode as keyof LetterPronunciation;
