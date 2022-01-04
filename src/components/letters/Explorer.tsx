@@ -103,7 +103,7 @@ export const Explorer: React.FC = () => {
                   </div>
                 ))
               }
-              <a href="#" className="btn btn-primary me-2" onClick={goBackToCarousel}>Got it ! Continue exploring the alphabet</a>
+              <a href="#" className="btn btn-primary mt-2 me-2" onClick={goBackToCarousel}>Got it ! Continue exploring the alphabet</a>
             </div>
           </div>
         </div>

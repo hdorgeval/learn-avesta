@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterHTranscription = 'h';
 export const letterHPronunciation: LetterPronunciation = {
-  'fr': 'like the letter h in ha-ha-ha',
-  'en': 'like the letter h in hello'
+  'fr': 'like the letter h in ha-ha-ha ;',
+  'en': 'like the letter h in hello.'
 };
 export const useLetterH= () => {
   const pronunciation = letterHPronunciation;

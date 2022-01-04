@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterTTranscription = 't';
 export const letterTPronunciation: LetterPronunciation = {
-  'fr': 'like the letter t in table',
-  'en': 'like the letter t in tea, getting'
+  'fr': 'like the letter t in table ; ',
+  'en': 'like the letter t in tea, getting.'
 };
 export const useLetterT= () => {
   const pronunciation = letterTPronunciation;

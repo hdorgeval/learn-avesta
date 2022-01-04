@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterDjTranscription = 'j';
 export const letterDjPronunciation: LetterPronunciation = {
-  'fr': 'like the letter j in jeans',
-  'en': 'like the letter j in just'
+  'fr': 'like the letter j in jeans ;',
+  'en': 'like the letter j in just.'
 };
 export const useLetterDj = () => {
   const pronunciation = letterDjPronunciation;

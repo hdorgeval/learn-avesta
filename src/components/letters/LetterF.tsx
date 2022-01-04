@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterFTranscription = 'f';
 export const letterFPronunciation: LetterPronunciation = {
-  'fr': 'like the letter f in face',
-  'en': 'like the letter f in find, if'
+  'fr': 'like the letter f in face ;',
+  'en': 'like the letter f in find, if.'
 };
 export const useLetterF= () => {
   const pronunciation = letterFPronunciation;

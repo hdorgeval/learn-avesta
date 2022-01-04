@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterSTranscription = 's';
 export const letterSPronunciation: LetterPronunciation = {
-  'fr': 'like the letter s in solide',
-  'en': 'like the letter s in sun, miss'
+  'fr': 'like the letter s in solide ;',
+  'en': 'like the letter s in sun, miss.'
 };
 export const useLetterS= () => {
   const pronunciation = letterSPronunciation;

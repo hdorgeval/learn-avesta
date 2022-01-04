@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterBTranscription = 'b';
 export const letterBPronunciation: LetterPronunciation = {
-  'fr': 'like the letter b in baguette',
-  'en': 'like the letter b in bag'
+  'fr': 'like the letter b in baguette ;',
+  'en': 'like the letter b in bag.'
 };
 export const useLetterB = () => {
   const pronunciation = letterBPronunciation;

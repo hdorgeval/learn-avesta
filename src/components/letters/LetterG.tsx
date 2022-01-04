@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterGTranscription = 'g';
 export const letterGPronunciation: LetterPronunciation = {
-  'fr': 'like the letter g in gars',
-  'en': 'like the letter g in give, bag, flag'
+  'fr': 'like the letter g in gars ;',
+  'en': 'like the letter g in give, bag, flag.'
 };
 export const useLetterG= () => {
   const pronunciation = letterGPronunciation;

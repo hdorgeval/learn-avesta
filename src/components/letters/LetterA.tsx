@@ -17,8 +17,8 @@ export interface LetterPronunciation {
 
 export const LetterATranscription = 'a';
 export const letterAPronunciation: LetterPronunciation = {
-  'fr': 'like the letter a in baguette',
-  'en': 'like the letter a in cat'
+  'fr': 'like the letter a in baguette ;',
+  'en': 'like the letter a in cat.'
 };
 
 export interface Letter {

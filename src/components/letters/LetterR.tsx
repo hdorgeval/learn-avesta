@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterRTranscription = 'r';
 export const letterRPronunciation: LetterPronunciation = {
-  'fr': 'like the letter r in rue',
-  'en': 'like the letter r in red, try'
+  'fr': 'like the letter r in rue ;',
+  'en': 'like the letter r in red, try.'
 };
 export const useLetterR= () => {
   const pronunciation = letterRPronunciation;

@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterAATranscription = 'ā' ; // '&#257;'; // ā
 export const letterAAPronunciation: LetterPronunciation = {
-  'fr': 'long a, like the sequence ah',
-  'en': 'like the letter a in father'
+  'fr': 'long a, like the sequence ah ;',
+  'en': 'like the letter a in father.'
 };
 
 export const useLetterAA = () => {

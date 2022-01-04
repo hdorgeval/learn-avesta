@@ -5,9 +5,9 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterXTranscription = 'x';
 export const letterXPronunciation: LetterPronunciation = {
-  'fr': 'like the sequence Kh in Khalid (to be pronounced more or less like rhalid)',
-  'es': 'like the letter j in Juan',
-  'de': 'like the sequence ch in nach'
+  'fr': 'like the sequence Kh in Khalid (to be pronounced more or less like rhalid) ;',
+  'es': 'like the letter j in Juan ;',
+  'de': 'like the sequence ch in nach.'
 };
 export const useLetterX= () => {
   const pronunciation = letterXPronunciation;

@@ -4,7 +4,7 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterEhTranscription = 'ē';
 export const letterEhPronunciation: LetterPronunciation = {
-  'fr': 'long é, like the sequence eh',
+  'fr': 'long é, like the sequence eh.',
 };
 
 export const useLetterEh = () => {

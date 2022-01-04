@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterVTranscription = 'v';
 export const letterVPronunciation: LetterPronunciation = {
-  'fr': 'like the letter v in vite',
-  'en': 'like the letter v in voice, five'
+  'fr': 'like the letter v in vite ;',
+  'en': 'like the letter v in voice, five.'
 };
 export const useLetterV= () => {
   const pronunciation = letterVPronunciation;
