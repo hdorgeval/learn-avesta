@@ -42,7 +42,7 @@ export const App: FC = () => {
         </nav>
       </header>
       <div data-bs-spy="scroll" data-bs-target="#appNav" data-bs-offset="0" tabIndex={0}>
-        <section className="section main-banner bg-dark" id="homeSection" data-section="section1">
+        <section className="section main-banner bg-dark overflow-visible" id="homeSection" data-section="section1">
           <video autoPlay muted loop id="bg-video">
             <source src={landingPageVideo} type="video/mp4" />
           </video>

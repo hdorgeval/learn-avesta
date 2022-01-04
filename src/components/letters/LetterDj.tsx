@@ -10,11 +10,11 @@ export const letterDjPronunciation: LetterPronunciation = {
 export const useLetterDj = () => {
   const pronunciation = letterDjPronunciation;
   const transcription = LetterDjTranscription;
-  const render = (props: LetterOwnProps) => {
+  const render = (props?: LetterOwnProps) => {
     return <LetterDj {...props} />;
   };
 
-  return [pronunciation,transcription,render];
+  return {pronunciation,transcription,render};
 };
 
 /**

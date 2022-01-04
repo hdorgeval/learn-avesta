@@ -53,7 +53,7 @@ export const phoneticSpeechSynthesis  : Record<string, SpeechRequest> ={
     rate: 1
   },
   '/g/': {
-    text: 'gu',
+    text: 'ghu',
     pitch: 1,
     rate: 1
   },

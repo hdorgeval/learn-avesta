@@ -12,11 +12,11 @@ export const letterXPronunciation: LetterPronunciation = {
 export const useLetterX= () => {
   const pronunciation = letterXPronunciation;
   const transcription = LetterXTranscription;
-  const render = (props: LetterOwnProps) => {
+  const render = (props?: LetterOwnProps) => {
     return <LetterX {...props} />;
   };
 
-  return [pronunciation,transcription,render];
+  return {pronunciation,transcription,render};
 };
 
 /**

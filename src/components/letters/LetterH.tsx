@@ -10,11 +10,11 @@ export const letterHPronunciation: LetterPronunciation = {
 export const useLetterH= () => {
   const pronunciation = letterHPronunciation;
   const transcription = LetterHTranscription;
-  const render = (props: LetterOwnProps) => {
+  const render = (props?: LetterOwnProps) => {
     return <LetterH {...props} />;
   };
 
-  return [pronunciation,transcription,render];
+  return {pronunciation,transcription,render};
 };
 /**
  * Letter H 

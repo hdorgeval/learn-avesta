@@ -11,11 +11,11 @@ export const letterCPronunciation: LetterPronunciation = {
 export const useLetterC = () => {
   const pronunciation = letterCPronunciation;
   const transcription = LetterCTranscription;
-  const render = (props: LetterOwnProps) => {
+  const render = (props?: LetterOwnProps) => {
     return <LetterC {...props} />;
   };
 
-  return [pronunciation,transcription,render];
+  return {pronunciation,transcription,render};
 };
 
 /**

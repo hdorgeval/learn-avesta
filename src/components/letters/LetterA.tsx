@@ -21,14 +21,20 @@ export const letterAPronunciation: LetterPronunciation = {
   'en': 'like the letter a in cat'
 };
 
+export interface Letter {
+  pronunciation: LetterPronunciation;
+  transcription: string;
+  render: (props?: LetterRendererOwnProps) => JSX.Element;
+}
+
 export const useLetterA = () => {
   const pronunciation = letterAPronunciation;
   const transcription = LetterATranscription;
-  const render = (props: LetterOwnProps) => {
+  const render = (props?: LetterOwnProps) => {
     return <LetterA {...props} />;
   };
 
-  return [pronunciation,transcription,render];
+  return {pronunciation,transcription,render};
 };
 
 export const LetterA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
