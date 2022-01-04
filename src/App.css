@@ -85,3 +85,32 @@ section.coming-soon {
   height: 100%;
   padding: 120px 0px;
 }
+
+@keyframes keyframesPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.pulse-on {
+  box-sizing: content-box;
+  width: 15px;
+  height: 15px;
+  border-radius: 30px;
+  background-color: var(--bs-info);
+  z-index: 10;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  animation: keyframesPulse 2s infinite;
+}
