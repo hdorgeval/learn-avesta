@@ -1,4 +1,4 @@
-import { useLetterA, useLetterAA, useLetterB, useLetterC, useLetterD, useLetterDj, useLetterE, useLetterEh, useLetterF, useLetterG, useLetterH, useLetterR, useLetterS, useLetterT, useLetterV, useLetterX, useLetterZ } from "../letters";
+import { useLetterA, useLetterAA, useLetterB, useLetterC, useLetterD, useLetterDj, useLetterE, useLetterEh, useLetterF, useLetterG, useLetterH, useLetterR, useLetterS, useLetterT, useLetterV, useLetterX, useLetterXv, useLetterZ } from "../letters";
 
 export const useLetters = () => {
   const letters = [
@@ -19,6 +19,7 @@ export const useLetters = () => {
     useLetterS() ,
     useLetterEh() ,
     useLetterX() ,
+    useLetterXv() ,
   ];
 
   return letters;

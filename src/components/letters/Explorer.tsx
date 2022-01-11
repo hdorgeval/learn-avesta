@@ -17,6 +17,18 @@ export const Explorer: React.FC = () => {
     addEvent('explore-letter');
   },[addEvent]);
 
+  const displayTranscription = useCallback((transcription: string) => {
+    if (!transcription.includes('<raised>')) {
+      return transcription;
+    }
+
+    const parts = transcription.split('<raised>');
+    return (<>
+      <span>{parts[0]}</span>
+      <span className="ms-0 position-absolute"  style={{marginTop: '-5px', fontSize: 'smaller'}}>{parts[1]}</span>
+    </>);
+
+  } , []);
   const goBackToCarousel = useCallback(() => {
     setSelectedLetter(undefined);
     setDisplayNewComerHint(false);
@@ -119,7 +131,7 @@ export const Explorer: React.FC = () => {
             </div>
             <div className="col-10">
               <div className="card-body">
-                <div className="card-title h5 text-start">Transcription : {selectedLetter.transcription}</div>
+                <div className="card-title h5 text-start">Transcription : {displayTranscription(selectedLetter.transcription)}</div>
                 {
                   Object.keys(selectedLetter.pronunciation).map((countryCode) => (
                     <div className="text-start" key={countryCode}>
