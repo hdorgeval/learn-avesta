@@ -95,6 +95,15 @@ section.learn-transpose {
   padding: 20px 0px;
 }
 
+section.video-session {
+  background-image: url(./assets/images/coming-soon-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0px;
+}
+
 @keyframes keyframesPulse {
   0% {
     transform: scale(0.95);

@@ -3,12 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { FC } from 'react';
 import './App.css';
+import previewAvestaScriptAndSounds from './assets/images/video-preview-avestan-script-and-sounds.png';
 import landingPageVideo from './assets/videos/course-video.mp4';
 import { ComingSoon } from './components/coming-soon';
 import { Drawer } from './components/drawings';
 import { useAnalytics } from './components/hooks';
 import { Explorer } from './components/letters';
-
+import { VideoPlayer } from './components/video-player';
 export const App: FC = () => {
   const [addEvent] = useAnalytics();
   addEvent('load-app');  
@@ -75,12 +76,24 @@ export const App: FC = () => {
         <section className="section bg-dark learn-transpose" id="learnToTransposeSection" data-section="section3">
           <div className="container-fluid" style={{minHeight: '150px'}}>
             <div className="fw-bold text-uppercase text-light" >
-              <i className="bi bi-brush me-2"></i> Learn to <em>transpose</em> Avesta characters 
+              <i className="bi bi-arrows-angle-contract me-2"></i> Learn to <em>transpose</em> Avesta characters 
             </div>
             <div className="mt-4">
-              
               {/* <Transposer /> */}
               <ComingSoon />
+            </div>
+          </div>
+        </section>
+
+        <section className="section bg-dark video-session" id="videoAvestaScriptAndSoundsSection" data-section="section3">
+          <div className="container-fluid" style={{minHeight: '150px'}}>
+            <div className="fw-bold text-uppercase text-light" >
+              <i className="bi bi-person-video me-2"></i> Video session on <em>Avesta Script and Sounds</em> by Almut Hintze
+            </div>
+            <div className="mt-4">
+              <VideoPlayer 
+                thumbnailUrl={previewAvestaScriptAndSounds}
+                videoUrl="https://spw.uni-goettingen.de/projects/aig/mp4/AVE-INT-003.mp4" startTime="18:35" />
             </div>
           </div>
         </section>
