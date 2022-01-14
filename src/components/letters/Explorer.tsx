@@ -1,19 +1,38 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAnalytics, useLetters } from "../hooks";
 import { Letter, LetterPronunciation } from "./LetterA";
 
 export const Explorer: React.FC = () => {
   const [selectedLetter, setSelectedLetter] = useState<Letter | undefined>(undefined);
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
+
   const [displayNewComerHint, setDisplayNewComerHint] = useState(true);
 
   const letters = useLetters();
+  const maxIndex =  useMemo( () => letters.length - 1, [letters]);
+
   const [addEvent] = useAnalytics();
+
+  useEffect(() => {
+    if (selectedIndex === -1) {
+      return;
+    }
+    const nextIndex = selectedIndex === maxIndex ? 0 : selectedIndex + 1;
+    const selector = `.carousel-indicators button[aria-label="Character ${nextIndex + 1}"]`;
+    const nextButton = document.querySelector(selector) as HTMLButtonElement;
+    if (nextButton) {
+      nextButton.click();
+    }
+  }
+  , [maxIndex, selectedIndex, selectedLetter]);
+
   const shuffledLetters = useMemo(() => {
     return letters.sort(() => Math.random() - 0.5);
   }, [letters]);
 
-  const handleClickOnLetter = useCallback((letter: Letter) => {
+  const handleClickOnLetter = useCallback((letter: Letter,index: number) => {
     setSelectedLetter(letter);
+    setSelectedIndex(index);
     addEvent('explore-letter');
   },[addEvent]);
 
@@ -33,6 +52,7 @@ export const Explorer: React.FC = () => {
     setSelectedLetter(undefined);
     setDisplayNewComerHint(false);
     addEvent('go-back-to-alphabet-explorer');
+    
   } , [addEvent]);
 
   const handleNewComerHint = useCallback(() => {
@@ -63,8 +83,9 @@ export const Explorer: React.FC = () => {
           <>
             <div
               id="avestaAlphabetExplorer"
-              className="carousel slide mt-5 pb-5"
+              className="carousel slide mt-5 pb-5 overflow-hidden"
               data-bs-ride="carousel"
+              
             >
               <div className="carousel-indicators">
                 {shuffledLetters.map((_, i) => (
@@ -75,7 +96,7 @@ export const Explorer: React.FC = () => {
                     data-bs-slide-to={`${i}`}
                     className={i === 0 ? "active" : ""}
                     aria-current={i === 0 ? "true" : "false"}
-                    aria-label={`Slide ${i + 1}`}
+                    aria-label={`Character ${i + 1}`}
                   ></button>
                 ))}
               </div>
@@ -84,7 +105,7 @@ export const Explorer: React.FC = () => {
                   <div 
                     key={`${i}`}
                     className={`carousel-item ${i === 0 ? 'active' : ''}`}
-                    onClick={() => handleClickOnLetter(letter)}
+                    onClick={() => handleClickOnLetter(letter,i)}
                   >
                     {letter.render()}
                   </div>
