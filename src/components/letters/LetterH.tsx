@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterHTranscription = 'h';
@@ -7,7 +7,7 @@ export const letterHPronunciation: LetterPronunciation = {
   'fr': 'like the letter h in ha-ha-ha ;',
   'en': 'like the letter h in hello.'
 };
-export const useLetterH= () => {
+export const useLetterH= (): Letter => {
   const pronunciation = letterHPronunciation;
   const transcription = LetterHTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -22,8 +22,9 @@ export const useLetterH= () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JW/0068.mp3
  * @alias: h
  */
-export const LetterH: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom  }) => {
+export const LetterH: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/h/',
     style: {
       marginLeft: '-0px',

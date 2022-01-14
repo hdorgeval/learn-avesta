@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import letterXSound from '../../assets/sounds/letter-x.mp3';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterXTranscription = 'x';
@@ -9,7 +9,7 @@ export const letterXPronunciation: LetterPronunciation = {
   'es': 'like the letter j in Juan ;',
   'de': 'like the sequence ch in nach.'
 };
-export const useLetterX= () => {
+export const useLetterX= (): Letter => {
   const pronunciation = letterXPronunciation;
   const transcription = LetterXTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -25,9 +25,10 @@ export const useLetterX= () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0078.mp3
  * @alias: x
  */
-export const LetterX: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle }) => {
+export const LetterX: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle,  disableSound }) => {
   
   const props: LetterRendererOwnProps = {
+    disableSound,
     audioUrl: letterXSound,
     style: {
       marginLeft: '-0px',

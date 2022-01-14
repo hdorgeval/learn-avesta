@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterRTranscription = 'r';
@@ -7,7 +7,7 @@ export const letterRPronunciation: LetterPronunciation = {
   'fr': 'like the letter r in rue ;',
   'en': 'like the letter r in red, try.'
 };
-export const useLetterR= () => {
+export const useLetterR= (): Letter => {
   const pronunciation = letterRPronunciation;
   const transcription = LetterRTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -23,8 +23,9 @@ export const useLetterR= () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JW/0280.mp3
  * @alias: r
  */
-export const LetterR: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom  }) => {
+export const LetterR: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/r/',
     style: {
       marginLeft: '-15px',

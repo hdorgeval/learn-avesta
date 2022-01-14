@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterDTranscription = 'd';
@@ -8,7 +8,7 @@ export const letterDPronunciation: LetterPronunciation = {
   'en': 'like the letter d in dad.'
 };
 
-export const useLetterD = () => {
+export const useLetterD = (): Letter => {
   const pronunciation = letterDPronunciation;
   const transcription = LetterDTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -24,8 +24,9 @@ export const useLetterD = () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/PL/0064.mp3
  * @alias: d
  */
-export const LetterD: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
+export const LetterD: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/d/',
     style: {
       marginLeft: '-32px',

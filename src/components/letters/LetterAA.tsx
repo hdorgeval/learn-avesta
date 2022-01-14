@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterAATranscription = 'ā' ; // '&#257;'; // ā
@@ -8,7 +8,7 @@ export const letterAAPronunciation: LetterPronunciation = {
   'en': 'like the letter a in father.'
 };
 
-export const useLetterAA = () => {
+export const useLetterAA = (): Letter => {
   const pronunciation = letterAAPronunciation;
   const transcription = LetterAATranscription;
   const render = (props?: LetterOwnProps) => {
@@ -23,8 +23,9 @@ export const useLetterAA = () => {
  * @audio:  
  * @alias: ɑ̄
  */
-export const LetterAA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom  }) => {
+export const LetterAA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/a-long/',
     style: {
       marginLeft: '-0px',

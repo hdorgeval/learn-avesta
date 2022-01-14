@@ -5,7 +5,7 @@ export interface LetterOwnProps {
   fill?: string | 'none';
   zoom?: number ;
   overridenStyle?: CSSProperties;
-
+  disableSound?: boolean;
 }
 
 export interface LetterPronunciation {
@@ -24,10 +24,10 @@ export const letterAPronunciation: LetterPronunciation = {
 export interface Letter {
   pronunciation: LetterPronunciation;
   transcription: string;
-  render: (props?: LetterRendererOwnProps) => JSX.Element;
+  render: (props?: LetterOwnProps) => JSX.Element;
 }
 
-export const useLetterA = () => {
+export const useLetterA = (): Letter => {
   const pronunciation = letterAPronunciation;
   const transcription = LetterATranscription;
   const render = (props?: LetterOwnProps) => {
@@ -37,9 +37,10 @@ export const useLetterA = () => {
   return {pronunciation,transcription,render};
 };
 
-export const LetterA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
+export const LetterA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/a/',
     style: {
       marginLeft: '-0px',

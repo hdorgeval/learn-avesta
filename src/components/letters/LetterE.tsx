@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterETranscription = 'e';
@@ -7,7 +7,7 @@ export const letterEPronunciation: LetterPronunciation = {
   'fr': 'like the letter é in été.',
 };
 
-export const useLetterE = () => {
+export const useLetterE = (): Letter => {
   const pronunciation = letterEPronunciation;
   const transcription = LetterETranscription;
   const render = (props?: LetterOwnProps) => {
@@ -23,8 +23,9 @@ export const useLetterE = () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0065.mp3
  * @alias: e
  */
-export const LetterE: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
+export const LetterE: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/e/',
     style: {
       marginLeft: '-0px',

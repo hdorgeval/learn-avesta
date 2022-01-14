@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import letterXSound from '../../assets/sounds/letter-x.mp3';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterXvTranscription = 'x<raised>v';
@@ -9,7 +9,7 @@ export const letterXvPronunciation: LetterPronunciation = {
   'es': 'like the letter j in Juan ;',
   
 };
-export const useLetterXv= () => {
+export const useLetterXv= (): Letter => {
   const pronunciation = letterXvPronunciation;
   const transcription = LetterXvTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -25,9 +25,10 @@ export const useLetterXv= () => {
  * @audio:  
  * @alias: x raised by the letter v
  */
-export const LetterXv: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle }) => {
+export const LetterXv: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disableSound }) => {
   
   const props: LetterRendererOwnProps = {
+    disableSound,
     audioUrl: letterXSound,
     textToSpeech: '/xv/',
     style: {

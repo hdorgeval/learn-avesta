@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterGTranscription = 'g';
@@ -7,7 +7,7 @@ export const letterGPronunciation: LetterPronunciation = {
   'fr': 'like the letter g in gars ;',
   'en': 'like the letter g in give, bag, flag.'
 };
-export const useLetterG= () => {
+export const useLetterG= (): Letter => {
   const pronunciation = letterGPronunciation;
   const transcription = LetterGTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -23,8 +23,9 @@ export const useLetterG= () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0261.mp3
  * @alias: g
  */
-export const LetterG: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
+export const LetterG: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/g/',
     style: {
       marginLeft: '-0px',

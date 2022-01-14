@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterBTranscription = 'b';
@@ -7,7 +7,7 @@ export const letterBPronunciation: LetterPronunciation = {
   'fr': 'like the letter b in baguette ;',
   'en': 'like the letter b in bag.'
 };
-export const useLetterB = () => {
+export const useLetterB = (): Letter => {
   const pronunciation = letterBPronunciation;
   const transcription = LetterBTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -22,8 +22,9 @@ export const useLetterB = () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0078.mp3
  * @alias: b
  */
-export const LetterB: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
+export const LetterB: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/b/',
     style: {
       marginLeft: '-45px',

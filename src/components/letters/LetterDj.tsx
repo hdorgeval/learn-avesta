@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterDjTranscription = 'j';
@@ -7,7 +7,7 @@ export const letterDjPronunciation: LetterPronunciation = {
   'fr': 'like the letter j in jeans ;',
   'en': 'like the letter j in just.'
 };
-export const useLetterDj = () => {
+export const useLetterDj = (): Letter => {
   const pronunciation = letterDjPronunciation;
   const transcription = LetterDjTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -23,8 +23,9 @@ export const useLetterDj = () => {
  * @audio:  
  * @alias: j
  */
-export const LetterDj: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
+export const LetterDj: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/j/',
     style: {
       marginLeft: '-0px',

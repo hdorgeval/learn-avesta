@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterSTranscription = 's';
@@ -7,7 +7,7 @@ export const letterSPronunciation: LetterPronunciation = {
   'fr': 'like the letter s in solide ;',
   'en': 'like the letter s in sun, miss.'
 };
-export const useLetterS= () => {
+export const useLetterS= (): Letter => {
   const pronunciation = letterSPronunciation;
   const transcription = LetterSTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -23,8 +23,9 @@ export const useLetterS= () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JW/0073.mp3
  * @alias: s
  */
-export const LetterS: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
+export const LetterS: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/s/',
     style: {
       marginLeft: '-0px',

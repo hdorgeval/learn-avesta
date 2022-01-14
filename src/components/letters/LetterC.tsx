@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterCTranscription = 'c';
@@ -8,7 +8,7 @@ export const letterCPronunciation: LetterPronunciation = {
   'en': 'like the sequence ch in chair, church, check.'
 };
 
-export const useLetterC = () => {
+export const useLetterC = (): Letter => {
   const pronunciation = letterCPronunciation;
   const transcription = LetterCTranscription;
   const render = (props?: LetterOwnProps) => {
@@ -24,8 +24,9 @@ export const useLetterC = () => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0078.mp3
  * @alias: c
  */
-export const LetterC: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom }) => {
+export const LetterC: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
+    disableSound,
     textToSpeech: '/c/',
     style: {
       marginLeft: '-0px',

@@ -3,6 +3,7 @@ import { useAudioFromUrl } from '../hooks';
 import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis';
 
 export interface LetterRendererOwnProps {
+  disableSound?: boolean;
   textToSpeech?: string;
   audioUrl?: string;
   style?: CSSProperties;
@@ -26,7 +27,7 @@ export interface LetterRendererOwnProps {
 /**
  * Letter Renderer
  */
-export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenStyle, svg, audioUrl, textToSpeech }) => {
+export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenStyle, svg, audioUrl, textToSpeech, disableSound }) => {
   const [startAudio] = useAudioFromUrl(audioUrl);
   const [speak] = useSpeechSynthesis();
 
@@ -40,8 +41,12 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
       ...overridenStyle
     };
   },[overridenStyle, style]);
-  
+
   const handleClick = useCallback(() => {
+    if (disableSound) {
+      return;
+    }
+    
     if (textToSpeech) {
       speak(textToSpeech);
       return;
@@ -49,7 +54,8 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
     if (audioUrl) {
       startAudio();
     }
-  }, [audioUrl, speak, startAudio, textToSpeech]);
+  
+  }, [audioUrl, disableSound, speak, startAudio, textToSpeech]);
   
   return (
     <span
