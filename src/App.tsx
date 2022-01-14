@@ -7,6 +7,7 @@ import landingPageVideo from './assets/videos/course-video.mp4';
 import { Drawer } from './components/drawings';
 import { useAnalytics } from './components/hooks';
 import { Explorer } from './components/letters';
+import { Transposer } from './components/transposing';
 
 export const App: FC = () => {
   const [addEvent] = useAnalytics();
@@ -67,6 +68,17 @@ export const App: FC = () => {
             </div>
             <div className="mt-4">
               <Drawer/>
+            </div>
+          </div>
+        </section>
+
+        <section className="section bg-dark learn-transpose" id="learnToTransposeSection" data-section="section3">
+          <div className="container-fluid" style={{minHeight: '150px'}}>
+            <div className="fw-bold text-uppercase text-light" >
+              <i className="bi bi-brush me-2"></i> Learn to <em>transpose</em> Avesta characters 
+            </div>
+            <div className="mt-4">
+              <Transposer />
             </div>
           </div>
         </section>
