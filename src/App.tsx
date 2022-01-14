@@ -4,10 +4,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { FC } from 'react';
 import './App.css';
 import landingPageVideo from './assets/videos/course-video.mp4';
+import { ComingSoon } from './components/coming-soon';
 import { Drawer } from './components/drawings';
 import { useAnalytics } from './components/hooks';
 import { Explorer } from './components/letters';
-import { Transposer } from './components/transposing';
 
 export const App: FC = () => {
   const [addEvent] = useAnalytics();
@@ -78,7 +78,9 @@ export const App: FC = () => {
               <i className="bi bi-brush me-2"></i> Learn to <em>transpose</em> Avesta characters 
             </div>
             <div className="mt-4">
-              <Transposer />
+              
+              {/* <Transposer /> */}
+              <ComingSoon />
             </div>
           </div>
         </section>
