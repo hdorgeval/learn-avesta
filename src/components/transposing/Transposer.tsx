@@ -11,6 +11,7 @@ export const Transposer: React.FC = () => {
   const slices = useSlicesOfShuffledLetters(6);
   const [currentSliceIndex, setCurrentSliceIndex] = useState(0);
   const [currentSlice, setCurrentSlice] = useState<Letter[]>(slices[currentSliceIndex]);
+  const [shuffledCurrentSlice, setShuffledCurrentSlice] = useState<Letter[]>([...slices[currentSliceIndex]].sort(() => Math.random() - 0.5));
   const [isCurrentSliceTransposed, setIsCurrentSliceTransposed] = useState(false);
   const [numberOfMatchedCharacters, setNumberOfMatchedCharacters] = useState(0);
 
@@ -31,6 +32,7 @@ export const Transposer: React.FC = () => {
       letter.hasBeenMatched = false;
     }));
     setCurrentSlice(slices[0]);
+    setShuffledCurrentSlice([...slices[0]].sort(() => Math.random() - 0.5));
     setCurrentSliceIndex(0);
     setSelectedAvestaCharacter(undefined);
     setSelectedAvestaTranscription(undefined);
@@ -41,6 +43,7 @@ export const Transposer: React.FC = () => {
   
   const continueActivity = useCallback(() => {
     setCurrentSlice(slices[currentSliceIndex+1]);
+    setShuffledCurrentSlice([...slices[currentSliceIndex + 1]].sort(() => Math.random() - 0.5));
     setCurrentSliceIndex(currentSliceIndex + 1);
     setSelectedAvestaCharacter(undefined);
     setSelectedAvestaTranscription(undefined);
@@ -64,7 +67,7 @@ export const Transposer: React.FC = () => {
     if (result >= 100) {
       handleActivityCompleted();
     }
-    return result;
+    return result > 100 ? 100 : result;
   }, [handleActivityCompleted, numberOfMatchedCharacters, slices]);
 
   const handleCurrentSliceIsFinished = useCallback(() => {
@@ -151,7 +154,7 @@ export const Transposer: React.FC = () => {
               ) : (
                 <div className="container h-100">
                   <div className="row row-cols-3 gx-4 justify-content-evenly align-items-center h-100">
-                    {currentSlice.map((letter, i) => (
+                    {shuffledCurrentSlice.map((letter, i) => (
                       <div 
                         key={`${i}`}
                         className={`col text-center fs-2 ${isAvestaTranscriptionSelected(letter) ? 'bg-primary' : ''}`}

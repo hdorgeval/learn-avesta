@@ -6,7 +6,7 @@ export const useSlicesOfShuffledLetters = (size: number) => {
   const letters = useLetters();
   const [sliceSize] = useState(size);
   const shuffledLetters = useMemo(() => {
-    return letters.sort(() => Math.random() - 0.5);
+    return [...letters].sort(() => Math.random() - 0.5);
   }, [letters]);
 
   const slices = useMemo(() => {
