@@ -12,14 +12,12 @@
   "eslint.alwaysShowStatus": true,
   "eslint.codeActionsOnSave.mode": "all",
   "eslint.options": {
-    "extensions": [".js", ".ts", ".tsx", ".md", ".json", ".html"]
+    "extensions": [".js", ".ts", ".tsx", ".json", ".html"]
   },
   "eslint.validate": [
     "javascript",
     "typescript",
-    "markdown",
     "json",
-
   ],
   "files.eol": "\r\n",
   "jest.autoRun": "off",
