@@ -22,6 +22,7 @@ export const letterAPronunciation: LetterPronunciation = {
 };
 
 export interface Letter {
+  hasBeenMatched?: boolean;
   pronunciation: LetterPronunciation;
   transcription: string;
   render: (props?: LetterOwnProps) => JSX.Element;

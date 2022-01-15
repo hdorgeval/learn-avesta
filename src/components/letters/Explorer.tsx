@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAnalytics, useLetters } from "../hooks";
 import { Letter, LetterPronunciation } from "./LetterA";
+import { Transcription } from "./Transcription";
 
 export const Explorer: React.FC = () => {
   const [selectedLetter, setSelectedLetter] = useState<Letter | undefined>(undefined);
@@ -36,18 +37,6 @@ export const Explorer: React.FC = () => {
     addEvent('explore-letter');
   },[addEvent]);
 
-  const displayTranscription = useCallback((transcription: string) => {
-    if (!transcription.includes('<raised>')) {
-      return transcription;
-    }
-
-    const parts = transcription.split('<raised>');
-    return (<>
-      <span>{parts[0]}</span>
-      <span className="ms-0 position-absolute"  style={{marginTop: '-5px', fontSize: 'smaller'}}>{parts[1]}</span>
-    </>);
-
-  } , []);
   const goBackToCarousel = useCallback(() => {
     setSelectedLetter(undefined);
     setDisplayNewComerHint(false);
@@ -134,7 +123,7 @@ export const Explorer: React.FC = () => {
               <div className="card bg-dark text-light">
                 <div className="card-body">
                   <p className="card-text"><i className="bi bi-lightbulb"></i> You can click on the above character to get it's sound and to display more infos.</p>
-                  <a href="#" className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>Got it !</a>
+                  <button className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>Got it !</button>
                 </div>
               </div>
               
@@ -152,7 +141,7 @@ export const Explorer: React.FC = () => {
             </div>
             <div className="col-10">
               <div className="card-body">
-                <div className="card-title h5 text-start">Transcription : {displayTranscription(selectedLetter.transcription)}</div>
+                <div className="card-title h5 text-start">Transcription : <Transcription letter={selectedLetter} /></div>
                 {
                   Object.keys(selectedLetter.pronunciation).map((countryCode) => (
                     <div className="text-start" key={countryCode}>
@@ -163,7 +152,7 @@ export const Explorer: React.FC = () => {
                 <p className="text-start mb-1 fst-italic">
                   <i className="bi bi-lightbulb"></i>Pro tip : you can click on the character on the left to get it's sound.
                 </p>
-                <a href="#" className="btn btn-primary mt-2 me-2" onClick={goBackToCarousel}>Got it ! Continue exploring the alphabet</a>
+                <button className="btn btn-primary mt-2 me-2" onClick={goBackToCarousel}>Got it ! Continue exploring the alphabet</button>
               </div>
             </div>
           </div>

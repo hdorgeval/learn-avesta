@@ -18,4 +18,5 @@ export * from './LetterV';
 export * from './LetterX';
 export * from './LetterXv';
 export * from './LetterZ';
+export * from './Transcription';
 
