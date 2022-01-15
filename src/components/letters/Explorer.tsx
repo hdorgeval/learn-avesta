@@ -28,7 +28,7 @@ export const Explorer: React.FC = () => {
   , [maxIndex, selectedIndex, selectedLetter]);
 
   const shuffledLetters = useMemo(() => {
-    return letters.sort(() => Math.random() - 0.5);
+    return [...letters].sort(() => Math.random() - 0.5);
   }, [letters]);
 
   const handleClickOnLetter = useCallback((letter: Letter,index: number) => {
