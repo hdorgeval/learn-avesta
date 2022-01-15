@@ -37,6 +37,8 @@ export const App: FC = () => {
               <div className="navbar-nav">
                 <a className="nav-link active" aria-current="page" href="#homeSection">Home</a>
                 <a className="nav-link" aria-current="page" href="#learnToDrawSection">Draw</a>
+                <a className="nav-link" aria-current="page" href="#learnToTransposeSection">Transpose</a>
+                <a className="nav-link" aria-current="page" href="#videoAvestaScriptAndSoundsSection">Video session</a>
                 
               </div>
             </div>
