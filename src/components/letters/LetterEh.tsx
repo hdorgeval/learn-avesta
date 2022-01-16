@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterEhTranscription = 'ē';
+export const LetterEhTranscription: TranscriptionSymbol = 'ē';
 export const letterEhPronunciation: LetterPronunciation = {
   'fr': 'long é, like the sequence eh.',
 };

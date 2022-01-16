@@ -15,7 +15,9 @@ export interface LetterPronunciation {
   'de'?: string;
 }
 
-export const LetterATranscription = 'a';
+export type TranscriptionSymbol = 'a' | 'ā' | 'b' | 'c' | 'd' | 'e' | 'ē' | 'f' | 'g' | 'h' | 'i' | 'ī' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'ō' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'x<raised>v'| 'y' | 'z';
+
+export const LetterATranscription: TranscriptionSymbol = 'a';
 export const letterAPronunciation: LetterPronunciation = {
   'fr': 'like the letter a in baguette ;',
   'en': 'like the letter a in cat.'
@@ -24,7 +26,7 @@ export const letterAPronunciation: LetterPronunciation = {
 export interface Letter {
   hasBeenMatched?: boolean;
   pronunciation: LetterPronunciation;
-  transcription: string;
+  transcription: TranscriptionSymbol;
   render: (props?: LetterOwnProps) => JSX.Element;
 }
 

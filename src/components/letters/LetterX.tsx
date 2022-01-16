@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import letterXSound from '../../assets/sounds/letter-x.mp3';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterXTranscription = 'x';
+export const LetterXTranscription: TranscriptionSymbol = 'x';
 export const letterXPronunciation: LetterPronunciation = {
   'fr': 'like the sequence Kh in Khalid (to be pronounced more or less like rhalid) ;',
   'es': 'like the letter j in Juan ;',

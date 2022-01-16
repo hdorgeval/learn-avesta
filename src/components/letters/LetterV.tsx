@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterVTranscription = 'v';
+export const LetterVTranscription: TranscriptionSymbol = 'v';
 export const letterVPronunciation: LetterPronunciation = {
   'fr': 'like the letter v in vite ;',
   'en': 'like the letter v in voice, five.'

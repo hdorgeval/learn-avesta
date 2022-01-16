@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterZTranscription = 'z';
+export const LetterZTranscription: TranscriptionSymbol = 'z';
 export const letterZPronunciation: LetterPronunciation = {
   'fr': 'like the letter z in zoro ;',
   'en': 'like the letter z in zoo.'

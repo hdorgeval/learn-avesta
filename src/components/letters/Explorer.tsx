@@ -141,16 +141,16 @@ export const Explorer: React.FC = () => {
             </div>
             <div className="col-10">
               <div className="card-body">
-                <div className="card-title h5 text-start">Transcription : <Transcription letter={selectedLetter} /></div>
+                <div className="card-title h5 text-start border-bottom border-bottom-1 border-secondary pb-2">Transcription : <Transcription letter={selectedLetter} /></div>
                 {
                   Object.keys(selectedLetter.pronunciation).map((countryCode) => (
-                    <div className="text-start" key={countryCode}>
+                    <div className="text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2" key={countryCode}>
                       <p className="mb-1">Pronunciation in {translateCountryCode(countryCode)} : {selectedLetter.pronunciation[countryCode as keyof LetterPronunciation]}</p>
                     </div>
                   ))
                 }
                 <p className="text-start mb-1 fst-italic">
-                  <i className="bi bi-lightbulb"></i>Pro tip : you can click on the character on the left to get it's sound.
+                  <i className="bi bi-lightbulb"></i>Tip : you can click on the character on the left to get it's sound.
                 </p>
                 <button className="btn btn-primary mt-2 me-2" onClick={goBackToCarousel}>Got it ! Continue exploring the alphabet</button>
               </div>

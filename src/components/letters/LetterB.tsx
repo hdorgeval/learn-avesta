@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterBTranscription = 'b';
+export const LetterBTranscription: TranscriptionSymbol = 'b';
 export const letterBPronunciation: LetterPronunciation = {
   'fr': 'like the letter b in baguette ;',
   'en': 'like the letter b in bag.'

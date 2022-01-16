@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterSTranscription = 's';
+export const LetterSTranscription: TranscriptionSymbol = 's';
 export const letterSPronunciation: LetterPronunciation = {
   'fr': 'like the letter s in solide ;',
   'en': 'like the letter s in sun, miss.'

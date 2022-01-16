@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterFTranscription = 'f';
+export const LetterFTranscription: TranscriptionSymbol = 'f';
 export const letterFPronunciation: LetterPronunciation = {
   'fr': 'like the letter f in face ;',
   'en': 'like the letter f in find, if.'

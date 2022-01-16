@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Letter, useLetterA, useLetterAA, useLetterB, useLetterC, useLetterD, useLetterDj, useLetterE, useLetterEh, useLetterF, useLetterG, useLetterH, useLetterR, useLetterS, useLetterT, useLetterV, useLetterX, useLetterXv, useLetterZ } from "../letters";
+import { Letter, useLetterA, useLetterAA, useLetterB, useLetterC, useLetterD, useLetterDj, useLetterE, useLetterEh, useLetterF, useLetterG, useLetterH, useLetterR, useLetterS, useLetterT, useLetterV, useLetterX, useLetterXv, useLetterY, useLetterZ } from "../letters";
 
 export const useLetters = () => {
   const [letters] = useState<Letter[]>([
@@ -21,6 +21,7 @@ export const useLetters = () => {
     useLetterEh() ,
     useLetterX() ,
     useLetterXv() ,
+    useLetterY() ,
   ]);
 
   return letters;

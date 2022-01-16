@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterAATranscription = 'ā' ; // '&#257;'; // ā
+export const LetterAATranscription: TranscriptionSymbol = 'ā' ; // '&#257;'; // ā
 export const letterAAPronunciation: LetterPronunciation = {
   'fr': 'long a, like the sequence ah ;',
   'en': 'like the letter a in father.'

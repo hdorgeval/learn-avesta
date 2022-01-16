@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterCTranscription = 'c';
+export const LetterCTranscription: TranscriptionSymbol = 'c';
 export const letterCPronunciation: LetterPronunciation = {
   'fr': 'like the sequence tch in atchoum ;',
   'en': 'like the sequence ch in chair, church, check.'
