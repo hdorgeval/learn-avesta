@@ -16,6 +16,7 @@ import {
   LetterV,
   LetterX,
   LetterXv,
+  LetterY,
   LetterZ
 } from '.';
 
@@ -47,9 +48,10 @@ export const Carrier: React.FC = () => {
       <LetterA fill="#f5a425" />
       <LetterS fill="#f5a425" />
       <LetterA fill="#f5a425" />
+      <LetterXv fill="#f5a425" />
       <LetterX fill="#f5a425" />
       <LetterA fill="#f5a425" />
-      <LetterXv fill="#f5a425" />
+      <LetterY fill="#f5a425" />
     </div>
   );
 };
