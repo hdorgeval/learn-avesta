@@ -12,6 +12,7 @@ export * from './LetterF';
 export * from './LetterG';
 export * from './LetterH';
 export * from './LetterO';
+export * from './LetterO2';
 export * from './LetterR';
 export * from './LetterS';
 export * from './LetterT';
