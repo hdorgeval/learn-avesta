@@ -72,7 +72,7 @@ export const Explorer: React.FC = () => {
           <>
             <div
               id="avestaAlphabetExplorer"
-              className="carousel slide mt-5 pb-5 overflow-hidden"
+              className="carousel slide mt-2 pt-4 pb-5 overflow-hidden"
               data-bs-ride="carousel"
               
             >
