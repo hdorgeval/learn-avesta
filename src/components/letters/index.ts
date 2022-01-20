@@ -14,6 +14,7 @@ export * from './LetterH';
 export * from './LetterO';
 export * from './LetterO2';
 export * from './LetterO2Long';
+export * from './LetterOLong';
 export * from './LetterR';
 export * from './LetterS';
 export * from './LetterT';
