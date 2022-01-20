@@ -1,6 +1,6 @@
 import {
   LetterA,
-  LetterAA,
+  LetterALong,
   LetterB,
   LetterC,
   LetterD,
@@ -30,7 +30,7 @@ export const Carrier: React.FC = () => {
   return (
     <div className="bg-dark">
       <LetterC fill="#f5a425" />
-      <LetterAA fill="#f5a425" />
+      <LetterALong fill="#f5a425" />
       <LetterA fill="#f5a425" />
       <LetterR fill="#f5a425" />
       <LetterG fill="#f5a425" />

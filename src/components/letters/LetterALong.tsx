@@ -1,29 +1,25 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterAATranscription: TranscriptionSymbol = 'ā' ; // '&#257;'; // ā
-export const letterAAPronunciation: LetterPronunciation = {
-  'fr': 'long a, like the sequence ah ;',
-  'en': 'like the letter a in father.'
-};
+export const useLetterALong = (): Letter => ({
+  pronunciation: {
+    'fr': 'long a, like the sequence ah ;',
+    'en': 'like the letter a in father.'
+  },
+  transcription: 'ā',
+  render : (props?: LetterOwnProps) => {
+    return <LetterALong {...props} />;
+  },
+});
 
-export const useLetterAA = (): Letter => {
-  const pronunciation = letterAAPronunciation;
-  const transcription = LetterAATranscription;
-  const render = (props?: LetterOwnProps) => {
-    return <LetterAA {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
 /**
  * Letter A long 
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  
  * @alias: ɑ̄
  */
-export const LetterAA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
+export const LetterALong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     textToSpeech: '/a-long/',
