@@ -1,21 +1,18 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterBTranscription: TranscriptionSymbol = 'b';
-export const letterBPronunciation: LetterPronunciation = {
-  'fr': 'like the letter b in baguette ;',
-  'en': 'like the letter b in bag.'
-};
-export const useLetterB = (): Letter => {
-  const pronunciation = letterBPronunciation;
-  const transcription = LetterBTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterB = (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter b in baguette ;',
+    'en': 'like the letter b in bag.'
+  },
+  transcription: 'b',
+  render : (props?: LetterOwnProps) => {
     return <LetterB {...props} />;
-  };
+  },
+});
 
-  return {pronunciation,transcription,render};
-};
 /**
  * Letter B 
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
