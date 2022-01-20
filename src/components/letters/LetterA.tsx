@@ -17,12 +17,6 @@ export interface LetterPronunciation {
 
 export type TranscriptionSymbol = 'a' | 'ā' | 'b' | 'c' | 'd' | 'e' | 'ē' | 'f' | 'g' | 'h' | 'i' | 'ī' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'ō' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'x<raised>v'| 'y' | 'z';
 
-export const LetterATranscription: TranscriptionSymbol = 'a';
-export const letterAPronunciation: LetterPronunciation = {
-  'fr': 'like the letter a in baguette ;',
-  'en': 'like the letter a in cat.'
-};
-
 export interface Letter {
   hasBeenMatched?: boolean;
   pronunciation: LetterPronunciation;
@@ -30,15 +24,16 @@ export interface Letter {
   render: (props?: LetterOwnProps) => JSX.Element;
 }
 
-export const useLetterA = (): Letter => {
-  const pronunciation = letterAPronunciation;
-  const transcription = LetterATranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterA = (): Letter => ({
+  pronunciation : {
+    'fr': 'like the letter a in baguette ;',
+    'en': 'like the letter a in cat.'
+  },
+  transcription : 'a',
+  render : (props?: LetterOwnProps) => {
     return <LetterA {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 export const LetterA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   
