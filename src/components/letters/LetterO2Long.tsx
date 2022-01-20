@@ -4,7 +4,7 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const LetterO2LongTranscription: TranscriptionSymbol = 'ō' ; 
 export const letterO2LongPronunciation: LetterPronunciation = {
-  'fr': 'o, like the letter o in hôte ;',
+  'fr': 'long o, like the letter o in hôte ;',
   'en': 'like the letter o in go.'
 };
 
