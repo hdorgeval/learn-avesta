@@ -22,9 +22,10 @@ export const useLetterH= (): Letter => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JW/0068.mp3
  * @alias: h
  */
-export const LetterH: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
+export const LetterH: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
+    disableTranslate,
     textToSpeech: '/h/',
     style: {
       marginLeft: '-0px',

@@ -23,9 +23,10 @@ export const useLetterDj = (): Letter => {
  * @audio:  
  * @alias: j
  */
-export const LetterDj: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
+export const LetterDj: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
+    disableTranslate,
     textToSpeech: '/j/',
     style: {
       marginLeft: '-0px',

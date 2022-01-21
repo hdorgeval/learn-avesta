@@ -25,10 +25,11 @@ export const useLetterXv= (): Letter => {
  * @audio:  
  * @alias: x raised by the letter v
  */
-export const LetterXv: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disableSound }) => {
+export const LetterXv: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disableSound, disableTranslate }) => {
   
   const props: LetterRendererOwnProps = {
     disableSound,
+    disableTranslate,
     audioUrl: letterXSound,
     textToSpeech: '/xv/',
     style: {

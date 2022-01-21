@@ -23,7 +23,7 @@ export const LetterInDrawingSurface : FC<LetterInDrawingSurfaceProps>= ({letter,
   //     throw new Error(`Letter ${letter} is not yet supported`);
   // }
 
-  return letter.render({zoom});
+  return letter.render({zoom, disableTranslate: true});
 };
 
 export const Drawer: React.FC = () => {
@@ -74,9 +74,9 @@ export const Drawer: React.FC = () => {
             </div>
             <div className="modal-body">
               <div className="d-grid gap-2 d-xl-block overflow-scroll" style={{maxHeight: '200px'}}>
-                {letters.map((letter: Letter) => (
+                {letters.map((letter: Letter, index) => (
                   <button 
-                    key={letter.transcription}
+                    key={`${letter.transcription}-${index}`}
                     className="btn btn-primary btn-large w-100 mb-xl-1" 
                     type="button" 
                     onClick={() => handlePickLetter(letter)}>

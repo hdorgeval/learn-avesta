@@ -25,10 +25,11 @@ export const useLetterX= (): Letter => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0078.mp3
  * @alias: x
  */
-export const LetterX: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle,  disableSound }) => {
+export const LetterX: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle,  disableSound, disableTranslate }) => {
   
   const props: LetterRendererOwnProps = {
     disableSound,
+    disableTranslate,
     audioUrl: letterXSound,
     style: {
       marginLeft: '-0px',

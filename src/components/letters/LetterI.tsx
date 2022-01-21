@@ -14,10 +14,11 @@ export const useLetterI = (): Letter => ({
   },
 });
 
-export const LetterI: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
+export const LetterI: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
   
   const props: LetterRendererOwnProps = {
     disableSound,
+    disableTranslate,
     audioUrl: letterISound,
     style: {
       marginLeft: '-0px',

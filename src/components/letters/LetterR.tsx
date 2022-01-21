@@ -23,9 +23,10 @@ export const useLetterR= (): Letter => {
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JW/0280.mp3
  * @alias: r
  */
-export const LetterR: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
+export const LetterR: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
+    disableTranslate,
     textToSpeech: '/r/',
     style: {
       marginLeft: '-15px',

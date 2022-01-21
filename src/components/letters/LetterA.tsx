@@ -6,6 +6,7 @@ export interface LetterOwnProps {
   zoom?: number ;
   overridenStyle?: CSSProperties;
   disableSound?: boolean;
+  disableTranslate?: boolean;
 }
 
 export interface LetterPronunciation {
@@ -35,9 +36,10 @@ export const useLetterA = (): Letter => ({
   },
 });
 
-export const LetterA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
+export const LetterA: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
   
   const props: LetterRendererOwnProps = {
+    disableTranslate,
     disableSound,
     textToSpeech: '/a/',
     style: {

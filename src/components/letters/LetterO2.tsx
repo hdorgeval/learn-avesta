@@ -23,9 +23,10 @@ export const useLetterO2 = (): Letter => {
  * @audio:  
  * @alias: o
  */
-export const LetterO2: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
+export const LetterO2: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
+    disableTranslate,
     textToSpeech: '/o/',
     style: {
       marginLeft: '-15px',

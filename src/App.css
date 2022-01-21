@@ -132,3 +132,7 @@ section.video-session {
   transition: all 0.2s ease-out;
   animation: keyframesPulse 2s infinite;
 }
+
+.min-h-0 {
+  min-height: 0;
+}

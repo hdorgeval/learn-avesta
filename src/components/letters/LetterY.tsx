@@ -27,10 +27,11 @@ export const useLetterY= (): Letter => {
  * @position: used only as the first letter in words
  * @variation: Indo-Parsi
  */
-export const LetterY: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disableSound }) => {
+export const LetterY: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disableSound, disableTranslate }) => {
   
   const props: LetterRendererOwnProps = {
     disableSound,
+    disableTranslate,
     audioUrl: letterYSound,
     style: {
       marginLeft: '-0px',
