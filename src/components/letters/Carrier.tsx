@@ -24,7 +24,8 @@ import {
   LetterX,
   LetterXv,
   LetterY,
-  LetterZ
+  LetterZ,
+  MissingLetter
 } from '.';
 
 export const Carrier: React.FC = () => {
@@ -67,6 +68,7 @@ export const Carrier: React.FC = () => {
       <LetterT fill="#f5a425" />
       <LetterO2 fill="#f5a425" />
       <LetterI fill="#f5a425" />
+      <MissingLetter fill="#f5a425" />
       <LetterA fill="#f5a425" />
       <LetterILong fill="#f5a425" />
       <LetterO2Long fill="#f5a425" />
