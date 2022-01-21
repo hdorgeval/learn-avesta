@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Letter, useLetterA, useLetterALong, useLetterB, useLetterC, useLetterD, useLetterDj, useLetterE, useLetterEh, useLetterF, useLetterG, useLetterH, useLetterI, useLetterILong, useLetterO, useLetterO2, useLetterO2Long, useLetterOLong, useLetterR, useLetterS, useLetterT, useLetterU, useLetterV, useLetterX, useLetterXv, useLetterY, useLetterZ } from "../letters";
 
-export const useLetters = () => {
-  const [letters] = useState<Letter[]>([
+export const useAllLetters = () => { 
+  return [
     useLetterA(),
     useLetterB() ,
     useLetterC() ,
@@ -29,7 +29,10 @@ export const useLetters = () => {
     useLetterX() ,
     useLetterXv() ,
     useLetterY() ,
-  ]);
+  ];
+};
 
+export const useLetters = () => {
+  const [letters] = useState<Letter[]>(useAllLetters());
   return letters;
 };

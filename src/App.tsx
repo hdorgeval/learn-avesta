@@ -129,7 +129,8 @@ export const App: FC = () => {
           </a>
         </div>
       </footer>
-      {/* <Carrier /> */}
+      {/* <Carrier />
+      <Word  word='henri'/> */}
     </>
   );
 };
