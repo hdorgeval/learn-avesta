@@ -33,6 +33,12 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
   const [speak] = useSpeechSynthesis();
 
   const appliedZoom = useMemo(() => svg.zoom || 1, [svg.zoom]);
+  const appliedStrokeWidth = useMemo(() => {
+    if (appliedZoom > 1) {
+      return svg.path.strokeWidth;
+    }
+    return svg.path.strokeWidth * appliedZoom;
+  }, [svg.path.strokeWidth, appliedZoom]);
   const appliedFill = useMemo(() => svg.path.fill || '#f5a425', [svg.path.fill]);
   const appliedStroke = useMemo(() => svg.path.stroke || '#000000', [svg.path.stroke]);
   const appliedTransform = useMemo(() => {
@@ -42,12 +48,22 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
     return `scale(${svg.path.scaleX * appliedZoom} ${svg.path.scaleY * appliedZoom}) translate(${svg.path.translateX * appliedZoom},${svg.path.translateY * appliedZoom})`;
   }, 
   [disableTranslate, svg.path.scaleX, svg.path.scaleY, svg.path.translateX, svg.path.translateY, appliedZoom]);
+  
   const appliedStyle = useMemo(() => {
+    const appliedLeftMargin = zoomifyMargin(style?.marginLeft, appliedZoom);
+    if (appliedLeftMargin) {
+      return {
+        ...style,
+        marginLeft: appliedLeftMargin,
+        ...overridenStyle,
+      };
+    }
+
     return {
       ...style,
       ...overridenStyle
     };
-  },[overridenStyle, style]);
+  },[appliedZoom, overridenStyle, style]);
 
   const handleClick = useCallback(() => {
     if (disableSound) {
@@ -84,7 +100,7 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
             stroke={appliedStroke}
             strokeLinejoin="round"
             strokeMiterlimit="10"
-            strokeWidth={svg.path.strokeWidth}
+            strokeWidth={appliedStrokeWidth}
             transform={appliedTransform}
           />
         </g>
@@ -92,3 +108,20 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
     </span>
   );
 };
+
+function zoomifyMargin(margin: string | number | undefined, zoom: number): string | number | undefined {
+  if (zoom === 1) {
+    return margin;
+  }
+  
+  if (typeof margin === 'number') {
+    return margin * zoom;
+  }
+
+  if (typeof margin === 'string' && margin.endsWith('px')) {
+    const rawValue = margin.replace('px', '');
+    return `${Number(rawValue) * zoom}px`;
+  }
+
+  return margin;
+}
