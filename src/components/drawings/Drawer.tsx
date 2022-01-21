@@ -52,7 +52,7 @@ export const Drawer: React.FC = () => {
   
   return (
     <>
-      <div className="ms-4 me-4" style={{minHeight: '150px', height: '150px'}}>
+      <div className="ms-4 me-4" style={{minHeight: '150px', height: '180px'}}>
         <DrawingSurface key={currentCharacter}>
           {
             <LetterInDrawingSurface letter={selectedLetter} zoom={3}/>
