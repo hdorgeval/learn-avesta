@@ -12,4 +12,12 @@ Learn Avesta at your own pace.
 
 ### Q: How complete and accurate is the information provided on the companion web site?
 
-[The companion web site](https://learn-avesta.org) is a work in progress. It reflects only my own current understanding of the language. Feel free to [contribute](./CONTRIBUTING.md) or raise issues if you find something wrong.
+[The companion web site](https://learn-avesta.org) is a work in progress. It reflects only my own current understanding of the language. Feel free to [contribute](./CONTRIBUTING.md) or raise [issues](https://github.com/hdorgeval/learn-avesta/issues) if you find something wrong.
+
+## Acknowledgment
+
+I would like to express my appreciation to a number of individuals and institutes, whose help and support contributed to make this project live:
+
+`Kersi B. Shroff` that helped me to get in contact with `Raham Asha`, who in turns provided me his printed book `Avesta - A Grammatical Précis`;
+
+`Céline Redard` and `Almut Hintze` from the [SOAS University of London](https://www.soas.ac.uk/).
