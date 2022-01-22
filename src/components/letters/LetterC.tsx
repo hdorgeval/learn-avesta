@@ -1,22 +1,18 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterCTranscription: TranscriptionSymbol = 'c';
-export const letterCPronunciation: LetterPronunciation = {
-  'fr': 'like the sequence tch in atchoum ;',
-  'en': 'like the sequence ch in chair, church, check.'
-};
-
-export const useLetterC = (): Letter => {
-  const pronunciation = letterCPronunciation;
-  const transcription = LetterCTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterC = (): Letter => ({
+  pronunciation: {
+    'fr': 'like the sequence tch in atchoum ;',
+    'en': 'like the sequence ch in chair, church, check.'
+  },
+  transcription: 'c',
+  
+  render: (props?: LetterOwnProps) => {
     return <LetterC {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter C sounds like Tch in French
