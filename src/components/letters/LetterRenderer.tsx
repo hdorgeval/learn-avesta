@@ -22,6 +22,7 @@ export interface LetterRendererOwnProps {
       scaleY: number;
       translateX: number;
       translateY: number;
+      disableZoomOnYTranslation?: boolean;
     }
   }
 }
@@ -45,9 +46,14 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
     if (disableTranslate) {
       return `scale(${svg.path.scaleX * appliedZoom} ${svg.path.scaleY * appliedZoom})`;
     }
+
+    if (svg.path.disableZoomOnYTranslation) {
+      return `scale(${svg.path.scaleX * appliedZoom} ${svg.path.scaleY * appliedZoom}) translate(${svg.path.translateX * appliedZoom},${svg.path.translateY})`;
+    }
+      
     return `scale(${svg.path.scaleX * appliedZoom} ${svg.path.scaleY * appliedZoom}) translate(${svg.path.translateX * appliedZoom},${svg.path.translateY * appliedZoom})`;
   }, 
-  [disableTranslate, svg.path.scaleX, svg.path.scaleY, svg.path.translateX, svg.path.translateY, appliedZoom]);
+  [disableTranslate, svg.path.disableZoomOnYTranslation, svg.path.scaleX, svg.path.scaleY, svg.path.translateX, svg.path.translateY, appliedZoom]);
   
   const appliedStyle = useMemo(() => {
     const appliedLeftMargin = zoomifyMargin(style?.marginLeft, appliedZoom);

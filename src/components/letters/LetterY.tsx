@@ -1,23 +1,18 @@
 import { FC } from 'react';
 import letterYSound from '../../assets/sounds/letter-y.mp3';
-import { Letter, LetterOwnProps, LetterPronunciation } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterYTranscription = 'y';
-export const letterYPronunciation: LetterPronunciation = {
-  'fr': 'like the y in yaourt ;',
-  'en': 'like the letter y in yes ;',
-  
-};
-export const useLetterY= (): Letter => {
-  const pronunciation = letterYPronunciation;
-  const transcription = LetterYTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterY= (): Letter => ({
+  pronunciation: {
+    'fr': 'like the y in yaourt ;',
+    'en': 'like the letter y in yes ;',
+  },
+  transcription: 'y',
+  render: (props?: LetterOwnProps) => {
     return <LetterY {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter Y like in English "yes"
@@ -48,6 +43,7 @@ export const LetterY: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disabl
         scaleY: 0.5,
         translateX: 0,
         translateY: 10,
+        disableZoomOnYTranslation: true,
         strokeWidth: 1,
       }
     }
