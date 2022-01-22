@@ -7,15 +7,15 @@ export const letterEhPronunciation: LetterPronunciation = {
   'fr': 'long é, like the sequence eh.',
 };
 
-export const useLetterEh = (): Letter => {
-  const pronunciation = letterEhPronunciation;
-  const transcription = LetterEhTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterEh = (): Letter => ({
+  pronunciation: {
+    'fr': 'long é, like the sequence eh.',
+  },
+  transcription: 'ē',
+  render : (props?: LetterOwnProps) => {
     return <LetterEh {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter Eh long é, like in "eh"
