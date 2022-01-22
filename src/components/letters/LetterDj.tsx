@@ -1,21 +1,17 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterDjTranscription: TranscriptionSymbol = 'j';
-export const letterDjPronunciation: LetterPronunciation = {
-  'fr': 'like the letter j in jeans ;',
-  'en': 'like the letter j in just.'
-};
-export const useLetterDj = (): Letter => {
-  const pronunciation = letterDjPronunciation;
-  const transcription = LetterDjTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterDj = (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter j in jeans ;',
+    'en': 'like the letter j in just.'
+  },
+  transcription: 'j',
+  render :(props?: LetterOwnProps) => {
     return <LetterDj {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter j that is pronounced dj.
