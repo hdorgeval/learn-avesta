@@ -12,7 +12,7 @@ Learn Avesta at your own pace.
 
 ### Q: How complete and accurate is the information provided on the companion website?
 
-[The companion website](https://learn-avesta.org) is a work in progress. It reflects only my own current understanding of the language. Feel free to [contribute](./CONTRIBUTING.md) or raise [issues](https://github.com/hdorgeval/learn-avesta/issues) if you find something wrong.
+[The companion website](https://learn-avesta.org) is a work in progress. It reflects only my own current understanding of the language. Feel free to [contribute](./CONTRIBUTING.md) or raise [issues](https://github.com/hdorgeval/learn-avesta/issues) if you find something wrong or have improvement to suggest : I'd love to get your insights.
 
 ## Acknowledgment
 
