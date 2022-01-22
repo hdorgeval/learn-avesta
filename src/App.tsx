@@ -16,9 +16,9 @@ export const App: FC = () => {
   
   return (
     <>
-      <header className="main-header clearfix bg-dark" role="menubar">
-        <nav className="navbar navbar-expand-lg navbar-dark" id="appNav">
-          <div className="container-fluid">
+      <header className="main-header clearfix bg-dark" role="menu">
+        <nav className="navbar navbar-expand-lg navbar-dark" id="appNav" role="menubar">
+          <div className="container-fluid" role="toolbar">
             <a className="navbar-brand fw-bold text-uppercase" href="#">
               <em>Learn</em> Avesta
             </a>
@@ -30,15 +30,16 @@ export const App: FC = () => {
               aria-controls="appNavBar"
               aria-expanded="false"
               aria-label="Toggle navigation"
+              role="button"
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="appNavBar">
-              <div className="navbar-nav">
-                <a className="nav-link active" aria-current="page" href="#homeSection">Home</a>
-                <a className="nav-link" aria-current="page" href="#learnToDrawSection">Draw</a>
-                <a className="nav-link" aria-current="page" href="#learnToTransposeSection">Transpose</a>
-                <a className="nav-link" aria-current="page" href="#videoAvestaScriptAndSoundsSection">Video session</a>
+            <div className="collapse navbar-collapse" id="appNavBar" >
+              <div className="navbar-nav" role="group">
+                <a className="nav-link active" aria-current="page" href="#homeSection" role="menuitem" aria-label="Home">Home</a>
+                <a className="nav-link" aria-current="page" href="#learnToDrawSection" role="menuitem" aria-label="Draw">Draw</a>
+                <a className="nav-link" aria-current="page" href="#learnToTransposeSection" role="menuitem" aria-label="Transpose">Transpose</a>
+                <a className="nav-link" aria-current="page" href="#videoAvestaScriptAndSoundsSection" role="menuitem" aria-label="Video session">Video session</a>
                 
               </div>
             </div>
