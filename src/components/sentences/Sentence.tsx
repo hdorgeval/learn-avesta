@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Word } from "../words/Word";
+import { Word } from "../words/Word2";
 
 export interface SentenceOwnProps {
   sentence: string;
