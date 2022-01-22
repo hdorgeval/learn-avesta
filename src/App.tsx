@@ -16,7 +16,7 @@ export const App: FC = () => {
   
   return (
     <>
-      <header className="main-header clearfix bg-dark" role="header">
+      <header className="main-header clearfix bg-dark" role="menubar">
         <nav className="navbar navbar-expand-lg navbar-dark" id="appNav">
           <div className="container-fluid">
             <a className="navbar-brand fw-bold text-uppercase" href="#">
