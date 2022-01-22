@@ -7,7 +7,7 @@ export * from './LetterC';
 export * from './LetterD';
 export * from './LetterDj';
 export * from './LetterE';
-export * from './LetterEh';
+export * from './LetterELong';
 export * from './LetterF';
 export * from './LetterG';
 export * from './LetterH';

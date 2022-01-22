@@ -1,11 +1,6 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
-
-export const LetterEhTranscription: TranscriptionSymbol = 'ē';
-export const letterEhPronunciation: LetterPronunciation = {
-  'fr': 'long é, like the sequence eh.',
-};
 
 export const useLetterEh = (): Letter => ({
   pronunciation: {
@@ -13,17 +8,17 @@ export const useLetterEh = (): Letter => ({
   },
   transcription: 'ē',
   render : (props?: LetterOwnProps) => {
-    return <LetterEh {...props} />;
+    return <LetterELong {...props} />;
   },
 });
 
 /**
- * Letter Eh long é, like in "eh"
+ * Letter E long : é, like in "eh"
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/PL/02D0.mp3
  * @alias: ē
  */
-export const LetterEh: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
+export const LetterELong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
