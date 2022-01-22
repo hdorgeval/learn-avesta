@@ -1,21 +1,16 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterETranscription: TranscriptionSymbol = 'e';
-export const letterEPronunciation: LetterPronunciation = {
-  'fr': 'like the letter é in été.',
-};
-
-export const useLetterE = (): Letter => {
-  const pronunciation = letterEPronunciation;
-  const transcription = LetterETranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterE = (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter é in été.',
+  },
+  transcription: 'e',
+  render: (props?: LetterOwnProps) => {
     return <LetterE {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter E sounds like 'é' in French
