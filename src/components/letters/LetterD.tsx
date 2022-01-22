@@ -1,22 +1,18 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterDTranscription: TranscriptionSymbol = 'd';
-export const letterDPronunciation: LetterPronunciation = {
-  'fr': 'like the letter d in date ;',
-  'en': 'like the letter d in dad.'
-};
+export const useLetterD = (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter d in date ;',
+    'en': 'like the letter d in dad.'
+  },
+  transcription: 'd',
 
-export const useLetterD = (): Letter => {
-  const pronunciation = letterDPronunciation;
-  const transcription = LetterDTranscription;
-  const render = (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <LetterD {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter D 
