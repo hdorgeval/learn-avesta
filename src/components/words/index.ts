@@ -1,2 +1,2 @@
-export * from './Word2';
+export * from './Word';
 
