@@ -28,4 +28,5 @@ export * from './LetterY';
 export * from './LetterZ';
 export * from './MissingLetter';
 export * from './Transcription';
+export * from './WordSeparator';
 
