@@ -1,2 +1,15 @@
 # learn-avesta
-Learn Avesta at your own pace
+
+## The language of the divine vision
+
+Learn Avesta at your own pace.
+
+## FAQ
+
+### Q: What is Avesta?
+
+`Avesta` or `Avestan` is the mother language for French, German, English, Latin and many other languages. It's comparable to the `Sanskrit` language.
+
+### Q: How complete and accurate is the information provided on the companion web site?
+
+[The companion web site](https://learn-avesta.org) is a work in progress. It reflects only my own current understanding of the language. Feel free to [contribute](./CONTRIBUTING.md) or raise issues if you find something wrong.
