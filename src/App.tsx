@@ -5,6 +5,7 @@ import { FC } from 'react';
 import './App.css';
 import previewAvestaScriptAndSounds from './assets/images/video-preview-avestan-script-and-sounds.png';
 import landingPageVideo from './assets/videos/course-video.mp4';
+import { AvestSongActivity } from './components/activities';
 import { Drawer } from './components/drawings';
 import { useAnalytics } from './components/hooks';
 import { Explorer } from './components/letters';
@@ -40,6 +41,7 @@ export const App: FC = () => {
                 <a className="nav-link" aria-current="page" href="#learnToDrawSection" role="menuitem" aria-label="Draw">Draw</a>
                 <a className="nav-link" aria-current="page" href="#learnToTransposeSection" role="menuitem" aria-label="Transpose">Transpose</a>
                 <a className="nav-link" aria-current="page" href="#videoAvestaScriptAndSoundsSection" role="menuitem" aria-label="Video session">Video session</a>
+                <a className="nav-link" aria-current="page" href="#avestaSongSection" role="menuitem" aria-label="Song session">Song session</a>
                 
               </div>
             </div>
@@ -113,6 +115,18 @@ export const App: FC = () => {
             </div>
           </div>
         </section>
+
+        <section className="section bg-dark video-session" id="avestaSongSection" data-section="section4">
+          <div className="container-fluid" style={{minHeight: '150px'}}>
+            <div className="fw-bold text-uppercase text-light" >
+              <i className="bi bi-music-note-list me-2"></i> Song session on <em>Yasna 28</em> 
+            </div>
+            <div className="mt-4">
+              <AvestSongActivity />
+            </div>
+          </div>
+        </section>
+
       </div>
       
       <footer className="bg-dark text-light">

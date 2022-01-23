@@ -136,3 +136,8 @@ section.video-session {
 .min-h-0 {
   min-height: 0;
 }
+
+.outline-2-info {
+  outline: 2px solid var(--bs-info);
+  outline-offset: 3px;
+}

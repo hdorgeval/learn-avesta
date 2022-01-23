@@ -7,6 +7,7 @@ export interface LetterOwnProps {
   overridenStyle?: CSSProperties;
   disableSound?: boolean;
   disableTranslate?: boolean;
+  key?: string;
 }
 
 export interface LetterPronunciation {
@@ -16,7 +17,7 @@ export interface LetterPronunciation {
   'de'?: string;
 }
 
-export type TranscriptionSymbol = 'a' | 'ā' | 'b' | 'c' | 'd' | 'e' | 'ē' | 'f' | 'g' | 'h' | 'i' | 'ī' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'ō' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'x<raised>v'| 'y' | 'z' | '-' | '.';
+export type TranscriptionSymbol = 'a' | 'ā' | 'b' | 'c' | 'd' | 'e' | 'ē' | 'ə' | 'f' | 'g' | 'h' | 'i' | 'ī' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'ō' | 'p' | 'q' | 'r' | 's' | 'ś' | 't' | 'θ' | 'u' | 'v' | 'w' | 'x' | 'x<raised>v'| 'y' | 'z' | '-' | '.';
 
 export interface Letter {
   hasBeenMatched?: boolean;

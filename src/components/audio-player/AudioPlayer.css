@@ -1,0 +1,15 @@
+.audio-player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
+}
+
+.audio-player-wrapper-on-ready {
+  position: relative;
+  padding-top: 20%; /* 720 / 1280 = 0.5625 */
+}
+
+.audio-react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
