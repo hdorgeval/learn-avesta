@@ -11,7 +11,7 @@ import {
   LetterG,
   LetterH,
   LetterI,
-  LetterILong, LetterO2,
+  LetterILong, LetterO,
   LetterO2Long, LetterR,
   LetterS,
   LetterT,
@@ -65,7 +65,7 @@ export const Carrier: React.FC = () => {
       <LetterA fill="#f5a425" />
       <LetterU fill="#f5a425" />
       <LetterT fill="#f5a425" />
-      <LetterO2 fill="#f5a425" />
+      <LetterO fill="#f5a425" />
       <LetterI fill="#f5a425" />
       <MissingLetter fill="#f5a425" />
       <LetterA fill="#f5a425" />
