@@ -1,21 +1,17 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterHTranscription: TranscriptionSymbol = 'h';
-export const letterHPronunciation: LetterPronunciation = {
-  'fr': 'like the letter h in ha-ha-ha ;',
-  'en': 'like the letter h in hello.'
-};
-export const useLetterH= (): Letter => {
-  const pronunciation = letterHPronunciation;
-  const transcription = LetterHTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterH= (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter h in ha-ha-ha ;',
+    'en': 'like the letter h in hello.'
+  },
+  transcription: 'h',
+  render : (props?: LetterOwnProps) => {
     return <LetterH {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 /**
  * Letter H 
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
