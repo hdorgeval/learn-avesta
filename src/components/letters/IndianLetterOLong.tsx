@@ -1,12 +1,6 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
-
-export const LetterOLongTranscription: TranscriptionSymbol = 'ō' ; 
-export const letterOLongPronunciation: LetterPronunciation = {
-  'fr': 'long o, like the letter o in hôte ;',
-  'en': 'like the letter o in go.'
-};
 
 export const useIndianLetterOLong = (): Letter => ({
   pronunciation: {
