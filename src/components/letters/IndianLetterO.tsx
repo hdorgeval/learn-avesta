@@ -2,14 +2,14 @@ import { FC } from 'react';
 import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterOIndian = (): Letter => ({
+export const useIndianLetterO = (): Letter => ({
   pronunciation: {
     'fr': 'o, like the letter o in pot ;',
     'en': 'like the letter o in going.'
   },
   transcription: 'o',
   render : (props?: LetterOwnProps) => {
-    return <LetterOIndian {...props} />;
+    return <IndianLetterO {...props} />;
   },
 });
 
@@ -19,7 +19,7 @@ export const useLetterOIndian = (): Letter => ({
  * @audio:  
  * @alias: o
  */
-export const LetterOIndian: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const IndianLetterO: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,

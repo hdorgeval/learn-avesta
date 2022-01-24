@@ -1,5 +1,6 @@
 export * from './Carrier';
 export * from './Explorer';
+export * from './IndianLetterO';
 export * from './LetterA';
 export * from './LetterALong';
 export * from './LetterB';
@@ -15,7 +16,6 @@ export * from './LetterI';
 export * from './LetterILong';
 export * from './LetterO2';
 export * from './LetterO2Long';
-export * from './LetterOIndian';
 export * from './LetterOLongIndian';
 export * from './LetterR';
 export * from './LetterS';
