@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Letter, useIndianLetterO, useLetterA, useLetterALong, useLetterB, useLetterC, useLetterD, useLetterDj, useLetterE, useLetterEh, useLetterF, useLetterG, useLetterH, useLetterI, useLetterILong, useLetterO2, useLetterO2Long, useLetterOLongIndian, useLetterR, useLetterS, useLetterT, useLetterU, useLetterV, useLetterX, useLetterXv, useLetterY, useLetterZ } from "../letters";
+import { Letter, useIndianLetterO, useIndianLetterOLong, useLetterA, useLetterALong, useLetterB, useLetterC, useLetterD, useLetterDj, useLetterE, useLetterEh, useLetterF, useLetterG, useLetterH, useLetterI, useLetterILong, useLetterO2, useLetterO2Long, useLetterR, useLetterS, useLetterT, useLetterU, useLetterV, useLetterX, useLetterXv, useLetterY, useLetterZ } from "../letters";
 
 export const useAllLetters = () => { 
   return [
@@ -14,7 +14,7 @@ export const useAllLetters = () => {
     useLetterI() ,
     useLetterILong() ,
     useIndianLetterO() ,
-    useLetterOLongIndian() ,
+    useIndianLetterOLong() ,
     useLetterO2() ,
     useLetterO2Long() ,
     useLetterT() ,

@@ -8,14 +8,14 @@ export const letterOLongPronunciation: LetterPronunciation = {
   'en': 'like the letter o in go.'
 };
 
-export const useLetterOLongIndian = (): Letter => ({
+export const useIndianLetterOLong = (): Letter => ({
   pronunciation: {
     'fr': 'long o, like the letter o in hôte ;',
     'en': 'like the letter o in go.'
   },
   transcription: 'ō',
   render: (props?: LetterOwnProps) => {
-    return <LetterOLongIndian {...props} />;
+    return <IndianLetterOLong {...props} />;
   },
 });
 /**
@@ -24,7 +24,7 @@ export const useLetterOLongIndian = (): Letter => ({
  * @audio:  
  * @alias: ō
  */
-export const LetterOLongIndian: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const IndianLetterOLong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
