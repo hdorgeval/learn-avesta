@@ -1,21 +1,17 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterGTranscription: TranscriptionSymbol = 'g';
-export const letterGPronunciation: LetterPronunciation = {
-  'fr': 'like the letter g in gars ;',
-  'en': 'like the letter g in give, bag, flag.'
-};
-export const useLetterG= (): Letter => {
-  const pronunciation = letterGPronunciation;
-  const transcription = LetterGTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterG= (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter g in gars ;',
+    'en': 'like the letter g in give, bag, flag.'
+  },
+  transcription: 'g',
+  render : (props?: LetterOwnProps) => {
     return <LetterG {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter G 
