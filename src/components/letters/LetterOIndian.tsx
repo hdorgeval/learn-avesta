@@ -9,7 +9,7 @@ export const useLetterO = (): Letter => ({
   },
   transcription: 'o',
   render : (props?: LetterOwnProps) => {
-    return <LetterO {...props} />;
+    return <LetterOIndian {...props} />;
   },
 });
 
@@ -19,7 +19,7 @@ export const useLetterO = (): Letter => ({
  * @audio:  
  * @alias: o
  */
-export const LetterO: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const LetterOIndian: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
