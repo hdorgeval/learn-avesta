@@ -7,15 +7,16 @@ export const letterFPronunciation: LetterPronunciation = {
   'fr': 'like the letter f in face ;',
   'en': 'like the letter f in find, if.'
 };
-export const useLetterF= (): Letter => {
-  const pronunciation = letterFPronunciation;
-  const transcription = LetterFTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterF= (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter f in face ;',
+    'en': 'like the letter f in find, if.'
+  },
+  transcription: 'f',
+  render : (props?: LetterOwnProps) => {
     return <LetterF {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter F 
