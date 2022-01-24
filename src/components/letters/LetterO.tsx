@@ -1,22 +1,18 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterOTranscription: TranscriptionSymbol = 'o' ; 
-export const letterOPronunciation: LetterPronunciation = {
-  'fr': 'o, like the letter o in pot ;',
-  'en': 'like the letter o in going.'
-};
-
-export const useLetterO = (): Letter => {
-  const pronunciation = letterOPronunciation;
-  const transcription = LetterOTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterO = (): Letter => ({
+  pronunciation: {
+    'fr': 'o, like the letter o in pot ;',
+    'en': 'like the letter o in going.'
+  },
+  transcription: 'o',
+  render : (props?: LetterOwnProps) => {
     return <LetterO {...props} />;
-  };
+  },
+});
 
-  return {pronunciation,transcription,render};
-};
 /**
  * Letter O 
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
