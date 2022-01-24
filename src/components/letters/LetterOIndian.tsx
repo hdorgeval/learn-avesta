@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterO = (): Letter => ({
+export const useLetterOIndian = (): Letter => ({
   pronunciation: {
     'fr': 'o, like the letter o in pot ;',
     'en': 'like the letter o in going.'
