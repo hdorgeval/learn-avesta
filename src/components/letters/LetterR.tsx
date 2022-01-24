@@ -1,21 +1,17 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterRTranscription: TranscriptionSymbol = 'r';
-export const letterRPronunciation: LetterPronunciation = {
-  'fr': 'like the letter r in rue ;',
-  'en': 'like the letter r in red, try.'
-};
-export const useLetterR= (): Letter => {
-  const pronunciation = letterRPronunciation;
-  const transcription = LetterRTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterR= (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter r in rue ;',
+    'en': 'like the letter r in red, try.'
+  },
+  transcription: 'r',
+  render: (props?: LetterOwnProps) => {
     return <LetterR {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter R 
