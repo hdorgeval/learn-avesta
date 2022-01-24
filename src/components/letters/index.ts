@@ -16,7 +16,7 @@ export * from './LetterILong';
 export * from './LetterO2';
 export * from './LetterO2Long';
 export * from './LetterOIndian';
-export * from './LetterOLong';
+export * from './LetterOLongIndian';
 export * from './LetterR';
 export * from './LetterS';
 export * from './LetterT';
