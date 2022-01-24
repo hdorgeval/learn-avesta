@@ -1,21 +1,17 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterSTranscription: TranscriptionSymbol = 's';
-export const letterSPronunciation: LetterPronunciation = {
-  'fr': 'like the letter s in solide ;',
-  'en': 'like the letter s in sun, miss.'
-};
-export const useLetterS= (): Letter => {
-  const pronunciation = letterSPronunciation;
-  const transcription = LetterSTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterS= (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter s in solide ;',
+    'en': 'like the letter s in sun, miss.'
+  },
+  transcription: 's',
+  render: (props?: LetterOwnProps) => {
     return <LetterS {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter S 
