@@ -1,29 +1,25 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterO2LongTranscription: TranscriptionSymbol = 'ō' ; 
-export const letterO2LongPronunciation: LetterPronunciation = {
-  'fr': 'long o, like the letter o in hôte ;',
-  'en': 'like the letter o in go.'
-};
+export const useLetterOLong = (): Letter => ({
+  pronunciation: {
+    'fr': 'long o, like the letter o in hôte ;',
+    'en': 'like the letter o in go.'
+  },
+  transcription: 'ō',
+  render: (props?: LetterOwnProps) => {
+    return <LetterOLong {...props} />;
+  },
+});
 
-export const useLetterO2Long = (): Letter => {
-  const pronunciation = letterO2LongPronunciation;
-  const transcription = LetterO2LongTranscription;
-  const render = (props?: LetterOwnProps) => {
-    return <LetterO2Long {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
 /**
  * Letter O long - Iranian version
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  
  * @alias: ō
  */
-export const LetterO2Long: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const LetterOLong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
