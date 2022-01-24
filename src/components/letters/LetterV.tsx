@@ -1,21 +1,17 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterVTranscription: TranscriptionSymbol = 'v';
-export const letterVPronunciation: LetterPronunciation = {
-  'fr': 'like the letter v in vite ;',
-  'en': 'like the letter v in voice, five.'
-};
-export const useLetterV= (): Letter => {
-  const pronunciation = letterVPronunciation;
-  const transcription = LetterVTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterV= (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter v in vite ;',
+    'en': 'like the letter v in voice, five.'
+  },
+  transcription: 'v',
+  render: (props?: LetterOwnProps) => {
     return <LetterV {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter V when used at the start of a word
