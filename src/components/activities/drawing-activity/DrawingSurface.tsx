@@ -1,6 +1,6 @@
 import { getStroke, StrokeOptions } from "perfect-freehand";
 import React from "react";
-import { useAnalytics } from "../hooks";
+import { useAnalytics } from "../../hooks";
 
 export interface DrawingPoint {
   x: number;

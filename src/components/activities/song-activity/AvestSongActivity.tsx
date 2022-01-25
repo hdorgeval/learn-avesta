@@ -1,11 +1,11 @@
 import { FC, useCallback, useState } from "react";
 import ReactPlayer from "react-player";
-import previewAvestaSong from '../../assets/images/audio-preview-avesta-song.png';
-import avestaSong from '../../assets/songs/avesta-song.mp3';
-import { AudioPlayer, AudioProgressEvent } from "../audio-player";
-import { useAnalytics } from "../hooks";
-import { Sentence } from "../sentences";
-import { TimelineRange } from "../words";
+import previewAvestaSong from '../../../assets/images/audio-preview-avesta-song.png';
+import avestaSong from '../../../assets/songs/avesta-song.mp3';
+import { AudioPlayer, AudioProgressEvent } from "../../audio-player";
+import { useAnalytics } from "../../hooks";
+import { Sentence } from "../../sentences";
+import { TimelineRange } from "../../words";
 export const AvestSongActivity: FC= () => {
   const [displayNewComerHint, setDisplayNewComerHint] = useState(true);
   const [addEvent] = useAnalytics();

@@ -1,6 +1,6 @@
 import { CSSProperties, FC, useCallback, useMemo, useState } from "react";
-import { useAnalytics, useLetters } from "../hooks";
-import { Letter } from "../letters";
+import { useAnalytics, useLetters } from "../../hooks";
+import { Letter } from "../../letters";
 import { DrawingSurface } from "./DrawingSurface";
 
 export interface LetterInDrawingSurfaceProps {
