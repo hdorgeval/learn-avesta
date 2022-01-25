@@ -5,10 +5,9 @@ import { FC } from 'react';
 import './App.css';
 import previewAvestaScriptAndSounds from './assets/images/video-preview-avestan-script-and-sounds.png';
 import landingPageVideo from './assets/videos/course-video.mp4';
-import { AvestSongActivity, Drawer } from './components/activities';
+import { AvestSongActivity, Drawer, Transposer } from './components/activities';
 import { useAnalytics } from './components/hooks';
 import { Explorer } from './components/letters';
-import { Transposer } from './components/transposing';
 import { VideoPlayer } from './components/video-player';
 export const App: FC = () => {
   const [addEvent] = useAnalytics();

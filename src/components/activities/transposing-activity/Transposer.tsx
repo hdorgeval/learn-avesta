@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
-import { useAnalytics, useSlicesOfShuffledLetters } from "../hooks";
-import { Letter, Transcription } from "../letters";
+import { useAnalytics, useSlicesOfShuffledLetters } from "../../hooks";
+import { Letter, Transcription } from "../../letters";
 
 export const Transposer: React.FC = () => {
   const [addEvent] = useAnalytics();
