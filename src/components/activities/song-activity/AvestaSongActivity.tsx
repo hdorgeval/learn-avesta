@@ -6,7 +6,7 @@ import { AudioPlayer, AudioProgressEvent } from "../../audio-player";
 import { useAnalytics } from "../../hooks";
 import { Sentence } from "../../sentences";
 import { TimelineRange } from "../../words";
-export const AvestSongActivity: FC= () => {
+export const AvestaSongActivity: FC= () => {
   const [displayNewComerHint, setDisplayNewComerHint] = useState(true);
   const [addEvent] = useAnalytics();
   const [isReady, setIsReady] = useState(false);
@@ -86,4 +86,4 @@ export const AvestSongActivity: FC= () => {
   );
 };
 
-AvestSongActivity.displayName = 'AvestSongActivity';
+AvestaSongActivity.displayName = 'AvestSongActivity';

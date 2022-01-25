@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { FC } from 'react';
 import './App.css';
 import landingPageVideo from './assets/videos/course-video.mp4';
-import { AvestaScriptAndSoundsActivity, AvestSongActivity, DrawingActivity, TransposeActivity } from './components/activities';
+import { AvestaScriptAndSoundsActivity, AvestaSongActivity, DrawingActivity, TransposeActivity } from './components/activities';
 import { useAnalytics } from './components/hooks';
 import { Explorer } from './components/letters';
 export const App: FC = () => {
@@ -103,7 +103,7 @@ export const App: FC = () => {
               <i className="bi bi-music-note-list me-2"></i> Song session on <em>Yasna 28</em> 
             </div>
             <div className="mt-4">
-              <AvestSongActivity />
+              <AvestaSongActivity />
             </div>
           </div>
         </section>

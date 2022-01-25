@@ -1,1 +1,2 @@
-export * from './AvestSongActivity';
+export * from './AvestaSongActivity';
+
