@@ -1,21 +1,17 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterZTranscription: TranscriptionSymbol = 'z';
-export const letterZPronunciation: LetterPronunciation = {
-  'fr': 'like the letter z in zoro ;',
-  'en': 'like the letter z in zoo.'
-};
-export const useLetterZ = (): Letter => {
-  const pronunciation = letterZPronunciation;
-  const transcription = LetterZTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterZ = (): Letter => ({
+  pronunciation: {
+    'fr': 'like the letter z in zoro ;',
+    'en': 'like the letter z in zoo.'
+  },
+  transcription: 'z',
+  render: (props?: LetterOwnProps) => {
     return <LetterZ {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter Z 
