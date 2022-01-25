@@ -122,7 +122,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
             { displayNewComerHint && (
               <div className="card bg-dark text-light">
                 <div className="card-body">
-                  <p className="card-text"><i className="bi bi-lightbulb"></i> You can click on the above character to get it's sound and to display more infos.</p>
+                  <p className="card-text"><i className="bi bi-lightbulb"></i> Welcome ! Start your avestic journey by exploring the alphabet ! You can click on the above character to get it's sound and to display more infos.</p>
                   <button className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>Got it !</button>
                 </div>
               </div>
