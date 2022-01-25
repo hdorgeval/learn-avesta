@@ -75,7 +75,7 @@ export const AvestaSongActivity: FC= () => {
         <div className="card bg-dark text-light">
           <div className="card-body d-flex align-items-center flex-column ">
             <p className="card-text flex-fill"><i className="bi bi-lightbulb"></i> You can click on a word to replay it.</p>
-            <p className="card-text flex-fill"><i className="bi bi-info-circle"></i> This feature is in early stage at the moment: the idea is to be able to sync in both direction an audio track with corresponding Avestan text and transposed text. The current text has missing letters and sentences.</p>
+            <p className="card-text flex-fill"><i className="bi bi-info-circle"></i> This feature is in early stage : the idea is to be able to sync, in both direction, an audio track with corresponding Avestan text and transposed text. The current text has missing letters and sentences.</p>
             <button  className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>Got it !</button>
           </div>
         </div>
