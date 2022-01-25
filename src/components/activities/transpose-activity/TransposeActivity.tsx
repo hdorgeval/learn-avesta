@@ -176,7 +176,7 @@ export const TransposeActivity: React.FC = () => {
       { displayNewComerHint && (
         <div className="card bg-dark text-light">
           <div className="card-body d-flex align-items-center flex-column ">
-            <p className="card-text flex-fill"><i className="bi bi-lightbulb"></i> Select an Avestan character, then select the corresponding transposition </p>
+            <p className="card-text flex-fill"><i className="bi bi-lightbulb"></i> Letters have been shuffled ! Try to recover the pairs ! Select an Avestan character, then select the corresponding transposition.</p>
             <button  className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>Got it !</button>
           </div>
         </div>
