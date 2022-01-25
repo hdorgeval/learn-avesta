@@ -26,7 +26,7 @@ export const LetterInDrawingSurface : FC<LetterInDrawingSurfaceProps>= ({letter,
   return letter.render({zoom, disableTranslate: true});
 };
 
-export const Drawer: React.FC = () => {
+export const DrawingActivity: React.FC = () => {
   const [addEvent] = useAnalytics();
   const letters = useLetters();
   const [selectedLetter, setSelectedLetter] = useState<Letter>(letters[0]);

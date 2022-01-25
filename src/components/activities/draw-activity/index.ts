@@ -1,3 +1,3 @@
-export * from './Drawer';
+export * from './DrawingActivity';
 export * from './DrawingSurface';
 
