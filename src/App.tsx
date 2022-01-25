@@ -5,7 +5,7 @@ import { FC } from 'react';
 import './App.css';
 import previewAvestaScriptAndSounds from './assets/images/video-preview-avestan-script-and-sounds.png';
 import landingPageVideo from './assets/videos/course-video.mp4';
-import { AvestSongActivity, DrawingActivity, Transposer } from './components/activities';
+import { AvestSongActivity, DrawingActivity, TransposeActivity } from './components/activities';
 import { useAnalytics } from './components/hooks';
 import { Explorer } from './components/letters';
 import { VideoPlayer } from './components/video-player';
@@ -82,7 +82,7 @@ export const App: FC = () => {
               <i className="bi bi-arrows-angle-contract me-2"></i> Learn to <em>transpose</em> Avesta characters 
             </div>
             <div className="mt-4">
-              <Transposer />
+              <TransposeActivity />
               {/* <ComingSoon /> */}
             </div>
           </div>

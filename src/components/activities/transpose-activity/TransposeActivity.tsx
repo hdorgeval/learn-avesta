@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from "react";
 import { useAnalytics, useSlicesOfShuffledLetters } from "../../hooks";
 import { Letter, Transcription } from "../../letters";
 
-export const Transposer: React.FC = () => {
+export const TransposeActivity: React.FC = () => {
   const [addEvent] = useAnalytics();
   const [displayNewComerHint, setDisplayNewComerHint] = useState(true);
   const [hasStartedActivity, setHasStartedActivity] = useState(false);
@@ -187,4 +187,4 @@ export const Transposer: React.FC = () => {
   );
 };
 
-Transposer.displayName = 'Transposer';
+TransposeActivity.displayName = 'Transposer';

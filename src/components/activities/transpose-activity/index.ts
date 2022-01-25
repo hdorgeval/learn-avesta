@@ -1,1 +1,2 @@
-export * from './Transposer';
+export * from './TransposeActivity';
+
