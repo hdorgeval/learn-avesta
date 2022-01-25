@@ -1,5 +1,4 @@
 export * from './Carrier';
-export * from './Explorer';
 export * from './IndianLetterO';
 export * from './IndianLetterOLong';
 export * from './LetterA';

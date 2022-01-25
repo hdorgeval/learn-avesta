@@ -95,3 +95,4 @@ export const DrawingActivity: React.FC = () => {
   );
 };
 
+DrawingActivity.displayName = 'DrawingActivity';

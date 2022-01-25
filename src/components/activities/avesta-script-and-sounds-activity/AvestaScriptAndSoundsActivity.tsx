@@ -23,3 +23,5 @@ export const AvestaScriptAndSoundsActivity: React.FC = () => {
     </>
   );
 };
+
+AvestaScriptAndSoundsActivity.displayName = 'AvestaScriptAndSoundsActivity';

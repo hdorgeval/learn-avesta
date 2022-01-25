@@ -4,9 +4,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { FC } from 'react';
 import './App.css';
 import landingPageVideo from './assets/videos/course-video.mp4';
-import { AvestaScriptAndSoundsActivity, AvestaSongActivity, DrawingActivity, TransposeActivity } from './components/activities';
+import { AvestaScriptAndSoundsActivity, AvestaSongActivity, DrawingActivity, ExploreAlphabetActivity, TransposeActivity } from './components/activities';
 import { useAnalytics } from './components/hooks';
-import { Explorer } from './components/letters';
 export const App: FC = () => {
   const [addEvent] = useAnalytics();
   addEvent('load-app');  
@@ -58,7 +57,7 @@ export const App: FC = () => {
               <a className="btn btn-lg btn-primary mt-3" href="#learnToDrawSection">
                 <div className="text-uppercase fw-bold">Discover more</div>
               </a>
-              <Explorer />
+              <ExploreAlphabetActivity />
             </div>
           </div>
         </section>

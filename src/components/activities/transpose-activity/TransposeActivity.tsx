@@ -187,4 +187,4 @@ export const TransposeActivity: React.FC = () => {
   );
 };
 
-TransposeActivity.displayName = 'Transposer';
+TransposeActivity.displayName = 'TransposeActivity';

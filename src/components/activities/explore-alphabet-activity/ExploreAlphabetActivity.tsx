@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useAnalytics, useLetters } from "../hooks";
-import { Letter, LetterPronunciation } from "./LetterA";
-import { Transcription } from "./Transcription";
+import { useAnalytics, useLetters } from "../../hooks";
+import { Letter, LetterPronunciation } from "../../letters/LetterA";
+import { Transcription } from "../../letters/Transcription";
 
-export const Explorer: React.FC = () => {
+export const ExploreAlphabetActivity: React.FC = () => {
   const [selectedLetter, setSelectedLetter] = useState<Letter | undefined>(undefined);
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 
@@ -163,4 +163,4 @@ export const Explorer: React.FC = () => {
   );
 };
 
-Explorer.displayName = 'LettersCarousel';
+ExploreAlphabetActivity.displayName = 'ExploreAlphabetActivity';
