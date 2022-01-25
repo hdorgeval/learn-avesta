@@ -1,23 +1,19 @@
 import { FC } from 'react';
 import letterXSound from '../../assets/sounds/letter-x.mp3';
-import { Letter, LetterOwnProps, LetterPronunciation, TranscriptionSymbol } from './LetterA';
+import { Letter, LetterOwnProps } from './LetterA';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const LetterXTranscription: TranscriptionSymbol = 'x';
-export const letterXPronunciation: LetterPronunciation = {
-  'fr': 'like the sequence Kh in Khalid (to be pronounced more or less like rhalid) ;',
-  'es': 'like the letter j in Juan ;',
-  'de': 'like the sequence ch in nach.'
-};
-export const useLetterX= (): Letter => {
-  const pronunciation = letterXPronunciation;
-  const transcription = LetterXTranscription;
-  const render = (props?: LetterOwnProps) => {
+export const useLetterX= (): Letter => ({
+  pronunciation: {
+    'fr': 'like the sequence Kh in Khalid (to be pronounced more or less like rhalid) ;',
+    'es': 'like the letter j in Juan ;',
+    'de': 'like the sequence ch in nach.'
+  },
+  transcription: 'x',
+  render: (props?: LetterOwnProps) => {
     return <LetterX {...props} />;
-  };
-
-  return {pronunciation,transcription,render};
-};
+  },
+});
 
 /**
  * Letter X like in Spanish "Juan" (also transcribed as Kh)
