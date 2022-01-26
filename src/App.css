@@ -141,3 +141,7 @@ section.video-session {
   outline: 2px solid var(--bs-info);
   outline-offset: 3px;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}

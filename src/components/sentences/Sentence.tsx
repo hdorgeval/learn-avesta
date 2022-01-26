@@ -19,6 +19,10 @@ export const Sentence: React.FC<SentenceOwnProps> = ({transcript, zoom, timeline
     const words = transcript.split(' ');
     return words;
   }, [transcript]);
+
+  const isLastWordInSentence = useCallback((index: number) => {
+    return index === words.length - 1;
+  } , [words.length]);
   
   const timelines = useMemo(() => {
     const timelines = timeline ? timeline.split(' ') : [];
@@ -40,7 +44,7 @@ export const Sentence: React.FC<SentenceOwnProps> = ({transcript, zoom, timeline
   return (
     <div className="d-flex flex-row flex-wrap flex-row-reverse">
       {words.map((word, index) => 
-        <AvestaWord key={`${word}-${index}`} transcript={word} zoom={appliedZoom} timeline={getTimelineForWordAtIndex(index)} currentTimeline={currentTimeline} onWordSeek={onWordSeek} />
+        <AvestaWord key={`${word}-${index}`} transcript={word} zoom={appliedZoom} isLastWordInSentence={isLastWordInSentence(index)} timeline={getTimelineForWordAtIndex(index)} currentTimeline={currentTimeline} onWordSeek={onWordSeek} />
       )}
     </div>
   );

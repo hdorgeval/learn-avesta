@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { useAllLetters } from "../hooks";
-import { useMissingLetter, useWordSeparator } from "../letters";
+import { useMissingLetter, useSentenceSeparator, useWordSeparator } from "../letters";
 
 export interface TimelineRange {
   start: number;
@@ -13,23 +13,31 @@ export interface AvestaWordOwnProps {
   timeline?: TimelineRange;
   currentTimeline?: number
   onWordSeek?: (timeline: TimelineRange) => void;
+  isLastWordInSentence?: boolean;
+  isLastWordInParagraph?: boolean;
 }
 
-export const AvestaWord: React.FC<AvestaWordOwnProps> = ({transcript, zoom, timeline, currentTimeline, onWordSeek}) => {
+export const AvestaWord: React.FC<AvestaWordOwnProps> = ({transcript, zoom, timeline, currentTimeline, isLastWordInSentence, onWordSeek}) => {
   const transcriptions = transcript.split('');
-  // eslint-disable-next-line no-console
-  console.log('transcriptions', transcriptions);
   const allLeters = useAllLetters();
   const missingLetter = useMissingLetter();
-  const separator = useWordSeparator();
+  const wordSeparator = useWordSeparator();
+  const sentenceSeparator = useSentenceSeparator();
+
+  const separator = useMemo(() => {
+    if (isLastWordInSentence) {
+      return sentenceSeparator;
+    }
+    return wordSeparator;
+  } , [isLastWordInSentence, sentenceSeparator, wordSeparator]);
   const letters = useMemo(() => {
-    const characters =  transcriptions.map((transcription) => {
+    const characters =  transcriptions.map(t => t.toLowerCase()).map((transcription) => {
       const letter = allLeters.find(letter => letter.transcription === transcription);
       return letter || missingLetter;
     });
     characters.push(separator);
     return characters.reverse();
-  }, [allLeters, missingLetter, separator, transcriptions]);
+  }, [transcriptions, separator, allLeters, missingLetter]);
 
   const isOntrack = useMemo(() => {
     if (timeline && currentTimeline) {
@@ -46,7 +54,7 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({transcript, zoom, time
 
   return (
     <div 
-      className={`ms-2 avesta-word ${isOntrack ? 'outline-2-info' : ''}`}
+      className={`ms-2 avesta-word cursor-pointer ${isOntrack ? 'outline-2-info' : ''}`}
       onClick={handleClick}
     >
       {letters.map((letter, index) => letter.render({zoom, key: `${letter.transcription}-${index}`, disableSound: true}))}

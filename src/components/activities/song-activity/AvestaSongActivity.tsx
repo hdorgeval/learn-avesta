@@ -45,7 +45,12 @@ export const AvestaSongActivity: FC= () => {
     <>
       {isReady && (
         <div className="bg-transparent">
-          <Sentence  transcript="yānīm manō yānīm vacō yānīm śyaoθnəm" timeline="0-1.34 1.34-2.38 2.38-3.81 3.81-4.88 4.88-6.28 6.28-9.36" zoom={0.5} currentTimeline={currentTimeline} onWordSeek={handleWordSeek}/>
+          <Sentence  
+            transcript="yānīm manō yānīm vacō yānīm śyaoθnəm aṣ̌aonō Zaraθuštrahe" 
+            timeline="0-1.34 1.34-2.38 2.38-3.81 3.81-4.88 4.88-6.28 6.28-9.36 9.67-12.32 12.32-14.86" 
+            zoom={0.5} 
+            currentTimeline={currentTimeline} 
+            onWordSeek={handleWordSeek}/>
         </div>
       )}
       <AudioPlayer 
