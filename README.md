@@ -29,7 +29,7 @@ You can contribute in many ways. If you find something wrong or have improvement
 
 ### Q: What is your vision for the future?
 
-My plan, is to create "by hand" a set of activities that will serve to train a neural network for automatic speech synthesis, speech recognition, text translation, etc... The idea will be to use existing tools given by Machine Learning and Artificial Intelligence technologies to provide, in fine, some kind of personal mentor to the learner.
+My plan, is to provide on the website a set of interactive activities that will serve to train a neural network for automatic speech synthesis, speech recognition, text translation, etc... The idea will be to use existing tools given by Machine Learning and Artificial Intelligence technologies to provide, in fine, some kind of personal mentor to the learner.
 
 This vision is ambitious, and I hope to achieve it.
 
