@@ -126,8 +126,8 @@ export const App: FC = () => {
       </footer>
       {/* <Carrier />
       <div className="bg-dark">
-        <Word  word='henri' zoom={0.5}/>
-        <Sentence  sentence="yānīm manō yānīm vacō" zoom={0.5}/>
+        <AvestaWord transcript="henri" zoom={0.5}/>
+        <Sentence transcript="yānīm manō yānīm vacō" zoom={0.5}/>
       </div> */}
     </>
   );

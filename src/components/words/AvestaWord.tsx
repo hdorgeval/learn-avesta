@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { useAllLetters } from "../hooks";
-import { useMissingLetter, useSentenceSeparator, useWordSeparator } from "../letters";
+import { useMissingLetter, useParagraphSeparator, useSentenceSeparator, useWordSeparator } from "../letters";
 
 export interface TimelineRange {
   start: number;
@@ -17,19 +17,25 @@ export interface AvestaWordOwnProps {
   isLastWordInParagraph?: boolean;
 }
 
-export const AvestaWord: React.FC<AvestaWordOwnProps> = ({transcript, zoom, timeline, currentTimeline, isLastWordInSentence, onWordSeek}) => {
+export const AvestaWord: React.FC<AvestaWordOwnProps> = ({transcript, zoom, timeline, currentTimeline, isLastWordInSentence, isLastWordInParagraph, onWordSeek}) => {
   const transcriptions = transcript.split('');
   const allLeters = useAllLetters();
   const missingLetter = useMissingLetter();
   const wordSeparator = useWordSeparator();
   const sentenceSeparator = useSentenceSeparator();
+  const paragraphSeparator = useParagraphSeparator();
 
   const separator = useMemo(() => {
+    if (isLastWordInParagraph) {
+      return paragraphSeparator;
+    }
+
     if (isLastWordInSentence) {
       return sentenceSeparator;
     }
+    
     return wordSeparator;
-  } , [isLastWordInSentence, sentenceSeparator, wordSeparator]);
+  } , [isLastWordInParagraph, isLastWordInSentence, paragraphSeparator, sentenceSeparator, wordSeparator]);
   const letters = useMemo(() => {
     const characters =  transcriptions.map(t => t.toLowerCase()).map((transcription) => {
       const lettersWithSameTranscription = allLeters.filter(letter => letter.transcription === transcription);
@@ -71,3 +77,5 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({transcript, zoom, time
     </div>
   );
 };
+
+AvestaWord.displayName = 'AvestaWord';

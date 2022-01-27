@@ -16,7 +16,7 @@ export interface LetterPronunciation {
   'de'?: string;
 }
 
-export type TranscriptionSymbol = 'a' | 'ā' | 'b' | 'c' | 'd' | 'e' | 'ē' | 'ə' | 'f' | 'g' | 'h' | 'i' | 'ī' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'ō' | 'p' | 'q' | 'r' | 's' | 'ś' | 'š' | 'ṣ' | 'ṣ̌' | 't' | 'θ' | 'u' | 'v' | 'w' | 'x' | 'x<raised>v'| 'y' | 'z' | '-' | '.' | '...';
+export type TranscriptionSymbol = 'a' | 'ā' | 'å' | 'ā̊' | 'b' | 'c' | 'd' | 'e' | 'ē' | 'ə' | 'ǝ̄' | 'f' | 'g' | 'h' | 'i' | 'ī' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'ō' | 'p' | 'q' | 'r' | 's' | 'ś' | 'š' | 'ṣ' | 'ṣ̌' | 't' | 'θ' | 'u' | 'v' | 'w' | 'x' | 'x<raised>v'| 'y' | 'z' | '-' | '.' | '...' | '***';
 
 export interface Letter {
   hasBeenMatched?: boolean;

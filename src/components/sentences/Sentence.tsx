@@ -7,9 +7,10 @@ export interface SentenceOwnProps {
   currentTimeline?: number;
   zoom?: number;
   onWordSeek?: (timeline: TimelineRange) => void;
+  isLastSentenceInParagraph?: boolean;
 }
 
-export const Sentence: React.FC<SentenceOwnProps> = ({transcript, zoom, timeline, currentTimeline, onWordSeek}) => {
+export const Sentence: React.FC<SentenceOwnProps> = ({transcript, zoom, timeline, currentTimeline, isLastSentenceInParagraph, onWordSeek}) => {
 
   const appliedZoom = useMemo(() => {
     return zoom || 1;
@@ -23,6 +24,10 @@ export const Sentence: React.FC<SentenceOwnProps> = ({transcript, zoom, timeline
   const isLastWordInSentence = useCallback((index: number) => {
     return index === words.length - 1;
   } , [words.length]);
+
+  const isLastWordInParagrah = useCallback((index: number) => {
+    return index === words.length - 1 && isLastSentenceInParagraph;
+  } , [isLastSentenceInParagraph, words.length]);
   
   const timelines = useMemo(() => {
     const timelines = timeline ? timeline.split(' ') : [];
@@ -44,7 +49,14 @@ export const Sentence: React.FC<SentenceOwnProps> = ({transcript, zoom, timeline
   return (
     <div className="d-flex flex-row flex-wrap flex-row-reverse">
       {words.map((word, index) => 
-        <AvestaWord key={`${word}-${index}`} transcript={word} zoom={appliedZoom} isLastWordInSentence={isLastWordInSentence(index)} timeline={getTimelineForWordAtIndex(index)} currentTimeline={currentTimeline} onWordSeek={onWordSeek} />
+        <AvestaWord 
+          key={`${word}-${index}`} 
+          transcript={word} zoom={appliedZoom} 
+          isLastWordInSentence={isLastWordInSentence(index)} 
+          isLastWordInParagraph={isLastWordInParagrah(index)} 
+          timeline={getTimelineForWordAtIndex(index)} 
+          currentTimeline={currentTimeline} 
+          onWordSeek={onWordSeek} />
       )}
     </div>
   );

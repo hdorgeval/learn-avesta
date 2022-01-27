@@ -22,6 +22,7 @@ import {
   LetterY,
   LetterZ,
   MissingLetter,
+  ParagraphSeparator,
   SentenceSeparator,
   WordSeparator
 } from '.';
@@ -73,6 +74,7 @@ export const Carrier: React.FC = () => {
       <LetterILong fill="#f5a425" />
       <LetterOLong fill="#f5a425" />
       <SentenceSeparator fill="#f5a425" />
+      <ParagraphSeparator fill="#f5a425" />
       <IndianLetterO fill="#f5a425" />
       <IndianLetterOLong fill="#f5a425" />
       <LetterV fill="#f5a425" />

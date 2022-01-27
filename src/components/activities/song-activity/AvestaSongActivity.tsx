@@ -4,7 +4,7 @@ import previewAvestaSong from '../../../assets/images/audio-preview-avesta-song.
 import avestaSong from '../../../assets/songs/avesta-song.mp3';
 import { AudioPlayer, AudioProgressEvent } from "../../audio-player";
 import { useAnalytics } from "../../hooks";
-import { useSentenceSeparator, useWordSeparator } from "../../letters";
+import { useParagraphSeparator, useSentenceSeparator, useWordSeparator } from "../../letters";
 import { Sentence } from "../../sentences";
 import { TimelineRange } from "../../words";
 export const AvestaSongActivity: FC= () => {
@@ -21,6 +21,7 @@ export const AvestaSongActivity: FC= () => {
 
   const sentenceSeparator = useSentenceSeparator();
   const wordSeparator = useWordSeparator();
+  const paragraphSeparator = useParagraphSeparator();
   
   const handleOnReady = useCallback((player: ReactPlayer | null) => {
     addEvent('start-avesta-song-activity');
@@ -55,6 +56,14 @@ export const AvestaSongActivity: FC= () => {
             zoom={0.5} 
             currentTimeline={currentTimeline} 
             onWordSeek={handleWordSeek}/>
+          <Sentence  
+            transcript="fərā ameṣ̌ā spəntā gāθā̊ gǝ̄urwāin" 
+            timeline="14.86-15.75 15.81-18.30 18.69-19.73 19.73-21.25 21.25-24.57" 
+            zoom={0.5} 
+            currentTimeline={currentTimeline} 
+            onWordSeek={handleWordSeek}
+            isLastSentenceInParagraph={true}
+          />
         </div>
       )}
       <AudioPlayer 
@@ -85,7 +94,7 @@ export const AvestaSongActivity: FC= () => {
           <div className="card-body d-flex align-items-center flex-column ">
             <p className="card-text flex-fill"><i className="bi bi-lightbulb"></i> You can click on a word to replay it.</p>
             <p className="card-text flex-fill"><i className="bi bi-lightbulb"></i> Did you notice that each word is separated from the next by a <span className="ps-1">{wordSeparator.render()}</span> character?</p>
-            <p className="card-text flex-fill"><i className="bi bi-lightbulb"></i> Did you also notice that <span className="ps-1">{sentenceSeparator.render()}</span> is used to mark the end of a sentence?</p>
+            <p className="card-text flex-fill"><i className="bi bi-lightbulb"></i> Did you also notice that <span className="ps-1">{sentenceSeparator.render()}</span> is used to mark the end of a sentence, and that  <span className="ps-1">{paragraphSeparator.render()}</span> is used to mark the end of a paragraph?</p>
             <p className="card-text flex-fill"><i className="bi bi-info-circle"></i> This feature is in early stage : the idea is to be able to sync, in both direction, an audio track with corresponding Avestan text and transposed text. The current text has missing letters and sentences.</p>
             <button  className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>Got it !</button>
           </div>
