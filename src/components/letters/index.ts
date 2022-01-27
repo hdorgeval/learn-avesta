@@ -1,6 +1,7 @@
 export * from './Carrier';
 export * from './IndianLetterO';
 export * from './IndianLetterOLong';
+export * from './letter.types';
 export * from './LetterA';
 export * from './LetterALong';
 export * from './LetterB';

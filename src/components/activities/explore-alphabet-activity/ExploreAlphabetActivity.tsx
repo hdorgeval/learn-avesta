@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAnalytics, useLetters } from "../../hooks";
-import { Letter, LetterPronunciation } from "../../letters/LetterA";
+import { Letter, LetterPronunciation } from "../../letters";
 import { Transcription } from "../../letters/Transcription";
 
 export const ExploreAlphabetActivity: React.FC = () => {

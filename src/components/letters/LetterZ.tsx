@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Letter, LetterOwnProps } from './LetterA';
+import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterZ = (): Letter => ({

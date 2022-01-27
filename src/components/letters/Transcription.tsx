@@ -1,4 +1,4 @@
-import { Letter } from "./LetterA";
+import { Letter } from "./letter.types";
 
 export interface TranscriptionOwnProps {
   letter: Letter;

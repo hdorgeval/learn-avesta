@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import letterUSound from '../../assets/sounds/letter-u.mp3';
-import { Letter, LetterOwnProps } from './LetterA';
+import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterU = (): Letter => ({
   pronunciation : {
