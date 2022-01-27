@@ -32,8 +32,18 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({transcript, zoom, time
   } , [isLastWordInSentence, sentenceSeparator, wordSeparator]);
   const letters = useMemo(() => {
     const characters =  transcriptions.map(t => t.toLowerCase()).map((transcription) => {
-      const letter = allLeters.find(letter => letter.transcription === transcription);
-      return letter || missingLetter;
+      const lettersWithSameTranscription = allLeters.filter(letter => letter.transcription === transcription);
+      
+      if (lettersWithSameTranscription.length === 0) {
+        return missingLetter;
+      }
+
+      if (lettersWithSameTranscription.length >  1) {
+        const preferredLetter = lettersWithSameTranscription.find(letter => letter.isPreferred);
+        return preferredLetter || lettersWithSameTranscription[0];
+      }
+
+      return lettersWithSameTranscription[0];
     });
     characters.push(separator);
     return characters.reverse();

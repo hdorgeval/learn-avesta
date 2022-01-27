@@ -20,6 +20,14 @@ export type TranscriptionSymbol = 'a' | 'ā' | 'b' | 'c' | 'd' | 'e' | 'ē' | '
 
 export interface Letter {
   hasBeenMatched?: boolean;
+  /**
+   * When true, the letter will be selected among the letters with the same transcription.
+   *
+   * @type {boolean}
+   * @memberof Letter
+   */
+  isPreferred?: boolean;
+  
   pronunciation: LetterPronunciation;
   transcription: TranscriptionSymbol;
   render: (props?: LetterOwnProps) => JSX.Element;
