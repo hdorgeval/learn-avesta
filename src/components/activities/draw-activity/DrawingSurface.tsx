@@ -87,7 +87,7 @@ export const DrawingSurface: React.FC = ({ children }) => {
   return (
     <div className="position-relative w-100 h-100 m-h-0">
       <div className="position-absolute w-100 h-100 top-0 ps-4 pe-4">{children}</div>
-      <div className="position-absolute w-100 h-100 left-0 end-0 bottom-0">
+      <div className="position-absolute w-100 h-100 left-0 end-0 bottom-0 cursor-crosshair">
         <svg
           width="100%"
           height="100%"

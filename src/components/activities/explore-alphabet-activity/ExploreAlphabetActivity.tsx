@@ -141,7 +141,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
         <div className="card text-light bg-dark mt-2 mb-0" style={{ zIndex: 2000 }}>
           <div className="row g-0">
             <div className="col-2 d-flex flex-column justify-content-center">
-              {selectedLetter.render()}
+              <span className="cursor-pointer">{selectedLetter.render()}</span>
             </div>
             <div className="col-10">
               <div className="card-body">

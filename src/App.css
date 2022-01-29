@@ -145,3 +145,7 @@ section.video-session {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.cursor-crosshair {
+  cursor: crosshair;
+}
