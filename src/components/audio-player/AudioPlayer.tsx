@@ -1,5 +1,5 @@
-import { FC, useCallback, useMemo, useRef, useState } from "react";
-import ReactPlayer from "react-player";
+import { FC, useCallback, useMemo, useRef, useState } from 'react';
+import ReactPlayer from 'react-player';
 import './AudioPlayer.css';
 
 export interface AudioProgressEvent {
@@ -11,16 +11,29 @@ export interface AudioProgressEvent {
 
 export interface AudioPlayerOwnProps {
   audioUrl: string;
+  autoStart: boolean;
   startTime?: string;
-  endTime?:string;
+  endTime?: string;
   thumbnailUrl?: string;
+  onClickPreview?: () => void;
   onReady?: (player: ReactPlayer | null) => void;
   onStart?: () => void;
   onSeek?: (seconds: number) => void;
   onProgress?: (progress: AudioProgressEvent) => void;
 }
 
-export const AudioPlayer: FC<AudioPlayerOwnProps> = ({audioUrl, startTime, endTime, thumbnailUrl, onReady, onStart, onSeek, onProgress}) => {
+export const AudioPlayer: FC<AudioPlayerOwnProps> = ({
+  autoStart,
+  audioUrl,
+  startTime,
+  endTime,
+  thumbnailUrl,
+  onReady,
+  onStart,
+  onSeek,
+  onProgress,
+  onClickPreview,
+}) => {
   const [isReady, setIsReady] = useState(false);
   const reactPlayerRef = useRef<ReactPlayer>(null);
 
@@ -39,25 +52,31 @@ export const AudioPlayer: FC<AudioPlayerOwnProps> = ({audioUrl, startTime, endTi
       return thumbnailUrl;
     }
     return true;
-  } , [thumbnailUrl]);
+  }, [thumbnailUrl]);
 
   const playing = useMemo(() => {
-    if (thumbnailUrl) {
+    if (autoStart) {
       return true;
     }
     return false;
-  } , [thumbnailUrl]);
+  }, [autoStart]);
 
   const wrapperClassName = useMemo(() => {
     return isReady ? 'audio-player-wrapper-on-ready' : 'audio-player-wrapper';
-  } , [isReady]);
+  }, [isReady]);
 
   const handleOnReady = useCallback(() => {
     setIsReady(true);
     if (onReady) {
       onReady(reactPlayerRef.current);
     }
-  } , [onReady]);
+  }, [onReady]);
+
+  const handleOnClickPreview = useCallback(() => {
+    if (onClickPreview) {
+      onClickPreview();
+    }
+  }, [onClickPreview]);
 
   return (
     <div className="position-relative w-100 h-100">
@@ -75,11 +94,11 @@ export const AudioPlayer: FC<AudioPlayerOwnProps> = ({audioUrl, startTime, endTi
           onReady={handleOnReady}
           onSeek={onSeek}
           onProgress={onProgress}
+          onClickPreview={handleOnClickPreview}
         />
       </div>
     </div>
-    
   );
 };
 
-AudioPlayer.displayName  = 'AudioPlayer';
+AudioPlayer.displayName = 'AudioPlayer';
