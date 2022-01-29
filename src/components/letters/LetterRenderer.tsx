@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useCallback, useMemo } from 'react';
+import { CSSProperties, FC, useCallback, useMemo, useState } from 'react';
 import { useAudioFromUrl } from '../hooks';
 import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis';
 
@@ -38,7 +38,8 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({
   disableSound,
   disableTranslate,
 }) => {
-  const [startAudio] = useAudioFromUrl(audioUrl);
+  const [appliedAudioUrl] = useState<string | undefined>(disableSound ? undefined : audioUrl);
+  const [startAudio] = useAudioFromUrl(appliedAudioUrl);
   const [speak] = useSpeechSynthesis();
 
   const appliedZoom = useMemo(() => svg.zoom || 1, [svg.zoom]);
