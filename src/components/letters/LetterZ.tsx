@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterZ = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter z in zoro ;',
-    'en': 'like the letter z in zoo.'
+    fr: 'like the letter z in zoro ;',
+    en: 'like the letter z in zoo.',
   },
   transcription: 'z',
   render: (props?: LetterOwnProps) => {
@@ -14,12 +14,18 @@ export const useLetterZ = (): Letter => ({
 });
 
 /**
- * Letter Z 
+ * Letter Z
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/PL/007A.mp3
  * @alias: z
  */
-export const LetterZ: FC<LetterOwnProps> = ({ fill ,overridenStyle, zoom, disableSound, disableTranslate}) => {
+export const LetterZ: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -40,10 +46,8 @@ export const LetterZ: FC<LetterOwnProps> = ({ fill ,overridenStyle, zoom, disabl
         translateX: 0,
         translateY: 0,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
+  return <LetterRenderer {...props} />;
 };

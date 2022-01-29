@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 export const useAudioFromUrl = (url: string | undefined) => {
   const [audio] = useState(new Audio(url));
@@ -6,9 +6,7 @@ export const useAudioFromUrl = (url: string | undefined) => {
 
   useEffect(() => {
     playing ? audio.play() : audio.pause();
-  },
-  [audio, playing]
-  );
+  }, [audio, playing]);
 
   useEffect(() => {
     audio.addEventListener('ended', () => setPlaying(false));
@@ -16,14 +14,14 @@ export const useAudioFromUrl = (url: string | undefined) => {
       audio.removeEventListener('ended', () => setPlaying(false));
     };
   }, [audio]);
-  
+
   const start = useCallback(() => {
     if (playing) {
       return;
     }
     setPlaying(true);
     audio.play();
-  },[audio, playing]);  
+  }, [audio, playing]);
 
   return [start];
 };

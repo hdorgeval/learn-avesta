@@ -1,15 +1,20 @@
-import { FC, useCallback, useMemo } from "react";
+import { FC, useCallback, useMemo } from 'react';
 import ReactPlayer from 'react-player';
-import { useAnalytics } from "../hooks";
+import { useAnalytics } from '../hooks';
 import './VideoPlayer.css';
 
 export interface VideoPlayerOwnProps {
   videoUrl: string;
   startTime?: string;
-  endTime?:string;
+  endTime?: string;
   thumbnailUrl?: string;
 }
-export const VideoPlayer: FC<VideoPlayerOwnProps> = ({videoUrl, startTime, endTime, thumbnailUrl}) => {
+export const VideoPlayer: FC<VideoPlayerOwnProps> = ({
+  videoUrl,
+  startTime,
+  endTime,
+  thumbnailUrl,
+}) => {
   const [addEvent] = useAnalytics();
   const framedUrl = useMemo(() => {
     if (startTime && endTime) {
@@ -26,18 +31,18 @@ export const VideoPlayer: FC<VideoPlayerOwnProps> = ({videoUrl, startTime, endTi
       return thumbnailUrl;
     }
     return true;
-  } , [thumbnailUrl]);
+  }, [thumbnailUrl]);
 
   const playing = useMemo(() => {
     if (thumbnailUrl) {
       return true;
     }
     return false;
-  } , [thumbnailUrl]);
-  
+  }, [thumbnailUrl]);
+
   const handleOnStart = useCallback(() => {
     addEvent('start-video-avestan-script-and-sounds');
-  } , [addEvent]);
+  }, [addEvent]);
 
   return (
     <div className="position-relative w-100 h-100">
@@ -54,8 +59,7 @@ export const VideoPlayer: FC<VideoPlayerOwnProps> = ({videoUrl, startTime, endTi
         />
       </div>
     </div>
-    
   );
 };
 
-VideoPlayer.displayName = "VideoPlayer";
+VideoPlayer.displayName = 'VideoPlayer';

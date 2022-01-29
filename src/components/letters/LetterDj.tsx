@@ -4,11 +4,11 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterDj = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter j in jeans ;',
-    'en': 'like the letter j in just.'
+    fr: 'like the letter j in jeans ;',
+    en: 'like the letter j in just.',
   },
   transcription: 'j',
-  render :(props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <LetterDj {...props} />;
   },
 });
@@ -16,10 +16,16 @@ export const useLetterDj = (): Letter => ({
 /**
  * Letter j that is pronounced dj.
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: j
  */
-export const LetterDj: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
+export const LetterDj: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -40,11 +46,9 @@ export const LetterDj: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disab
         translateX: 0,
         translateY: 20,
         strokeWidth: 0.5,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

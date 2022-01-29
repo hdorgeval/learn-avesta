@@ -4,7 +4,7 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterE = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter é in été.',
+    fr: 'like the letter é in été.',
   },
   transcription: 'e',
   render: (props?: LetterOwnProps) => {
@@ -18,7 +18,13 @@ export const useLetterE = (): Letter => ({
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0065.mp3
  * @alias: e
  */
-export const LetterE: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
+export const LetterE: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -39,11 +45,9 @@ export const LetterE: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: 30,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

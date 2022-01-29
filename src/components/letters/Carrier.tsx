@@ -1,5 +1,7 @@
 import {
-  IndianLetterO, IndianLetterOLong, LetterA,
+  IndianLetterO,
+  IndianLetterOLong,
+  LetterA,
   LetterALong,
   LetterB,
   LetterC,
@@ -11,8 +13,10 @@ import {
   LetterG,
   LetterH,
   LetterI,
-  LetterILong, LetterO,
-  LetterOLong, LetterR,
+  LetterILong,
+  LetterO,
+  LetterOLong,
+  LetterR,
   LetterS,
   LetterT,
   LetterU,
@@ -24,7 +28,7 @@ import {
   MissingLetter,
   ParagraphSeparator,
   SentenceSeparator,
-  WordSeparator
+  WordSeparator,
 } from '.';
 
 export const Carrier: React.FC = () => {

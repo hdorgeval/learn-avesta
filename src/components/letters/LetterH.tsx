@@ -2,23 +2,29 @@ import { FC } from 'react';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterH= (): Letter => ({
+export const useLetterH = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter h in ha-ha-ha ;',
-    'en': 'like the letter h in hello.'
+    fr: 'like the letter h in ha-ha-ha ;',
+    en: 'like the letter h in hello.',
   },
   transcription: 'h',
-  render : (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <LetterH {...props} />;
   },
 });
 /**
- * Letter H 
+ * Letter H
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JW/0068.mp3
  * @alias: h
  */
-export const LetterH: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const LetterH: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -39,11 +45,9 @@ export const LetterH: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: 35,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

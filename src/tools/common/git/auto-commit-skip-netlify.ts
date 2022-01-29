@@ -16,7 +16,6 @@ export async function autoCommitSkipNetlify(): Promise<void> {
   const unstagedFiles = status.modified;
 
   for (let index = 0; index < unstagedFiles.length; index++) {
-
     const unstagedFile = unstagedFiles[index];
 
     if (unstagedFile.includes('.skip-netlify')) {
@@ -25,7 +24,6 @@ export async function autoCommitSkipNetlify(): Promise<void> {
       await git.commit(commitMessage);
       // eslint-disable-next-line no-console
       console.log(commitMessage);
-
     }
   }
 }

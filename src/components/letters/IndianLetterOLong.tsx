@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useIndianLetterOLong = (): Letter => ({
   pronunciation: {
-    'fr': 'long o, like the letter o in hôte ;',
-    'en': 'like the letter o in go.'
+    fr: 'long o, like the letter o in hôte ;',
+    en: 'like the letter o in go.',
   },
   transcription: 'ō',
   render: (props?: LetterOwnProps) => {
@@ -15,10 +15,16 @@ export const useIndianLetterOLong = (): Letter => ({
 /**
  * Letter O long - Indian version
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: ō
  */
-export const IndianLetterOLong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const IndianLetterOLong: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -39,11 +45,8 @@ export const IndianLetterOLong: FC<LetterOwnProps> = ({ fill, overridenStyle, zo
         translateX: 0,
         translateY: -40,
         strokeWidth: 0.5,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
-  
+  return <LetterRenderer {...props} />;
 };

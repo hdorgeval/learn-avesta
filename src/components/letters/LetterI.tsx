@@ -4,18 +4,23 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterI = (): Letter => ({
-  pronunciation : {
-    'fr': 'like the letter i in ami ;',
-    'en': 'like the letter i in it.'
+  pronunciation: {
+    fr: 'like the letter i in ami ;',
+    en: 'like the letter i in it.',
   },
-  transcription : 'i',
-  render : (props?: LetterOwnProps) => {
+  transcription: 'i',
+  render: (props?: LetterOwnProps) => {
     return <LetterI {...props} />;
   },
 });
 
-export const LetterI: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
-  
+export const LetterI: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -36,10 +41,8 @@ export const LetterI: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: -10,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
+  return <LetterRenderer {...props} />;
 };

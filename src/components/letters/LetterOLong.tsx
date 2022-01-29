@@ -5,8 +5,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterOLong = (): Letter => ({
   isPreferred: true,
   pronunciation: {
-    'fr': 'long o, like the letter o in hôte ;',
-    'en': 'like the letter o in go.'
+    fr: 'long o, like the letter o in hôte ;',
+    en: 'like the letter o in go.',
   },
   transcription: 'ō',
   render: (props?: LetterOwnProps) => {
@@ -17,10 +17,16 @@ export const useLetterOLong = (): Letter => ({
 /**
  * Letter O long - Iranian version
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: ō
  */
-export const LetterOLong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const LetterOLong: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -41,11 +47,8 @@ export const LetterOLong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, di
         translateX: 0,
         translateY: -20,
         strokeWidth: 0.5,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
-  
+  return <LetterRenderer {...props} />;
 };

@@ -4,22 +4,28 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterB = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter b in baguette ;',
-    'en': 'like the letter b in bag.'
+    fr: 'like the letter b in baguette ;',
+    en: 'like the letter b in bag.',
   },
   transcription: 'b',
-  render : (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <LetterB {...props} />;
   },
 });
 
 /**
- * Letter B 
+ * Letter B
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0078.mp3
  * @alias: b
  */
-export const LetterB: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
+export const LetterB: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -40,10 +46,8 @@ export const LetterB: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: 10,
         strokeWidth: 2,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
+  return <LetterRenderer {...props} />;
 };

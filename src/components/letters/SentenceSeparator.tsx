@@ -5,18 +5,23 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useSentenceSeparator = (): Letter => ({
   pronunciation: {},
   transcription: '...',
-  render : (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <SentenceSeparator {...props} />;
   },
 });
 
 /**
- * Sentence separator. 
+ * Sentence separator.
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: .
  */
-export const SentenceSeparator: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
+export const SentenceSeparator: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     style: {
@@ -35,11 +40,8 @@ export const SentenceSeparator: FC<LetterOwnProps> = ({ fill, overridenStyle, zo
         translateX: 0,
         translateY: 20,
         strokeWidth: 0.5,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
-  
+  return <LetterRenderer {...props} />;
 };

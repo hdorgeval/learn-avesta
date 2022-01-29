@@ -23,13 +23,21 @@ export interface LetterRendererOwnProps {
       translateX: number;
       translateY: number;
       disableZoomOnYTranslation?: boolean;
-    }
-  }
+    };
+  };
 }
 /**
  * Letter Renderer
  */
-export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenStyle, svg, audioUrl, textToSpeech, disableSound, disableTranslate }) => {
+export const LetterRenderer: FC<LetterRendererOwnProps> = ({
+  style,
+  overridenStyle,
+  svg,
+  audioUrl,
+  textToSpeech,
+  disableSound,
+  disableTranslate,
+}) => {
   const [startAudio] = useAudioFromUrl(audioUrl);
   const [speak] = useSpeechSynthesis();
 
@@ -48,13 +56,24 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
     }
 
     if (svg.path.disableZoomOnYTranslation) {
-      return `scale(${svg.path.scaleX * appliedZoom} ${svg.path.scaleY * appliedZoom}) translate(${svg.path.translateX * appliedZoom},${svg.path.translateY})`;
+      return `scale(${svg.path.scaleX * appliedZoom} ${svg.path.scaleY * appliedZoom}) translate(${
+        svg.path.translateX * appliedZoom
+      },${svg.path.translateY})`;
     }
-      
-    return `scale(${svg.path.scaleX * appliedZoom} ${svg.path.scaleY * appliedZoom}) translate(${svg.path.translateX * appliedZoom},${svg.path.translateY * appliedZoom})`;
-  }, 
-  [disableTranslate, svg.path.disableZoomOnYTranslation, svg.path.scaleX, svg.path.scaleY, svg.path.translateX, svg.path.translateY, appliedZoom]);
-  
+
+    return `scale(${svg.path.scaleX * appliedZoom} ${svg.path.scaleY * appliedZoom}) translate(${
+      svg.path.translateX * appliedZoom
+    },${svg.path.translateY * appliedZoom})`;
+  }, [
+    disableTranslate,
+    svg.path.disableZoomOnYTranslation,
+    svg.path.scaleX,
+    svg.path.scaleY,
+    svg.path.translateX,
+    svg.path.translateY,
+    appliedZoom,
+  ]);
+
   const appliedStyle = useMemo(() => {
     const appliedLeftMargin = zoomifyMargin(style?.marginLeft, appliedZoom);
     if (appliedLeftMargin) {
@@ -67,15 +86,15 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
 
     return {
       ...style,
-      ...overridenStyle
+      ...overridenStyle,
     };
-  },[appliedZoom, overridenStyle, style]);
+  }, [appliedZoom, overridenStyle, style]);
 
   const handleClick = useCallback(() => {
     if (disableSound) {
       return;
     }
-    
+
     if (textToSpeech) {
       speak(textToSpeech);
       return;
@@ -83,13 +102,10 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
     if (audioUrl) {
       startAudio();
     }
-  
   }, [audioUrl, disableSound, speak, startAudio, textToSpeech]);
-  
+
   return (
-    <span
-      style={appliedStyle}
-    >
+    <span style={appliedStyle}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/2000/svg"
@@ -115,11 +131,14 @@ export const LetterRenderer: FC<LetterRendererOwnProps> = ({ style, overridenSty
   );
 };
 
-function zoomifyMargin(margin: string | number | undefined, zoom: number): string | number | undefined {
+function zoomifyMargin(
+  margin: string | number | undefined,
+  zoom: number,
+): string | number | undefined {
   if (zoom === 1) {
     return margin;
   }
-  
+
   if (typeof margin === 'number') {
     return margin * zoom;
   }

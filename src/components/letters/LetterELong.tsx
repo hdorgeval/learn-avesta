@@ -4,10 +4,10 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterEh = (): Letter => ({
   pronunciation: {
-    'fr': 'long é, like the sequence eh.',
+    fr: 'long é, like the sequence eh.',
   },
   transcription: 'ē',
-  render : (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <LetterELong {...props} />;
   },
 });
@@ -18,7 +18,13 @@ export const useLetterEh = (): Letter => ({
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/PL/02D0.mp3
  * @alias: ē
  */
-export const LetterELong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
+export const LetterELong: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -39,11 +45,9 @@ export const LetterELong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, di
         translateX: 0,
         translateY: 30,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterT= (): Letter => ({
+export const useLetterT = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter t in table ; ',
-    'en': 'like the letter t in tea, getting.'
+    fr: 'like the letter t in table ; ',
+    en: 'like the letter t in tea, getting.',
   },
   transcription: 't',
   render: (props?: LetterOwnProps) => {
@@ -14,12 +14,18 @@ export const useLetterT= (): Letter => ({
 });
 
 /**
- * Letter T 
+ * Letter T
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/PL/0074.mp3
  * @alias: t
  */
-export const LetterT: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const LetterT: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -40,11 +46,9 @@ export const LetterT: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: 0,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

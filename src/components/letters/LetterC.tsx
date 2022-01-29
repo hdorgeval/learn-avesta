@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterC = (): Letter => ({
   pronunciation: {
-    'fr': 'like the sequence tch in atchoum ;',
-    'en': 'like the sequence ch in chair, church, check.'
+    fr: 'like the sequence tch in atchoum ;',
+    en: 'like the sequence ch in chair, church, check.',
   },
   transcription: 'c',
   render: (props?: LetterOwnProps) => {
@@ -19,7 +19,13 @@ export const useLetterC = (): Letter => ({
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0078.mp3
  * @alias: c
  */
-export const LetterC: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
+export const LetterC: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -41,11 +47,9 @@ export const LetterC: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateY: 30,
         disableZoomOnYTranslation: true,
         strokeWidth: 2,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

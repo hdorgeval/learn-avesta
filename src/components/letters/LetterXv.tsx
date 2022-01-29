@@ -3,10 +3,10 @@ import letterXSound from '../../assets/sounds/letter-x.mp3';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterXv= (): Letter => ({
+export const useLetterXv = (): Letter => ({
   pronunciation: {
-    'fr': 'like the sequence Khw in khwa (to be pronounced more or less like the word Roi) ;',
-    'es': 'like the letter j in Juan ;',
+    fr: 'like the sequence Khw in khwa (to be pronounced more or less like the word Roi) ;',
+    es: 'like the letter j in Juan ;',
   },
   transcription: 'x<raised>v',
   render: (props?: LetterOwnProps) => {
@@ -17,11 +17,16 @@ export const useLetterXv= (): Letter => ({
 /**
  * Letter Xv like in Spanish "Juan" (could be transcribed as Khw)
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: x raised by the letter v
  */
-export const LetterXv: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disableSound, disableTranslate }) => {
-  
+export const LetterXv: FC<LetterOwnProps> = ({
+  fill,
+  zoom,
+  overridenStyle,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -43,11 +48,9 @@ export const LetterXv: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disab
         translateX: 0,
         translateY: 25,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

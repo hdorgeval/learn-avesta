@@ -5,18 +5,18 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useWordSeparator = (): Letter => ({
   pronunciation: {},
   transcription: '.',
-  render : (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <WordSeparator {...props} />;
   },
 });
 
 /**
- * Word separator. 
+ * Word separator.
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: .
  */
-export const WordSeparator: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
+export const WordSeparator: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     style: {
@@ -35,11 +35,8 @@ export const WordSeparator: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, 
         translateX: 0,
         translateY: 20,
         strokeWidth: 0.5,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
-  
+  return <LetterRenderer {...props} />;
 };

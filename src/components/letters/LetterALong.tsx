@@ -4,22 +4,22 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterALong = (): Letter => ({
   pronunciation: {
-    'fr': 'long a, like the sequence ah ;',
-    'en': 'like the letter a in father.'
+    fr: 'long a, like the sequence ah ;',
+    en: 'like the letter a in father.',
   },
   transcription: 'ā',
-  render : (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <LetterALong {...props} />;
   },
 });
 
 /**
- * Letter A long 
+ * Letter A long
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: ɑ̄
  */
-export const LetterALong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
+export const LetterALong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     textToSpeech: '/a-long/',
@@ -39,11 +39,8 @@ export const LetterALong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, di
         translateX: 0,
         translateY: 0,
         strokeWidth: 0.5,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
-  
+  return <LetterRenderer {...props} />;
 };

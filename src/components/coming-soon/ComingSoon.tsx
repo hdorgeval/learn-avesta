@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 export const ComingSoon: FC = () => {
   return (
@@ -7,4 +7,3 @@ export const ComingSoon: FC = () => {
     </div>
   );
 };
-

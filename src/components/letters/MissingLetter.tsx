@@ -5,18 +5,18 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useMissingLetter = (): Letter => ({
   pronunciation: {},
   transcription: '-',
-  render : (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <MissingLetter {...props} />;
   },
 });
 
 /**
- * Placeholder for missing letters. 
+ * Placeholder for missing letters.
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: -
  */
-export const MissingLetter: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound  }) => {
+export const MissingLetter: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound }) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     style: {
@@ -35,11 +35,8 @@ export const MissingLetter: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, 
         translateX: 10,
         translateY: 20,
         strokeWidth: 0.5,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
-  
+  return <LetterRenderer {...props} />;
 };

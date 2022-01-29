@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
-import { Letter } from "../letters";
-import { useLetters } from "./useLetters";
+import { useMemo, useState } from 'react';
+import { Letter } from '../letters';
+import { useLetters } from './useLetters';
 
 export const useSlicesOfShuffledLetters = (size: number) => {
   const letters = useLetters();

@@ -4,8 +4,8 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterD = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter d in date ;',
-    'en': 'like the letter d in dad.'
+    fr: 'like the letter d in date ;',
+    en: 'like the letter d in dad.',
   },
   transcription: 'd',
 
@@ -15,12 +15,18 @@ export const useLetterD = (): Letter => ({
 });
 
 /**
- * Letter D 
+ * Letter D
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/PL/0064.mp3
  * @alias: d
  */
-export const LetterD: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
+export const LetterD: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -41,11 +47,9 @@ export const LetterD: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: 15,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

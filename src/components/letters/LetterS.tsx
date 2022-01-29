@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterS= (): Letter => ({
+export const useLetterS = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter s in solide ;',
-    'en': 'like the letter s in sun, miss.'
+    fr: 'like the letter s in solide ;',
+    en: 'like the letter s in sun, miss.',
   },
   transcription: 's',
   render: (props?: LetterOwnProps) => {
@@ -14,12 +14,18 @@ export const useLetterS= (): Letter => ({
 });
 
 /**
- * Letter S 
+ * Letter S
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JW/0073.mp3
  * @alias: s
  */
-export const LetterS: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
+export const LetterS: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -40,11 +46,9 @@ export const LetterS: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: -5,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

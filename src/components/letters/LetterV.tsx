@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterV= (): Letter => ({
+export const useLetterV = (): Letter => ({
   pronunciation: {
-    'fr': 'like the letter v in vite ;',
-    'en': 'like the letter v in voice, five.'
+    fr: 'like the letter v in vite ;',
+    en: 'like the letter v in voice, five.',
   },
   transcription: 'v',
   render: (props?: LetterOwnProps) => {
@@ -19,7 +19,13 @@ export const useLetterV= (): Letter => ({
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0076.mp3
  * @alias: v
  */
-export const LetterV: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const LetterV: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -40,11 +46,9 @@ export const LetterV: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: 0,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

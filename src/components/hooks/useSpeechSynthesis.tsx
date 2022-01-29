@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 interface SpeechRequest {
   text: string;
@@ -6,101 +6,101 @@ interface SpeechRequest {
   rate: number;
 }
 
-export const phoneticSpeechSynthesis  : Record<string, SpeechRequest> ={
+export const phoneticSpeechSynthesis: Record<string, SpeechRequest> = {
   '/a-long/': {
     text: 'ah',
     pitch: 0.9,
-    rate: 0.5
+    rate: 0.5,
   },
-  '/a/':{
+  '/a/': {
     text: 'ah',
     pitch: 0.3,
-    rate: 1.6
+    rate: 1.6,
   },
   '/b/': {
     text: 'bea',
     pitch: 0.9,
-    rate: 1.1
+    rate: 1.1,
   },
   '/c/': {
     text: 'che',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/d/': {
     text: 'd',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/j/': {
     text: 'djea',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/e/': {
     text: 'e',
     pitch: 0.9,
-    rate: 1.6
+    rate: 1.6,
   },
   '/e-long/': {
     text: 'e',
     pitch: 0.9,
-    rate: 0.5
+    rate: 0.5,
   },
   '/f/': {
     text: 'f',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/g/': {
     text: 'ghu',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/h/': {
     text: 'h',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/o/': {
     text: 'o',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/o-long/': {
     text: 'oh',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/r/': {
     text: 'r',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/s/': {
     text: 's',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/t/': {
     text: 't',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/v/': {
     text: 'v',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/z/': {
     text: 'z',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
   '/xv/': {
     text: 'rwa',
     pitch: 1,
-    rate: 1
+    rate: 1,
   },
 };
 
@@ -112,19 +112,21 @@ function isPhonetic(text: string): boolean {
  * translate, if needed, phonetical text to speech
  * @see https://mdn.github.io/web-speech-api/speak-easy-synthesis/index.html
  */
-function  toSpeechRequest(text: string): SpeechRequest {
+function toSpeechRequest(text: string): SpeechRequest {
   if (phoneticSpeechSynthesis[text]) {
     return phoneticSpeechSynthesis[text];
   }
 
   if (isPhonetic(text)) {
-    throw new Error(`Unsupported phonetic sequence: ${text}. Maybe you forgot to update the phoneticSpeechSynthesis object?`);
+    throw new Error(
+      `Unsupported phonetic sequence: ${text}. Maybe you forgot to update the phoneticSpeechSynthesis object?`,
+    );
   }
 
   return {
     text,
     pitch: 1,
-    rate: 1
+    rate: 1,
   };
 }
 
@@ -144,7 +146,7 @@ export const useSpeechSynthesis = () => {
 
     const request = toSpeechRequest(text);
     const utterance = new SpeechSynthesisUtterance(request.text);
-    utterance.lang = "en-US";
+    utterance.lang = 'en-US';
     utterance.rate = request.rate;
     utterance.pitch = request.pitch;
     window.speechSynthesis.speak(utterance);

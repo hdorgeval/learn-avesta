@@ -3,11 +3,11 @@ import letterXSound from '../../assets/sounds/letter-x.mp3';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterX= (): Letter => ({
+export const useLetterX = (): Letter => ({
   pronunciation: {
-    'fr': 'like the sequence Kh in Khalid (to be pronounced more or less like rhalid) ;',
-    'es': 'like the letter j in Juan ;',
-    'de': 'like the sequence ch in nach.'
+    fr: 'like the sequence Kh in Khalid (to be pronounced more or less like rhalid) ;',
+    es: 'like the letter j in Juan ;',
+    de: 'like the sequence ch in nach.',
   },
   transcription: 'x',
   render: (props?: LetterOwnProps) => {
@@ -21,8 +21,13 @@ export const useLetterX= (): Letter => ({
  * @audio:  https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/sounds/JH/0078.mp3
  * @alias: x
  */
-export const LetterX: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle,  disableSound, disableTranslate }) => {
-  
+export const LetterX: FC<LetterOwnProps> = ({
+  fill,
+  zoom,
+  overridenStyle,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -43,11 +48,9 @@ export const LetterX: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle,  disab
         translateX: 0,
         translateY: -22,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

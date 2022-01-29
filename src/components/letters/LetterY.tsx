@@ -3,10 +3,10 @@ import letterYSound from '../../assets/sounds/letter-y.mp3';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterY= (): Letter => ({
+export const useLetterY = (): Letter => ({
   pronunciation: {
-    'fr': 'like the y in yaourt ;',
-    'en': 'like the letter y in yes ;',
+    fr: 'like the y in yaourt ;',
+    en: 'like the letter y in yes ;',
   },
   transcription: 'y',
   render: (props?: LetterOwnProps) => {
@@ -17,13 +17,18 @@ export const useLetterY= (): Letter => ({
 /**
  * Letter Y like in English "yes"
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: y
  * @position: used only as the first letter in words
  * @variation: Indo-Parsi
  */
-export const LetterY: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disableSound, disableTranslate }) => {
-  
+export const LetterY: FC<LetterOwnProps> = ({
+  fill,
+  zoom,
+  overridenStyle,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -45,11 +50,9 @@ export const LetterY: FC<LetterOwnProps> = ({ fill, zoom, overridenStyle, disabl
         translateY: 10,
         disableZoomOnYTranslation: true,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  
-  return (
-    <LetterRenderer {...props} />
-  );
+
+  return <LetterRenderer {...props} />;
 };

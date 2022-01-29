@@ -4,18 +4,23 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterILong = (): Letter => ({
-  pronunciation : {
-    'fr': 'long i like the letter i in amie ;',
-    'en': 'like the sound ee in feet.'
+  pronunciation: {
+    fr: 'long i like the letter i in amie ;',
+    en: 'like the sound ee in feet.',
   },
-  transcription : 'ī',
-  render : (props?: LetterOwnProps) => {
+  transcription: 'ī',
+  render: (props?: LetterOwnProps) => {
     return <LetterILong {...props} />;
   },
 });
 
-export const LetterILong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
-  
+export const LetterILong: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -36,10 +41,8 @@ export const LetterILong: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, di
         translateX: 0,
         translateY: 15,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
+  return <LetterRenderer {...props} />;
 };

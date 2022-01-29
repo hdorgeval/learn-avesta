@@ -3,18 +3,23 @@ import letterUSound from '../../assets/sounds/letter-u.mp3';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterU = (): Letter => ({
-  pronunciation : {
-    'fr': 'like the sound ou in loup;',
-    'en': 'like the letter u in put.'
+  pronunciation: {
+    fr: 'like the sound ou in loup;',
+    en: 'like the letter u in put.',
   },
-  transcription : 'u',
-  render : (props?: LetterOwnProps) => {
+  transcription: 'u',
+  render: (props?: LetterOwnProps) => {
     return <LetterU {...props} />;
   },
 });
 
-export const LetterU: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate }) => {
-  
+export const LetterU: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -35,10 +40,8 @@ export const LetterU: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disabl
         translateX: 0,
         translateY: -10,
         strokeWidth: 1,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
+  return <LetterRenderer {...props} />;
 };

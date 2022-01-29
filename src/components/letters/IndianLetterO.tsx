@@ -4,22 +4,28 @@ import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useIndianLetterO = (): Letter => ({
   pronunciation: {
-    'fr': 'o, like the letter o in pot ;',
-    'en': 'like the letter o in going.'
+    fr: 'o, like the letter o in pot ;',
+    en: 'like the letter o in going.',
   },
   transcription: 'o',
-  render : (props?: LetterOwnProps) => {
+  render: (props?: LetterOwnProps) => {
     return <IndianLetterO {...props} />;
   },
 });
 
 /**
- * Letter O 
+ * Letter O
  * @link: https://www.internationalphoneticassociation.org/IPAcharts/inter_chart_2018/IPA_2018.html
- * @audio:  
+ * @audio:
  * @alias: o
  */
-export const IndianLetterO: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, disableSound, disableTranslate  }) => {
+export const IndianLetterO: FC<LetterOwnProps> = ({
+  fill,
+  overridenStyle,
+  zoom,
+  disableSound,
+  disableTranslate,
+}) => {
   const props: LetterRendererOwnProps = {
     disableSound,
     disableTranslate,
@@ -40,11 +46,8 @@ export const IndianLetterO: FC<LetterOwnProps> = ({ fill, overridenStyle, zoom, 
         translateX: 0,
         translateY: -55,
         strokeWidth: 0.5,
-      }
-    }
+      },
+    },
   };
-  return (
-    <LetterRenderer {...props} />
-  );
-  
+  return <LetterRenderer {...props} />;
 };
