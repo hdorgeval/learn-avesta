@@ -1,7 +1,10 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 export const useAudioFromUrl = (url: string | undefined) => {
-  const [audio] = useState(new Audio(url));
+  const audio = useMemo(() => {
+    return new Audio(url);
+  }, [url]);
+
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
