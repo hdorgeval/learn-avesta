@@ -12,9 +12,9 @@ export const Transcription: React.FC<TranscriptionOwnProps> = ({ letter }) => {
         <span>{parts[0]}</span>
         <span
           className="position-absolute"
-          style={{ marginTop: '0px', marginLeft: '-0.3em', fontSize: 'smaller' }}
+          style={{ marginTop: '0px', marginLeft: '-0.5em', fontSize: 'smaller' }}
         >
-          {parts[1]}
+          &#711;
         </span>
       </>
     );
