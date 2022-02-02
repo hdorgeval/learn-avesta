@@ -80,35 +80,36 @@ export const DrawingActivity: React.FC = () => {
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header bg-dark text-light">
               <h5 className="modal-title" id="modalLetterPickerLabel">
                 Pick a character
               </h5>
               <button
                 type="button"
-                className="btn-close"
+                className="btn-close btn-close-white"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">
-              <div
-                className="d-grid gap-2 d-xl-block overflow-scroll"
-                style={{ maxHeight: '200px' }}
-              >
-                {letters.map((letter: Letter, index) => (
-                  <button
-                    key={`${letter.transcription}-${index}`}
-                    className="btn btn-primary btn-large w-100 mb-xl-1"
-                    type="button"
-                    onClick={() => handlePickLetter(letter)}
-                  >
-                    {letter.render({ zoom: 1 })}
-                  </button>
-                ))}
+            <div className="modal-body bg-dark text-light">
+              <div className="container-fluid">
+                <div
+                  className="row row-cols-5 gx-4 justify-content-evenly align-items-center overflow-auto"
+                  style={{ maxHeight: '200px' }}
+                >
+                  {letters.map((letter: Letter, index) => (
+                    <div
+                      key={`${index}`}
+                      className="col m-2 d-flex justify-content-evenly align-items-center h-100 cursor-pointer"
+                      onClick={() => handlePickLetter(letter)}
+                    >
+                      {letter.render({ zoom: 1 })}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="modal-footer">
+            <div className="modal-footer bg-dark text-light">
               <button
                 type="button"
                 className="btn btn-secondary"
