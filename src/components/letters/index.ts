@@ -19,6 +19,7 @@ export * from './LetterO';
 export * from './LetterOLong';
 export * from './LetterR';
 export * from './LetterS';
+export * from './LetterSSH';
 export * from './LetterT';
 export * from './LetterU';
 export * from './LetterV';
