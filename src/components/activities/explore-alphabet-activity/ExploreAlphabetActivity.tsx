@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useAnalytics, useLetters } from '../../hooks';
 import { Letter, LetterPronunciation } from '../../letters';
-import { Transcription } from '../../letters/Transcription';
+import { AlternateTranscriptions, Transcription } from '../../letters/Transcription';
 
 export const ExploreAlphabetActivity: React.FC = () => {
   const [selectedLetter, setSelectedLetter] = useState<Letter | undefined>(undefined);
@@ -29,6 +29,21 @@ export const ExploreAlphabetActivity: React.FC = () => {
   const shuffledLetters = useMemo(() => {
     return [...letters].sort(() => Math.random() - 0.5);
   }, [letters]);
+  const hasAlternateTranscriptions = useMemo(() => {
+    return (
+      selectedLetter &&
+      Array.isArray(selectedLetter.alternateTranscriptions) &&
+      selectedLetter.alternateTranscriptions.length >= 1
+    );
+  }, [selectedLetter]);
+
+  const hasMultipleAlternateTranscriptions = useMemo(() => {
+    return (
+      selectedLetter &&
+      Array.isArray(selectedLetter.alternateTranscriptions) &&
+      selectedLetter.alternateTranscriptions.length > 1
+    );
+  }, [selectedLetter]);
 
   const handleClickOnLetter = useCallback(
     (letter: Letter, index: number) => {
@@ -148,6 +163,12 @@ export const ExploreAlphabetActivity: React.FC = () => {
                 <div className="card-title h5 text-start border-bottom border-bottom-1 border-secondary pb-2">
                   Transcription : <Transcription letter={selectedLetter} />
                 </div>
+                {hasAlternateTranscriptions && (
+                  <div className="card-title h5 text-start border-bottom border-bottom-1 border-secondary pb-2">
+                    Alternate transcription{hasMultipleAlternateTranscriptions && <>s</>} :{' '}
+                    <AlternateTranscriptions letter={selectedLetter} />
+                  </div>
+                )}
                 {Object.keys(selectedLetter.pronunciation).map((countryCode) => (
                   <div
                     className="text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2"

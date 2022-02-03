@@ -78,5 +78,6 @@ export interface Letter {
 
   pronunciation: LetterPronunciation;
   transcription: TranscriptionSymbol;
+  alternateTranscriptions?: TranscriptionSymbol[];
   render: (props?: LetterOwnProps) => JSX.Element;
 }

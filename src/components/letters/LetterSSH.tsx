@@ -8,6 +8,7 @@ export const useLetterSSH = (): Letter => ({
     en: 'like the sequence sh in ashame.',
   },
   transcription: 'ṣ̌',
+  alternateTranscriptions: ['ṣ'],
   render: (props?: LetterOwnProps) => {
     return <LetterSSH {...props} />;
   },
