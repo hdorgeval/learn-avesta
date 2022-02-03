@@ -87,8 +87,7 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
     if (isLastWordInSentence || isLastWordInParagraph) {
       characters.push('.');
     }
-    // eslint-disable-next-line no-console
-    console.log(characters);
+
     return characters;
   }, [isLastWordInParagraph, isLastWordInSentence, transcriptions]);
 
