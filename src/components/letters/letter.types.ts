@@ -79,5 +79,11 @@ export interface Letter {
   pronunciation: LetterPronunciation;
   transcription: TranscriptionSymbol;
   alternateTranscriptions?: TranscriptionSymbol[];
+  sampleWord?: SampleWord;
   render: (props?: LetterOwnProps) => JSX.Element;
+}
+
+export interface SampleWord {
+  transcript: string;
+  audioUrl?: string;
 }

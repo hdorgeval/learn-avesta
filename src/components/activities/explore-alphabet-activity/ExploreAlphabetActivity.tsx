@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useAnalytics, useLetters } from '../../hooks';
 import { Letter, LetterPronunciation } from '../../letters';
 import { AlternateTranscriptions, Transcription } from '../../letters/Transcription';
+import { AvestaWord } from '../../words';
 
 export const ExploreAlphabetActivity: React.FC = () => {
   const [selectedLetter, setSelectedLetter] = useState<Letter | undefined>(undefined);
@@ -44,7 +45,6 @@ export const ExploreAlphabetActivity: React.FC = () => {
       selectedLetter.alternateTranscriptions.length > 1
     );
   }, [selectedLetter]);
-
   const handleClickOnLetter = useCallback(
     (letter: Letter, index: number) => {
       setSelectedLetter(letter);
@@ -180,9 +180,25 @@ export const ExploreAlphabetActivity: React.FC = () => {
                     </p>
                   </div>
                 ))}
+                {selectedLetter.sampleWord && (
+                  <>
+                    <div className="d-flex flex-row justify-content-start text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">
+                      <p className="mb-1">Sample word : </p>
+                      <AvestaWord
+                        transcript={selectedLetter.sampleWord?.transcript}
+                        zoom={0.5}
+                        audioUrl={selectedLetter.sampleWord?.audioUrl}
+                      />
+                    </div>
+                    <p className="text-start mb-1 fst-italic">
+                      <i className="bi bi-lightbulb"></i>Tip : you can click on the word above to
+                      get it's sound.
+                    </p>
+                  </>
+                )}
                 <p className="text-start mb-1 fst-italic">
                   <i className="bi bi-lightbulb"></i>Tip : you can click on the character on the
-                  left to get it's sound.
+                  left to get it's sound;
                 </p>
                 <button className="btn btn-primary mt-2 me-2" onClick={goBackToCarousel}>
                   Got it ! Continue exploring the alphabet

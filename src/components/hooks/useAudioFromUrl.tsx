@@ -1,30 +1,58 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export const useAudioFromUrl = (url: string | undefined) => {
-  const audio = useMemo(() => {
-    return new Audio(url);
-  }, [url]);
-
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const [audio, setAudio] = useState<HTMLAudioElement | undefined>(undefined);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    playing ? audio.play() : audio.pause();
-  }, [audio, playing]);
+    if (!url) {
+      return;
+    }
+    if (audio && playing) {
+      audio.play();
+      return;
+    }
+
+    if (audio && !playing) {
+      audio.pause();
+      return;
+    }
+  }, [audio, playing, url]);
 
   useEffect(() => {
-    audio.addEventListener('ended', () => setPlaying(false));
-    return () => {
-      audio.removeEventListener('ended', () => setPlaying(false));
-    };
+    if (audio) {
+      audio.addEventListener('ended', () => setPlaying(false));
+      return () => {
+        if (audio) {
+          audio.removeEventListener('ended', () => setPlaying(false));
+          audio.removeEventListener('loadeddata', () => setHasLoaded(false));
+        }
+      };
+    }
   }, [audio]);
 
   const start = useCallback(() => {
+    if (!hasLoaded) {
+      const dowloadedAudio = new Audio(url);
+      setPlaying(true);
+      setHasLoaded(true);
+      setAudio(dowloadedAudio);
+      dowloadedAudio.addEventListener('loadeddata', () => {
+        dowloadedAudio.play();
+      });
+      return;
+    }
+
     if (playing) {
       return;
     }
+
     setPlaying(true);
-    audio.play();
-  }, [audio, playing]);
+    if (audio) {
+      audio.play();
+    }
+  }, [audio, hasLoaded, playing, url]);
 
   return [start];
 };

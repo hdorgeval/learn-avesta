@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import letterSSHSound from '../../assets/sounds/letter-ssh.mp3';
+import wordSampleSound from '../../assets/sounds/words/ashaa.mp3';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterSSH = (): Letter => ({
@@ -9,6 +10,7 @@ export const useLetterSSH = (): Letter => ({
   },
   transcription: 'ṣ̌',
   alternateTranscriptions: ['ṣ'],
+  sampleWord: { transcript: 'aṣā', audioUrl: wordSampleSound },
   render: (props?: LetterOwnProps) => {
     return <LetterSSH {...props} />;
   },

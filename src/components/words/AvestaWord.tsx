@@ -1,7 +1,8 @@
 import { useCallback, useMemo, useState } from 'react';
 import { splitTranscript } from '../../tools/common/transcript';
-import { useAllLetters } from '../hooks';
+import { useAllLetters, useAudioFromUrl } from '../hooks';
 import {
+  hasTranscription,
   useMissingLetter,
   useParagraphSeparator,
   useSentenceSeparator,
@@ -22,9 +23,11 @@ export interface AvestaWordOwnProps {
   isLastWordInSentence?: boolean;
   isLastWordInParagraph?: boolean;
   renderTranscriptOnly?: boolean;
+  audioUrl?: string;
 }
 
 export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
+  audioUrl,
   transcript,
   zoom,
   timeline,
@@ -40,6 +43,8 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
   const wordSeparator = useWordSeparator();
   const sentenceSeparator = useSentenceSeparator();
   const paragraphSeparator = useParagraphSeparator();
+  const [appliedAudioUrl] = useState<string | undefined>(audioUrl);
+  const [startAudio] = useAudioFromUrl(appliedAudioUrl);
 
   const separator = useMemo(() => {
     if (isLastWordInParagraph) {
@@ -62,8 +67,8 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
     const characters = transcriptions
       .map((t) => t.toLowerCase())
       .map((transcription) => {
-        const lettersWithSameTranscription = allLeters.filter(
-          (letter) => letter.transcription === transcription,
+        const lettersWithSameTranscription = allLeters.filter((letter) =>
+          hasTranscription(letter, transcription),
         );
 
         if (lettersWithSameTranscription.length === 0) {
@@ -113,7 +118,11 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
     if (onWordSeek && timeline) {
       onWordSeek(timeline);
     }
-  }, [onWordSeek, timeline]);
+
+    if (audioUrl) {
+      startAudio();
+    }
+  }, [audioUrl, onWordSeek, startAudio, timeline]);
 
   return (
     <>
