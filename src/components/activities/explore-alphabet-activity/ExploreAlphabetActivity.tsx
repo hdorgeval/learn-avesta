@@ -164,7 +164,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
                   Transcription : <Transcription letter={selectedLetter} />
                 </div>
                 {hasAlternateTranscriptions && (
-                  <div className="card-title h5 text-start border-bottom border-bottom-1 border-secondary pb-2">
+                  <div className="card-title h6 text-start border-bottom border-bottom-1 border-secondary pb-2">
                     Alternate transcription{hasMultipleAlternateTranscriptions && <>s</>} :{' '}
                     <AlternateTranscriptions letter={selectedLetter} />
                   </div>
