@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useIndianLetterO = (): Letter => ({
+  id: 'o2',
   pronunciation: {
     fr: 'o, like the letter o in pot ;',
     en: 'like the letter o in going.',

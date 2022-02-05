@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterZ = (): Letter => ({
+  id: 'z',
   pronunciation: {
     fr: 'like the letter z in zoro ;',
     en: 'like the letter z in zoo.',

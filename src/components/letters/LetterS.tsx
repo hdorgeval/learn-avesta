@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterS = (): Letter => ({
+  id: 's',
   pronunciation: {
     fr: 'like the letter s in solide ;',
     en: 'like the letter s in sun, miss.',

@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterEh = (): Letter => ({
+  id: 'ē',
   pronunciation: {
     fr: 'long é, like the sequence eh.',
   },

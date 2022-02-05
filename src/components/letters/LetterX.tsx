@@ -4,6 +4,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterX = (): Letter => ({
+  id: 'x',
   pronunciation: {
     fr: 'like the sequence Kh in Khalid (to be pronounced more or less like rhalid) ;',
     es: 'like the letter j in Juan ;',

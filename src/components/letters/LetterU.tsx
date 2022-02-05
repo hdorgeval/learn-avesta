@@ -3,6 +3,7 @@ import letterUSound from '../../assets/sounds/letter-u.mp3';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterU = (): Letter => ({
+  id: 'u',
   pronunciation: {
     fr: 'like the sound ou in loup;',
     en: 'like the letter u in put.',

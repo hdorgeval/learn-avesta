@@ -4,6 +4,7 @@ import wordSampleSound from '../../assets/sounds/words/ashaa.mp3';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterSSH = (): Letter => ({
+  id: 'ssh',
   pronunciation: {
     fr: 'like the sequence ch in château ;',
     en: 'like the sequence sh in ashame.',

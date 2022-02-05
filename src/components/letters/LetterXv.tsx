@@ -4,6 +4,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterXv = (): Letter => ({
+  id: 'xv',
   pronunciation: {
     fr: 'like the sequence Khw in khwa (to be pronounced more or less like the word Roi) ;',
     es: 'like the letter j in Juan ;',

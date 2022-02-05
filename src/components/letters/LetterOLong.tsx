@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterOLong = (): Letter => ({
+  id: 'ō1',
   isPreferred: true,
   pronunciation: {
     fr: 'long o, like the letter o in hôte ;',

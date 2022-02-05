@@ -67,6 +67,7 @@ export type TranscriptionSymbol =
   | '***';
 
 export interface Letter {
+  id: string;
   hasBeenMatched?: boolean;
   /**
    * When true, the letter will be selected among the letters with the same transcription.

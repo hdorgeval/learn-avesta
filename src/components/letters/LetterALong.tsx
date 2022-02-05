@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterALong = (): Letter => ({
+  id: 'ā',
   pronunciation: {
     fr: 'long a, like the sequence ah ;',
     en: 'like the letter a in father.',

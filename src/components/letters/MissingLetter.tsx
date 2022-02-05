@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useMissingLetter = (): Letter => ({
+  id: '-',
   pronunciation: {},
   transcription: '-',
   render: (props?: LetterOwnProps) => {

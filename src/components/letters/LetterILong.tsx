@@ -4,6 +4,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterILong = (): Letter => ({
+  id: 'ī',
   pronunciation: {
     fr: 'long i like the letter i in amie ;',
     en: 'like the sound ee in feet.',

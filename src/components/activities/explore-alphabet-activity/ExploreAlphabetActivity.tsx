@@ -42,6 +42,28 @@ export const ExploreAlphabetActivity: React.FC = () => {
     );
   }, [selectedLetter]);
 
+  const hasOtherShapes = useMemo(() => {
+    return (
+      selectedLetter &&
+      letters.filter((letter) => letter.transcription === selectedLetter.transcription).length > 1
+    );
+  }, [letters, selectedLetter]);
+  const hasMulitpleOtherShapes = useMemo(() => {
+    return (
+      selectedLetter &&
+      letters.filter((letter) => letter.transcription === selectedLetter.transcription).length > 2
+    );
+  }, [letters, selectedLetter]);
+
+  const otherShapes = useMemo(() => {
+    if (!selectedLetter) {
+      return [];
+    }
+    return letters
+      .filter((letter) => letter.transcription === selectedLetter.transcription)
+      .filter((letter) => letter.id !== selectedLetter.id);
+  }, [letters, selectedLetter]);
+
   const hasMultipleAlternateTranscriptions = useMemo(() => {
     return (
       selectedLetter &&
@@ -217,6 +239,20 @@ export const ExploreAlphabetActivity: React.FC = () => {
                   <div className="card-title h6 text-start border-bottom border-bottom-1 border-secondary pb-2">
                     Alternate transcription{hasMultipleAlternateTranscriptions && <>s</>} :{' '}
                     <AlternateTranscriptions letter={selectedLetter} />
+                  </div>
+                )}
+                {hasOtherShapes && (
+                  <div className="card-title h6 text-start border-bottom border-bottom-1 border-secondary pb-2 d-flex justify-content-start align-items-center h-100">
+                    Other shape{hasMulitpleOtherShapes && <>s</>} :{' '}
+                    {otherShapes.map((letter: Letter, index) => (
+                      <span
+                        key={`${index}`}
+                        className="m-2  cursor-pointer"
+                        onClick={() => handleClickOnLetter(letter, index)}
+                      >
+                        {letter.render({ zoom: 1 })}
+                      </span>
+                    ))}
                   </div>
                 )}
                 {Object.keys(selectedLetter.pronunciation).map((countryCode) => (

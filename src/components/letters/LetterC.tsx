@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterC = (): Letter => ({
+  id: 'c',
   pronunciation: {
     fr: 'like the sequence tch in atchoum ;',
     en: 'like the sequence ch in chair, church, check.',

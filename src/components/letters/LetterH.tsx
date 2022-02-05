@@ -3,6 +3,7 @@ import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterH = (): Letter => ({
+  id: 'h',
   pronunciation: {
     fr: 'like the letter h in ha-ha-ha ;',
     en: 'like the letter h in hello.',
