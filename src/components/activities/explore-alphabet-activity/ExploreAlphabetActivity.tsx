@@ -7,8 +7,12 @@ import { AvestaWord } from '../../words';
 export const ExploreAlphabetActivity: React.FC = () => {
   const [selectedLetter, setSelectedLetter] = useState<Letter | undefined>(undefined);
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
-
+  const [displayCarrousel, setDisplayCarrousel] = useState<boolean>(true);
   const [displayNewComerHint, setDisplayNewComerHint] = useState(true);
+  const [displayLetterPickerHint, setDisplayLetterPickerHint] = useState(false);
+  const [displayLetterPickerButton, setDisplayLetterPickerButton] = useState(false);
+  const [displayLetterPickerModal, setdisplayLetterPickerModal] = useState(false);
+  const [userHasAckedLetterPickerHint, setuserHasAckedLetterPickerHint] = useState(false);
 
   const letters = useLetters();
   const maxIndex = useMemo(() => letters.length - 1, [letters]);
@@ -45,10 +49,14 @@ export const ExploreAlphabetActivity: React.FC = () => {
       selectedLetter.alternateTranscriptions.length > 1
     );
   }, [selectedLetter]);
+
   const handleClickOnLetter = useCallback(
     (letter: Letter, index: number) => {
       setSelectedLetter(letter);
       setSelectedIndex(index);
+      setDisplayCarrousel(false);
+      setdisplayLetterPickerModal(false);
+      addEvent(`explore-letter-${letter.transcription}-`);
       addEvent('explore-letter');
     },
     [addEvent],
@@ -56,12 +64,30 @@ export const ExploreAlphabetActivity: React.FC = () => {
 
   const goBackToCarousel = useCallback(() => {
     setSelectedLetter(undefined);
+    setDisplayCarrousel(true);
     setDisplayNewComerHint(false);
+    userHasAckedLetterPickerHint
+      ? setDisplayLetterPickerHint(false)
+      : setDisplayLetterPickerHint(true);
+    setDisplayLetterPickerButton(true);
+    setdisplayLetterPickerModal(false);
     addEvent('go-back-to-alphabet-explorer');
-  }, [addEvent]);
+  }, [addEvent, userHasAckedLetterPickerHint]);
 
+  const handleClickOnPickerLetterButton = useCallback(() => {
+    setSelectedLetter(undefined);
+    setDisplayCarrousel(false);
+    setDisplayLetterPickerButton(false);
+    setdisplayLetterPickerModal(true);
+    addEvent('display-picker-letter-modal-in-alphabet-explorer');
+  }, [addEvent]);
   const handleNewComerHint = useCallback(() => {
     setDisplayNewComerHint(false);
+  }, []);
+
+  const handlePickerLetterHint = useCallback(() => {
+    setDisplayLetterPickerHint(false);
+    setuserHasAckedLetterPickerHint(true);
   }, []);
 
   const translateCountryCode = useCallback((countryCode: string) => {
@@ -82,7 +108,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
 
   return (
     <>
-      {!selectedLetter && (
+      {displayCarrousel && (
         <>
           <div
             id="avestaAlphabetExplorer"
@@ -109,7 +135,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
               {shuffledLetters.map((letter, i) => (
                 <div
                   key={`${i}`}
-                  className={`carousel-item ${i === 0 ? 'active' : ''}`}
+                  className={`cursor-pointer carousel-item ${i === 0 ? 'active' : ''}`}
                   onClick={() => handleClickOnLetter(letter, i)}
                 >
                   {letter.render()}
@@ -144,6 +170,30 @@ export const ExploreAlphabetActivity: React.FC = () => {
                   and to display more infos.
                 </p>
                 <button className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>
+                  Got it !
+                </button>
+              </div>
+            </div>
+          )}
+          {displayLetterPickerButton && (
+            <button
+              className="btn btn-primary mt-2 me-2 w-100"
+              onClick={handleClickOnPickerLetterButton}
+            >
+              Pick another character
+            </button>
+          )}
+          {displayLetterPickerHint && (
+            <div className="card bg-dark text-light">
+              <div className="card-body">
+                <p className="card-text">
+                  <i className="bi bi-lightbulb"></i> Now you can either pick the above letter or,
+                  if the above letter has no more secrets for you, you can fetch the next one by
+                  using the arrows <span className="fw-bold fs-4">&#62;</span> and{' '}
+                  <span className="fw-bold fs-4">&#60;</span>, or you can pick a letter of your
+                  choice.
+                </p>
+                <button className="btn btn-primary mt-2 me-2" onClick={handlePickerLetterHint}>
                   Got it !
                 </button>
               </div>
@@ -204,6 +254,48 @@ export const ExploreAlphabetActivity: React.FC = () => {
                   Got it ! Continue exploring the alphabet
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {displayLetterPickerModal && (
+        <div
+          className="card text-light bg-dark mt-2 mb-0 modal-dialog modal-dialog-centered"
+          style={{ zIndex: 2000 }}
+        >
+          <div className="modal-content" style={{ minHeight: '150px', height: '180px' }}>
+            <div className="modal-header bg-dark text-light">
+              <h5 className="modal-title">Pick a character</h5>
+              <button
+                type="button"
+                className="btn-close btn-close-white"
+                aria-label="Close"
+                onClick={goBackToCarousel}
+              ></button>
+            </div>
+            <div className="modal-body bg-dark text-light">
+              <div className="container-fluid">
+                <div
+                  className="row row-cols-5 gx-4 justify-content-evenly align-items-center overflow-auto"
+                  style={{ maxHeight: '200px' }}
+                >
+                  {shuffledLetters.map((letter: Letter, index) => (
+                    <div
+                      key={`${index}`}
+                      className="col m-2 d-flex justify-content-evenly align-items-center h-100 cursor-pointer"
+                      onClick={() => handleClickOnLetter(letter, index)}
+                    >
+                      {letter.render({ zoom: 1 })}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer bg-dark text-light">
+              <button type="button" className="btn btn-secondary" onClick={goBackToCarousel}>
+                Close
+              </button>
             </div>
           </div>
         </div>
