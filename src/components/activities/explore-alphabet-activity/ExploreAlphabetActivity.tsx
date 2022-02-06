@@ -55,6 +55,13 @@ export const ExploreAlphabetActivity: React.FC = () => {
     );
   }, [letters, selectedLetter]);
 
+  const hasAdditionalDetails = useMemo(() => {
+    return (
+      selectedLetter &&
+      selectedLetter.additionalDetails &&
+      selectedLetter.additionalDetails.length > 0
+    );
+  }, [selectedLetter]);
   const otherShapes = useMemo(() => {
     if (!selectedLetter) {
       return [];
@@ -266,6 +273,11 @@ export const ExploreAlphabetActivity: React.FC = () => {
                     </p>
                   </div>
                 ))}
+                {hasAdditionalDetails && (
+                  <div className="text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">
+                    <p className="mb-1">{selectedLetter.additionalDetails}</p>
+                  </div>
+                )}
                 {selectedLetter.sampleWord && (
                   <>
                     <div className="d-flex flex-row flex-wrap justify-content-start text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">

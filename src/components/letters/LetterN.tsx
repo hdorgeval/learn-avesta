@@ -8,7 +8,7 @@ export const useLetterN = (): Letter => ({
     fr: 'like the letter n in cesta punta (famous basque game) ;',
     en: 'like the letter n in grunt.',
   },
-  additionalDetails: 'used before the letters k, g, c, j, t, d, b',
+  additionalDetails: 'Used before the letters k, g, c, j, t, d, b',
   transcription: 'ṇ',
   sampleWord: {
     transcript: 'spəṇtā',
