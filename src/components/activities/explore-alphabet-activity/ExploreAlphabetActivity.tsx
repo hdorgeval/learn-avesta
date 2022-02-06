@@ -268,7 +268,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
                 ))}
                 {selectedLetter.sampleWord && (
                   <>
-                    <div className="d-flex flex-row justify-content-start text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">
+                    <div className="d-flex flex-row flex-wrap justify-content-start text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">
                       <p className="mb-1">Sample word : </p>
                       <AvestaWord
                         transcript={selectedLetter.sampleWord?.transcript}
