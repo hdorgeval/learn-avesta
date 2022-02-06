@@ -24,7 +24,7 @@ a {
   --background-color: rgba(22, 34, 57, 0.95);
   --height: 80px;
   position: fixed;
-  z-index: 12;
+  z-index: 3000;
   width: 100%;
   top: 0;
 }
