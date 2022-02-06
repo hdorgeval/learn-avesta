@@ -72,9 +72,10 @@ section em {
   position: absolute;
   width: 80%;
   left: 50%;
-  top: 30%;
-  bottom: 50%;
+  top: 32%;
+  bottom: 30%;
   transform: translate(-50%, -50%);
+  z-index: 2000;
 }
 
 section.coming-soon {
