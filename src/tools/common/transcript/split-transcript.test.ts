@@ -13,6 +13,7 @@ describe('split transcript', (): void => {
     { transcript: 'aṣ̌aonō', expected: ['a', 'ṣ̌', 'a', 'o', 'n', 'ō'] },
     { transcript: 'gāθā̊', expected: ['g', 'ā', 'θ', 'ā̊'] },
     { transcript: 'spəntā', expected: ['s', 'p', 'ə', 'n', 't', 'ā'] },
+    { transcript: 'spəṇtā', expected: ['s', 'p', 'ə', 'ṇ', 't', 'ā'] },
     { transcript: 'gǝ̄urwāin', expected: ['g', 'ǝ̄', 'u', 'r', 'w', 'ā', 'i', 'n'] },
     {
       transcript: 'Zaraθuštrahe',

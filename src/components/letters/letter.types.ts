@@ -39,6 +39,7 @@ export type TranscriptionSymbol =
   | 'l'
   | 'm'
   | 'n'
+  | 'ṇ'
   | 'ŋ́'
   | 'ŋ'
   | 'o'
@@ -76,6 +77,7 @@ export interface Letter {
    * @memberof Letter
    */
   isPreferred?: boolean;
+  additionalDetails?: string;
 
   pronunciation: LetterPronunciation;
   transcription: TranscriptionSymbol;

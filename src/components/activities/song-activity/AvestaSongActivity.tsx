@@ -68,7 +68,7 @@ export const AvestaSongActivity: FC = () => {
               onWordSeek={handleWordSeek}
             />
             <Sentence
-              transcript="fərā ameṣā spəntā gāθā̊ gǝ̄urwāin"
+              transcript="fərā ameṣā spəṇtā gāθā̊ gǝ̄urwāin"
               timeline="14.86-15.75 15.81-18.30 18.69-19.73 19.73-21.25 21.25-24.57"
               zoom={0.5}
               currentTimeline={currentTimeline}
@@ -86,7 +86,7 @@ export const AvestaSongActivity: FC = () => {
               renderTranscriptOnly={true}
             />
             <Sentence
-              transcript="fərā ameṣā spəntā gāθā̊ gǝ̄urwāin"
+              transcript="fərā ameṣā spəṇtā gāθā̊ gǝ̄urwāin"
               timeline="14.86-15.75 15.81-18.30 18.69-19.73 19.73-21.25 21.25-24.57"
               zoom={0.5}
               currentTimeline={currentTimeline}
