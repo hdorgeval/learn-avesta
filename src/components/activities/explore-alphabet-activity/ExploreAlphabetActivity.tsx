@@ -217,8 +217,8 @@ export const ExploreAlphabetActivity: React.FC = () => {
               <div className="card-body">
                 <p className="card-text">
                   <i className="bi bi-lightbulb"></i> Now you can either pick the above letter or,
-                  if the above letter has no more secrets for you, you can fetch the next one by
-                  using the arrows <span className="fw-bold fs-4">&#62;</span> and{' '}
+                  if this letter has no more secrets for you, you can fetch the next one by using
+                  the arrows <span className="fw-bold fs-4">&#62;</span> and{' '}
                   <span className="fw-bold fs-4">&#60;</span>, or you can pick a letter of your
                   choice.
                 </p>
