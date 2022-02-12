@@ -286,6 +286,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
                         transcript={selectedLetter.sampleWord?.transcript}
                         zoom={0.5}
                         audioUrl={selectedLetter.sampleWord?.audioUrl}
+                        preferredLetterIds={[selectedLetter.id]}
                       />
                     </div>
                     <p className="text-start mb-1 fst-italic">

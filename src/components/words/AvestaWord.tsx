@@ -24,6 +24,7 @@ export interface AvestaWordOwnProps {
   isLastWordInParagraph?: boolean;
   renderTranscriptOnly?: boolean;
   audioUrl?: string;
+  preferredLetterIds?: string[];
 }
 
 export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
@@ -34,6 +35,7 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
   currentTimeline,
   isLastWordInSentence,
   isLastWordInParagraph,
+  preferredLetterIds,
   renderTranscriptOnly,
   onWordSeek,
 }) => {
@@ -75,6 +77,18 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
           return missingLetter;
         }
 
+        if (
+          lettersWithSameTranscription.length > 1 &&
+          Array.isArray(preferredLetterIds) &&
+          preferredLetterIds.length > 0
+        ) {
+          const preferredLetterFromProps = lettersWithSameTranscription.find((letter) =>
+            preferredLetterIds.some((id) => id === letter.id),
+          );
+          const preferredLetter = lettersWithSameTranscription.find((letter) => letter.isPreferred);
+          return preferredLetterFromProps || preferredLetter || lettersWithSameTranscription[0];
+        }
+
         if (lettersWithSameTranscription.length > 1) {
           const preferredLetter = lettersWithSameTranscription.find((letter) => letter.isPreferred);
           return preferredLetter || lettersWithSameTranscription[0];
@@ -85,7 +99,7 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
     characters.push(separator);
 
     return characters.reverse();
-  }, [transcriptions, separator, allLeters, missingLetter]);
+  }, [transcriptions, separator, allLeters, preferredLetterIds, missingLetter]);
 
   const transcriptedLetters = useMemo(() => {
     const characters = [...transcriptions];

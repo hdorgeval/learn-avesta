@@ -3,7 +3,7 @@ import naroiSound from '../../assets/sounds/words/naroi.mp3';
 import { Letter, LetterOwnProps } from './letter.types';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterN2 = (): Letter => ({
-  id: 'n1',
+  id: 'n2',
   pronunciation: {
     fr: 'like the letter n in nature ;',
     en: 'like the letter n in nut.',
@@ -14,6 +14,7 @@ export const useLetterN2 = (): Letter => ({
     audioUrl: naroiSound,
     voiceOf: 'Kersey Antia',
   },
+  isPreferred: false,
   render: (props?: LetterOwnProps) => {
     return <LetterN2 {...props} />;
   },
