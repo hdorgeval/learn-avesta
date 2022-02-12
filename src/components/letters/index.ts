@@ -20,6 +20,7 @@ export * from './LetterM';
 export * from './LetterM2';
 export * from './LetterM3';
 export * from './LetterN';
+export * from './LetterN2';
 export * from './LetterNg';
 export * from './LetterO';
 export * from './LetterOLong';

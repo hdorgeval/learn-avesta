@@ -89,4 +89,5 @@ export interface Letter {
 export interface SampleWord {
   transcript: string;
   audioUrl?: string;
+  voiceOf?: 'Kersey Antia';
 }
