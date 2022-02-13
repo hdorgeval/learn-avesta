@@ -5,7 +5,7 @@ import avestaSong from '../../../assets/songs/avesta-song.mp3';
 import { AudioPlayer, AudioProgressEvent } from '../../audio-player';
 import { useAnalytics } from '../../hooks';
 import { useParagraphSeparator, useSentenceSeparator, useWordSeparator } from '../../letters';
-import { Sentence } from '../../sentences';
+import { Sentence, SentenceOwnProps } from '../../sentences';
 import { TimelineRange } from '../../words';
 export const AvestaSongActivity: FC = () => {
   const [displayNewComerHint, setDisplayNewComerHint] = useState(true);
@@ -15,6 +15,21 @@ export const AvestaSongActivity: FC = () => {
   const [currentTimeline, setCurrentTimeline] = useState(-1);
   const [audioPlayerRef, setAudioPlayerRef] = useState<ReactPlayer | null>(null);
   const [audioPlayOnSart, setAudioPlayOnSart] = useState(false);
+  const [sentences] = useState<SentenceOwnProps[]>([
+    {
+      transcript: 'yānīm manō yānīm vacō yānīm śyaoθnəm aṣaonō Zaraθuštrahe',
+      timeline: '0-1.34 1.34-2.38 2.38-3.81 3.81-4.88 4.88-6.28 6.28-9.36 9.67-12.32 12.32-14.86',
+    },
+    {
+      transcript: 'fərā ameṣā spəṇtā gāθā̊ gǝ̄urwāin',
+      timeline: '14.86-15.75 15.81-18.30 18.69-19.73 19.73-21.25 21.25-24.57',
+      isLastSentenceInParagraph: true,
+    },
+    {
+      transcript: 'Nəmō wǝ̄ gāθā̊ aṣaonīš',
+      timeline: '24.84-25.42 25.58-25.90 25.91-27.33 27.41-30.81',
+    },
+  ]);
   const handleNewComerHint = useCallback(() => {
     setDisplayNewComerHint(false);
   }, []);
@@ -60,40 +75,31 @@ export const AvestaSongActivity: FC = () => {
       {isActivityStarted && (
         <>
           <div className="bg-transparent">
-            <Sentence
-              transcript="yānīm manō yānīm vacō yānīm śyaoθnəm aṣaonō Zaraθuštrahe"
-              timeline="0-1.34 1.34-2.38 2.38-3.81 3.81-4.88 4.88-6.28 6.28-9.36 9.67-12.32 12.32-14.86"
-              zoom={0.5}
-              currentTimeline={currentTimeline}
-              onWordSeek={handleWordSeek}
-            />
-            <Sentence
-              transcript="fərā ameṣā spəṇtā gāθā̊ gǝ̄urwāin"
-              timeline="14.86-15.75 15.81-18.30 18.69-19.73 19.73-21.25 21.25-24.57"
-              zoom={0.5}
-              currentTimeline={currentTimeline}
-              onWordSeek={handleWordSeek}
-              isLastSentenceInParagraph={true}
-            />
+            {sentences.map((sentence, index) => (
+              <Sentence
+                key={`avesta-sentence-${index}`}
+                transcript={sentence.transcript}
+                timeline={sentence.timeline}
+                isLastSentenceInParagraph={sentence.isLastSentenceInParagraph}
+                zoom={0.5}
+                currentTimeline={currentTimeline}
+                onWordSeek={handleWordSeek}
+              />
+            ))}
           </div>
           <div className="bg-transparent mt-2">
-            <Sentence
-              transcript="yānīm manō yānīm vacō yānīm śyaoθnəm aṣaonō Zaraθuštrahe"
-              timeline="0-1.34 1.34-2.38 2.38-3.81 3.81-4.88 4.88-6.28 6.28-9.36 9.67-12.32 12.32-14.86"
-              zoom={0.5}
-              currentTimeline={currentTimeline}
-              onWordSeek={handleWordSeek}
-              renderTranscriptOnly={true}
-            />
-            <Sentence
-              transcript="fərā ameṣā spəṇtā gāθā̊ gǝ̄urwāin"
-              timeline="14.86-15.75 15.81-18.30 18.69-19.73 19.73-21.25 21.25-24.57"
-              zoom={0.5}
-              currentTimeline={currentTimeline}
-              onWordSeek={handleWordSeek}
-              isLastSentenceInParagraph={true}
-              renderTranscriptOnly={true}
-            />
+            {sentences.map((sentence, index) => (
+              <Sentence
+                key={`transcript-sentence-${index}`}
+                transcript={sentence.transcript}
+                timeline={sentence.timeline}
+                isLastSentenceInParagraph={sentence.isLastSentenceInParagraph}
+                zoom={0.5}
+                currentTimeline={currentTimeline}
+                onWordSeek={handleWordSeek}
+                renderTranscriptOnly={true}
+              />
+            ))}
           </div>
         </>
       )}
