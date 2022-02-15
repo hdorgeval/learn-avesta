@@ -104,6 +104,7 @@ export type AnalyticsEventForAlphabetExplorerActivity =
   | 'explore-letter-y-'
   | 'explore-letter-z-'
   | 'explore-letter-θ-';
+export type AnalyticsFor101NamesActivity = 'start-101-names-activity';
 
 export type AnalyticsEvent =
   | 'load-app'
@@ -112,7 +113,8 @@ export type AnalyticsEvent =
   | 'transpose-activity-completed'
   | 'start-avesta-song-activity'
   | AnalyticsEventForAlphabetExplorerActivity
-  | AnalyticsEventForDrawingActivity;
+  | AnalyticsEventForDrawingActivity
+  | AnalyticsFor101NamesActivity;
 export const useAnalytics = () => {
   const addEvent = useCallback((event: AnalyticsEvent) => {
     try {

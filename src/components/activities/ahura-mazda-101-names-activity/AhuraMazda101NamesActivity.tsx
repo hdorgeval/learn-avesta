@@ -1,0 +1,102 @@
+import { FC, useCallback, useState } from 'react';
+import ReactPlayer from 'react-player';
+import { AudioPlayer, AudioProgressEvent } from '../../audio-player';
+import { ComingSoon } from '../../coming-soon';
+import { useAnalytics } from '../../hooks';
+import { TimelineRange } from '../../words';
+import audioTrack from './assets/101-names.mp3';
+import previewActivity from './assets/preview-101-names-of-ahura-mazda.png';
+
+export const AhuraMazda101NamesActivity: FC = () => {
+  const [displayNewComerHint, setDisplayNewComerHint] = useState(true);
+  const [addEvent] = useAnalytics();
+  const [isActivityStarted, setIsActivityStarted] = useState(false);
+  const [isAudioReady, setIsAudioReady] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [currentTimeline, setCurrentTimeline] = useState(-1);
+  const [audioPlayerRef, setAudioPlayerRef] = useState<ReactPlayer | null>(null);
+  const [audioPlayOnSart, setAudioPlayOnSart] = useState(false);
+
+  const handleNewComerHint = useCallback(() => {
+    setDisplayNewComerHint(false);
+  }, []);
+
+  const handleOnAudioReady = useCallback((player: ReactPlayer | null) => {
+    setIsAudioReady(true);
+    setAudioPlayerRef(player);
+    setTimeout(() => {
+      setAudioPlayOnSart(true);
+    }, 0);
+  }, []);
+
+  const handleOnAudioStart = useCallback(() => {
+    setCurrentTimeline(0);
+  }, []);
+
+  const handleOnAudioSeek = useCallback((seconds: number) => {
+    setCurrentTimeline(seconds);
+  }, []);
+
+  const handleOnAudioProgress = useCallback((progress: AudioProgressEvent) => {
+    setCurrentTimeline(progress.playedSeconds);
+  }, []);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleWordSeek = useCallback(
+    (progress: TimelineRange) => {
+      setCurrentTimeline(progress.start);
+      audioPlayerRef?.seekTo(progress.start);
+    },
+    [audioPlayerRef],
+  );
+
+  const handleOnClickPreview = useCallback(() => {
+    setIsActivityStarted(true);
+    addEvent('start-101-names-activity');
+  }, [addEvent]);
+
+  return (
+    <>
+      {isActivityStarted && <ComingSoon />}
+      <AudioPlayer
+        autoStart={audioPlayOnSart}
+        thumbnailUrl={previewActivity}
+        audioUrl={audioTrack}
+        onReady={handleOnAudioReady}
+        onStart={handleOnAudioStart}
+        onSeek={handleOnAudioSeek}
+        onProgress={handleOnAudioProgress}
+        onClickPreview={handleOnClickPreview}
+      ></AudioPlayer>
+
+      <div className="d-flex flex-column align-items-center">
+        <a
+          className="text-light fs-6 text-muted"
+          href="https://ramiyarkaranjia.com/101-names-of-god/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="101 names of God source"
+        >
+          Credit: Ramiyar P. Karanjia
+          <i className="bi bi-box-arrow-up-right ms-2"></i>
+        </a>
+      </div>
+
+      {displayNewComerHint && isAudioReady && (
+        <div className="card bg-dark text-light">
+          <div className="card-body d-flex align-items-center flex-column ">
+            <p className="card-text flex-fill">
+              <i className="bi bi-info-circle"></i> This feature is in early stage : the idea is to
+              be able to sync, in both direction, an audio track with the corresponding 101 Names in
+              their three forms: Avestan, transposed and English translation. Avestan names may have
+              missing letters.
+            </p>
+            <button className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>
+              Got it !
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};

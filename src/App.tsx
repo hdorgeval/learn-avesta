@@ -5,6 +5,7 @@ import { FC } from 'react';
 import './App.css';
 import landingPageVideo from './assets/videos/course-video.mp4';
 import {
+  AhuraMazda101NamesActivity,
   AvestaScriptAndSoundsActivity,
   AvestaSongActivity,
   DrawingActivity,
@@ -82,6 +83,15 @@ export const App: FC = () => {
                   aria-label="Song session"
                 >
                   Song session
+                </a>
+                <a
+                  className="nav-link"
+                  aria-current="page"
+                  href="#s101NamesOfAhuraMazdaSection"
+                  role="menuitem"
+                  aria-label="101 names session"
+                >
+                  101 names of Ahura Mazda
                 </a>
               </div>
             </div>
@@ -170,6 +180,23 @@ export const App: FC = () => {
             </div>
             <div className="mt-4">
               <AvestaSongActivity />
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="section bg-dark video-session"
+          id="s101NamesOfAhuraMazdaSection"
+          data-section="section5"
+        >
+          <div className="container-fluid" style={{ minHeight: '150px' }}>
+            <div className="fw-bold text-uppercase text-light d-flex align-items-center">
+              <i className="bi bi-sunrise fs-1 me-2"></i> 101 names of{' '}
+              <em className="ps-1">Ahura Mazda</em>
+            </div>
+            <div className="mt-4">
+              <AhuraMazda101NamesActivity />
+              {/* <ComingSoon /> */}
             </div>
           </div>
         </section>
