@@ -14,6 +14,13 @@ export interface TimelineRange {
   end: number;
 }
 
+export interface WordTranslation {
+  fr?: string;
+  en?: string;
+  es?: string;
+  de?: string;
+}
+
 export interface AvestaWordOwnProps {
   transcript: string;
   zoom: number;
@@ -25,6 +32,7 @@ export interface AvestaWordOwnProps {
   renderTranscriptOnly?: boolean;
   audioUrl?: string;
   preferredLetterIds?: string[];
+  translation?: WordTranslation;
 }
 
 export const AvestaWord: React.FC<AvestaWordOwnProps> = ({

@@ -79,7 +79,7 @@ export const AudioPlayer: FC<AudioPlayerOwnProps> = ({
   }, [onClickPreview]);
 
   return (
-    <div className="position-relative w-100 h-100">
+    <div className="position-relative w-100 h-100 mt-4">
       <div className={wrapperClassName}>
         <ReactPlayer
           ref={reactPlayerRef}

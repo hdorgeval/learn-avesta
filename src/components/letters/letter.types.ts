@@ -22,6 +22,7 @@ export type TranscriptionSymbol =
   | 'ā'
   | 'å'
   | 'ā̊'
+  | 'ą'
   | 'b'
   | 'c'
   | 'd'

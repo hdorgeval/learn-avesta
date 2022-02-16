@@ -1,11 +1,11 @@
 import { FC, useCallback, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { AudioPlayer, AudioProgressEvent } from '../../audio-player';
-import { ComingSoon } from '../../coming-soon';
 import { useAnalytics } from '../../hooks';
-import { TimelineRange } from '../../words';
+import { AvestaWord, AvestaWordOwnProps, TimelineRange } from '../../words';
 import audioTrack from './assets/101-names.mp3';
 import previewActivity from './assets/preview-101-names-of-ahura-mazda.png';
+import { names101 } from './data';
 
 export const AhuraMazda101NamesActivity: FC = () => {
   const [displayNewComerHint, setDisplayNewComerHint] = useState(true);
@@ -16,6 +16,8 @@ export const AhuraMazda101NamesActivity: FC = () => {
   const [currentTimeline, setCurrentTimeline] = useState(-1);
   const [audioPlayerRef, setAudioPlayerRef] = useState<ReactPlayer | null>(null);
   const [audioPlayOnSart, setAudioPlayOnSart] = useState(false);
+  const [names] = useState<AvestaWordOwnProps[]>(names101);
+  const [currentName, setCurrentName] = useState<AvestaWordOwnProps | undefined>(undefined);
 
   const handleNewComerHint = useCallback(() => {
     setDisplayNewComerHint(false);
@@ -33,21 +35,43 @@ export const AhuraMazda101NamesActivity: FC = () => {
     setCurrentTimeline(0);
   }, []);
 
-  const handleOnAudioSeek = useCallback((seconds: number) => {
-    setCurrentTimeline(seconds);
-  }, []);
+  const findCurrentName = useCallback(
+    (timelineInSeconds: number) => {
+      const currentName = names.find(
+        (name) =>
+          name.timeline &&
+          timelineInSeconds > name.timeline.start - 1 &&
+          timelineInSeconds <= name.timeline.end,
+      );
+      return currentName;
+    },
+    [names],
+  );
 
-  const handleOnAudioProgress = useCallback((progress: AudioProgressEvent) => {
-    setCurrentTimeline(progress.playedSeconds);
-  }, []);
+  const handleOnAudioSeek = useCallback(
+    (seconds: number) => {
+      setCurrentTimeline(seconds);
+      setCurrentName(findCurrentName(seconds));
+    },
+    [findCurrentName],
+  );
+
+  const handleOnAudioProgress = useCallback(
+    (progress: AudioProgressEvent) => {
+      setCurrentTimeline(progress.playedSeconds);
+      setCurrentName(findCurrentName(progress.playedSeconds));
+    },
+    [findCurrentName],
+  );
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleWordSeek = useCallback(
     (progress: TimelineRange) => {
       setCurrentTimeline(progress.start);
+      setCurrentName(findCurrentName(progress.start));
       audioPlayerRef?.seekTo(progress.start);
     },
-    [audioPlayerRef],
+    [audioPlayerRef, findCurrentName],
   );
 
   const handleOnClickPreview = useCallback(() => {
@@ -57,7 +81,15 @@ export const AhuraMazda101NamesActivity: FC = () => {
 
   return (
     <>
-      {isActivityStarted && <ComingSoon />}
+      {isActivityStarted && (
+        <>
+          <div className="bg-transparent" style={{ minHeight: '100px' }}>
+            <div className="d-flex justify-content-around align-items-center">
+              {currentName && <AvestaWord key={currentName.transcript} {...currentName} />}
+            </div>
+          </div>
+        </>
+      )}
       <AudioPlayer
         autoStart={audioPlayOnSart}
         thumbnailUrl={previewActivity}
@@ -88,8 +120,8 @@ export const AhuraMazda101NamesActivity: FC = () => {
             <p className="card-text flex-fill">
               <i className="bi bi-info-circle"></i> This feature is in early stage : the idea is to
               be able to sync, in both direction, an audio track with the corresponding 101 Names in
-              their three forms: Avestan, transposed and English translation. Avestan names may have
-              missing letters.
+              their three forms: Avestan, transposed and English translation. For the moment, there
+              are only a few Avestan names and some words have missing letters.
             </p>
             <button className="btn btn-primary mt-2 me-2" onClick={handleNewComerHint}>
               Got it !
