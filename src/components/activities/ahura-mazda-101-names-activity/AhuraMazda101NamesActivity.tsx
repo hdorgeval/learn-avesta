@@ -1,6 +1,7 @@
 import { FC, useCallback, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { AudioPlayer, AudioProgressEvent } from '../../audio-player';
+import { CountdownTimer } from '../../countdown-timer';
 import { useAnalytics } from '../../hooks';
 import { AvestaWord, AvestaWordOwnProps, TimelineRange } from '../../words';
 import audioTrack from './assets/101-names.mp3';
@@ -18,6 +19,10 @@ export const AhuraMazda101NamesActivity: FC = () => {
   const [audioPlayOnSart, setAudioPlayOnSart] = useState(false);
   const [names] = useState<AvestaWordOwnProps[]>(names101);
   const [currentName, setCurrentName] = useState<AvestaWordOwnProps | undefined>(undefined);
+  const [timelineInSecondsOfFirstName] = useState<number>(names[0].timeline?.start || 0);
+  const [remainingTimingInSecondsBeforeFirstName, setRemainingTimingInSecondsBeforeFirstName] =
+    useState(timelineInSecondsOfFirstName);
+  const [countdownProgress, setCountdownProgress] = useState(0);
 
   const handleNewComerHint = useCallback(() => {
     setDisplayNewComerHint(false);
@@ -48,6 +53,23 @@ export const AhuraMazda101NamesActivity: FC = () => {
     [names],
   );
 
+  const getRemainingTimeBeforeFirstName = useCallback(
+    (timelineInSeconds: number) => {
+      const remainingTime = timelineInSecondsOfFirstName - timelineInSeconds;
+      return remainingTime;
+    },
+    [timelineInSecondsOfFirstName],
+  );
+
+  const getCountdownProgress = useCallback(
+    (timelineInSeconds: number) => {
+      const remainingTime = timelineInSecondsOfFirstName - timelineInSeconds;
+      const ratio = (1 - remainingTime / timelineInSecondsOfFirstName) * 100;
+      return ratio < 0 ? 0 : Math.floor(ratio);
+    },
+    [timelineInSecondsOfFirstName],
+  );
+
   const handleOnAudioSeek = useCallback(
     (seconds: number) => {
       setCurrentTimeline(seconds);
@@ -60,10 +82,13 @@ export const AhuraMazda101NamesActivity: FC = () => {
     (progress: AudioProgressEvent) => {
       setCurrentTimeline(progress.playedSeconds);
       setCurrentName(findCurrentName(progress.playedSeconds));
+      setRemainingTimingInSecondsBeforeFirstName(
+        getRemainingTimeBeforeFirstName(progress.playedSeconds),
+      );
+      setCountdownProgress(getCountdownProgress(progress.playedSeconds));
     },
-    [findCurrentName],
+    [findCurrentName, getCountdownProgress, getRemainingTimeBeforeFirstName],
   );
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleWordSeek = useCallback(
     (progress: TimelineRange) => {
@@ -84,9 +109,20 @@ export const AhuraMazda101NamesActivity: FC = () => {
       {isActivityStarted && (
         <>
           <div className="bg-transparent" style={{ minHeight: '100px' }}>
-            <div className="d-flex justify-content-around align-items-center">
-              {currentName && <AvestaWord key={currentName.transcript} {...currentName} />}
-            </div>
+            {countdownProgress < 95 && (
+              <div className="d-flex justify-content-center">
+                <CountdownTimer
+                  timeleftInSeconds={remainingTimingInSecondsBeforeFirstName}
+                  progress={countdownProgress}
+                />
+              </div>
+            )}
+
+            {currentName && (
+              <div className="d-flex justify-content-around align-items-center">
+                <AvestaWord key={currentName.transcript} {...currentName} />
+              </div>
+            )}
           </div>
         </>
       )}
@@ -132,3 +168,5 @@ export const AhuraMazda101NamesActivity: FC = () => {
     </>
   );
 };
+
+AhuraMazda101NamesActivity.displayName = 'AhuraMazda101NamesActivity';

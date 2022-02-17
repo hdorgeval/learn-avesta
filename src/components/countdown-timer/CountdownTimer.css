@@ -1,0 +1,11 @@
+.svg-timer {
+  transform: scaleX(-1);
+}
+
+.remaining-path {
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+}
