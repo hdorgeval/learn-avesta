@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Letter, TranscriptionSymbol } from './letter.types';
+import { Letter, TranscriptionSymbol } from './letter.models';
 
 export interface TranscriptionOwnProps {
   letter: Letter;

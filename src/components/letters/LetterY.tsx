@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import letterYSound from '../../assets/sounds/letter-y.mp3';
-import { Letter, LetterOwnProps } from './letter.types';
+import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterY = (): Letter => ({

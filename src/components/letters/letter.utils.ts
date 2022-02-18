@@ -1,4 +1,4 @@
-import { Letter } from './letter.types';
+import { Letter } from './letter.models';
 
 export function hasTranscription(letter: Letter, transcription: string): boolean {
   if (letter.transcription === transcription) {

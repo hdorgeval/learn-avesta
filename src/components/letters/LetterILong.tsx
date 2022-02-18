@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import letterISound from '../../assets/sounds/letter-i.mp3';
-import { Letter, LetterOwnProps } from './letter.types';
+import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
 export const useLetterILong = (): Letter => ({
