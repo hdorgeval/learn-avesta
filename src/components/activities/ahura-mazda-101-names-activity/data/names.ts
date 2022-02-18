@@ -58,11 +58,19 @@ export const names101: AvestaWordOwnProps[] = [
     },
   },
   {
-    transcript: 'Frāxtan-təh',
+    transcript: 'Frāxtaŋ-təh',
     timeline: { start: 37.76, end: 40.19 },
     zoom: 0.9,
     translation: {
       en: 'Broad end of all',
+    },
+  },
+  {
+    transcript: 'Camaŋā',
+    timeline: { start: 40.19, end: 42.45 },
+    zoom: 1,
+    translation: {
+      en: 'Primal cause',
     },
   },
 ];
