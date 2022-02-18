@@ -4,8 +4,13 @@ export interface CountdownTimerOwnProps {
   timeleftInSeconds: number;
   progress: number;
 }
+/**
+ * inspired by https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/
+ * @param
+ * @returns
+ */
 export const CountdownTimer: FC<CountdownTimerOwnProps> = ({ timeleftInSeconds, progress }) => {
-  const [viewboxDimension] = useState<number>(100);
+  const [viewboxSize] = useState<number>(100);
   const [rawSize] = useState<string>('200px');
   const remainingTime = useMemo(() => {
     if (timeleftInSeconds < 0) {
@@ -17,16 +22,16 @@ export const CountdownTimer: FC<CountdownTimerOwnProps> = ({ timeleftInSeconds, 
   }, [timeleftInSeconds]);
 
   const viewBox = useMemo(() => {
-    return `0 0 ${viewboxDimension} ${viewboxDimension}`;
-  }, [viewboxDimension]);
+    return `0 0 ${viewboxSize} ${viewboxSize}`;
+  }, [viewboxSize]);
 
   const viewBoxCenter = useMemo(() => {
-    return { x: viewboxDimension / 2, y: viewboxDimension / 2 };
-  }, [viewboxDimension]);
+    return { x: viewboxSize / 2, y: viewboxSize / 2 };
+  }, [viewboxSize]);
 
   const radius = useMemo(() => {
-    return viewboxDimension / 4;
-  }, [viewboxDimension]);
+    return viewboxSize / 4;
+  }, [viewboxSize]);
 
   const circumferencePath = useMemo(() => {
     return `M ${viewBoxCenter.x}, ${

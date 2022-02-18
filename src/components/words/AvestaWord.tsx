@@ -33,6 +33,7 @@ export interface AvestaWordOwnProps {
   audioUrl?: string;
   preferredLetterIds?: string[];
   translation?: WordTranslation;
+  shrink?: boolean;
 }
 
 export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
@@ -45,6 +46,7 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
   isLastWordInParagraph,
   preferredLetterIds,
   renderTranscriptOnly,
+  shrink,
   onWordSeek,
 }) => {
   const [transcriptions] = useState(splitTranscript(transcript));
@@ -161,7 +163,9 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
         </div>
       ) : (
         <div
-          className={`ms-2 avesta-word cursor-pointer ${isOntrack ? 'outline-2-info' : ''}`}
+          className={`ms-2 avesta-word cursor-pointer ${isOntrack ? 'outline-2-info' : ''} ${
+            shrink ? 'd-flex flex-nowrap' : ''
+          }`}
           onClick={handleClick}
         >
           {avestanLetters.map((letter, index) =>
