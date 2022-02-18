@@ -49,4 +49,20 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Without end',
     },
   },
+  {
+    transcript: 'Bunəstih',
+    timeline: { start: 35.51, end: 37.77 },
+    zoom: 1,
+    translation: {
+      en: 'Source of all Creation',
+    },
+  },
+  {
+    transcript: 'Frāxtan-təh',
+    timeline: { start: 37.76, end: 40.19 },
+    zoom: 0.9,
+    translation: {
+      en: 'Broad end of all',
+    },
+  },
 ];
