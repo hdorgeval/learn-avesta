@@ -41,4 +41,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Without beginning',
     },
   },
+  {
+    transcript: 'Abī-aṇjām',
+    timeline: { start: 33.28, end: 35.51 },
+    zoom: 1,
+    translation: {
+      en: 'Without end',
+    },
+  },
 ];

@@ -42,12 +42,14 @@ export const AhuraMazda101NamesActivity: FC = () => {
 
   const findCurrentName = useCallback(
     (timelineInSeconds: number) => {
-      const currentName = names.find(
-        (name) =>
-          name.timeline &&
-          timelineInSeconds > name.timeline.start - 1 &&
-          timelineInSeconds <= name.timeline.end,
-      );
+      const currentName = names
+        .filter(
+          (name) =>
+            name.timeline &&
+            timelineInSeconds > name.timeline.start - 1 &&
+            timelineInSeconds <= name.timeline.end,
+        )
+        .pop();
       return currentName;
     },
     [names],
