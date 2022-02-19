@@ -13,6 +13,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
   const [displayLetterPickerButton, setDisplayLetterPickerButton] = useState(false);
   const [displayLetterPickerModal, setdisplayLetterPickerModal] = useState(false);
   const [userHasAckedLetterPickerHint, setuserHasAckedLetterPickerHint] = useState(false);
+  const [hasStartedActivity, setHasStartedActivity] = useState(false);
 
   const letters = useLetters();
   const maxIndex = useMemo(() => letters.length - 1, [letters]);
@@ -95,9 +96,12 @@ export const ExploreAlphabetActivity: React.FC = () => {
       setDisplayCarrousel(false);
       setdisplayLetterPickerModal(false);
       addEvent(`explore-letter-${letter.transcription}-`);
-      addEvent('explore-letter');
+      if (!hasStartedActivity) {
+        addEvent(`start-explore-alphabet-activity`);
+        setHasStartedActivity(true);
+      }
     },
-    [addEvent],
+    [addEvent, hasStartedActivity],
   );
 
   const goBackToCarousel = useCallback(() => {
@@ -109,8 +113,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
       : setDisplayLetterPickerHint(true);
     setDisplayLetterPickerButton(true);
     setdisplayLetterPickerModal(false);
-    addEvent('go-back-to-alphabet-explorer');
-  }, [addEvent, userHasAckedLetterPickerHint]);
+  }, [userHasAckedLetterPickerHint]);
 
   const handleClickOnPickerLetterButton = useCallback(() => {
     setSelectedLetter(undefined);

@@ -30,10 +30,11 @@ export const DrawingActivity: React.FC = () => {
   const [addEvent] = useAnalytics();
   const letters = useLetters();
   const [selectedLetter, setSelectedLetter] = useState<Letter>(letters[0]);
+  const [hasStartedActivity, setHasStartedActivity] = useState(false);
 
   const currentCharacter = useMemo(() => {
     return selectedLetter.transcription;
-  }, [selectedLetter]);
+  }, [selectedLetter.transcription]);
 
   const closeModal = useCallback(() => {
     const closeButton = document.getElementById('modalLetterPickerCloseButton');
@@ -46,15 +47,22 @@ export const DrawingActivity: React.FC = () => {
     (letter: Letter) => {
       setSelectedLetter(letter);
       closeModal();
-      addEvent(`pick-letter-${letter.transcription}-for-drawing`);
     },
-    [addEvent, closeModal],
+    [closeModal],
   );
+
+  const handleOnDrawing = useCallback(() => {
+    addEvent(`draw-letter-${selectedLetter.transcription}-`);
+    if (!hasStartedActivity) {
+      addEvent(`start-drawing-activity`);
+      setHasStartedActivity(true);
+    }
+  }, [addEvent, hasStartedActivity, selectedLetter.transcription]);
 
   return (
     <>
       <div className="ms-4 me-4" style={{ minHeight: '150px', height: '180px' }}>
-        <DrawingSurface key={currentCharacter}>
+        <DrawingSurface key={currentCharacter} onDrawing={handleOnDrawing}>
           {<LetterInDrawingSurface letter={selectedLetter} zoom={3} />}
         </DrawingSurface>
       </div>

@@ -1,6 +1,5 @@
 import { getStroke, StrokeOptions } from 'perfect-freehand';
-import React from 'react';
-import { useAnalytics } from '../../hooks';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 
 export interface DrawingPoint {
   x: number;
@@ -24,10 +23,13 @@ export function getSvgPathFromStroke(stroke: number[][]): string {
   return d.join(' ');
 }
 
-export const DrawingSurface: React.FC = ({ children }) => {
-  const [addEvent] = useAnalytics();
-  const [points, setPoints] = React.useState<DrawingPoint[]>([]);
-  const options = React.useMemo<StrokeOptions>(() => {
+export interface DrawingSurfaceOwnProps {
+  onDrawing: () => void;
+}
+
+export const DrawingSurface: FC<DrawingSurfaceOwnProps> = ({ children, onDrawing }) => {
+  const [points, setPoints] = useState<DrawingPoint[]>([]);
+  const options = useMemo<StrokeOptions>(() => {
     return {
       size: 11,
       thinning: 0.5,
@@ -47,7 +49,7 @@ export const DrawingSurface: React.FC = ({ children }) => {
     };
   }, []);
 
-  const handlePointerDown = React.useCallback(
+  const handlePointerDown = useCallback(
     (e: React.PointerEvent<SVGElement>) => {
       const target = e.target as HTMLElement;
       const nativeEvent = e.nativeEvent as PointerEvent;
@@ -59,12 +61,12 @@ export const DrawingSurface: React.FC = ({ children }) => {
         pressure: e.pressure,
       };
       setPoints([firstPoint]);
-      addEvent('drawing');
+      onDrawing();
     },
-    [addEvent],
+    [onDrawing],
   );
 
-  const handlePointerMove = React.useCallback(
+  const handlePointerMove = useCallback(
     (e: React.PointerEvent<SVGElement>) => {
       if (e.buttons !== 1) {
         return;
@@ -81,8 +83,8 @@ export const DrawingSurface: React.FC = ({ children }) => {
     [points],
   );
 
-  const stroke = React.useMemo(() => getStroke(points, options), [points, options]);
-  const pathData = React.useMemo(() => getSvgPathFromStroke(stroke), [stroke]);
+  const stroke = useMemo(() => getStroke(points, options), [points, options]);
+  const pathData = useMemo(() => getSvgPathFromStroke(stroke), [stroke]);
 
   return (
     <div className="position-relative w-100 h-100 m-h-0">
