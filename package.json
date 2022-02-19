@@ -41,7 +41,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "jest": "27.4.7",
-    "netlify-cli": "8.4.2",
+    "netlify-cli": "9.6.5",
     "prettier": "2.5.1",
     "rimraf": "3.0.2",
     "simple-git": "2.48.0",
