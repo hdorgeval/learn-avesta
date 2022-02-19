@@ -1,7 +1,7 @@
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { FC } from 'react';
+import { FC, useCallback, useState } from 'react';
 import './App.css';
 import landingPageVideo from './assets/videos/course-video.mp4';
 import {
@@ -13,9 +13,22 @@ import {
   TransposeActivity,
 } from './components/activities';
 import { useAnalytics } from './components/hooks';
+import { SocialShare } from './components/social-share';
 export const App: FC = () => {
   const [addEvent] = useAnalytics();
+  const [displayShareButton] = useState(false);
+
+  const [
+    displayShareButtonsOfActivity101NamesOfAhuraMazda,
+    setDisplayShareButtonsOfActivity101NamesOfAhuraMazda,
+  ] = useState(false);
+
   addEvent('load-app');
+  const handleClickOnShareActivity101NamesOfAhuraMazda = useCallback(() => {
+    setDisplayShareButtonsOfActivity101NamesOfAhuraMazda(
+      !displayShareButtonsOfActivity101NamesOfAhuraMazda,
+    );
+  }, [displayShareButtonsOfActivity101NamesOfAhuraMazda]);
 
   return (
     <>
@@ -193,7 +206,14 @@ export const App: FC = () => {
             <div className="fw-bold text-uppercase text-light d-flex align-items-center">
               <i className="bi bi-sunrise fs-1 me-2"></i> 101 names of{' '}
               <em className="ps-1">Ahura Mazda</em>
+              {displayShareButton && (
+                <i
+                  className="bi bi-share fs-3 ms-4"
+                  onClick={handleClickOnShareActivity101NamesOfAhuraMazda}
+                ></i>
+              )}
             </div>
+            {displayShareButtonsOfActivity101NamesOfAhuraMazda && <SocialShare />}
             <div className="mt-4">
               <AhuraMazda101NamesActivity />
               {/* <ComingSoon /> */}
