@@ -121,9 +121,23 @@ export const AhuraMazda101NamesActivity: FC = () => {
             )}
 
             {currentName && (
-              <div className="d-flex flex-row justify-content-around align-items-center">
-                <AvestaWord key={currentName.transcript} {...currentName} />
-              </div>
+              <>
+                <div className="d-flex flex-row justify-content-around align-items-center">
+                  <AvestaWord key={currentName.transcript} {...currentName} />
+                </div>
+                <div className="d-flex flex-row justify-content-around align-items-center text-light">
+                  <AvestaWord
+                    key={currentName.transcript}
+                    {...currentName}
+                    renderTranscriptOnly={true}
+                  />
+                </div>
+                <div className="d-flex flex-row justify-content-around align-items-center text-light">
+                  <span className="font-monospace" key={currentName.transcript}>
+                    {currentName.translation?.en}
+                  </span>
+                </div>
+              </>
             )}
           </div>
         </>
