@@ -78,7 +78,11 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
   const avestanLetters = useMemo(() => {
     const characters = transcriptions
       .map((t) => t.toLowerCase())
-      .map((transcription) => {
+      .map((transcription, index) => {
+        const isFirstLetterInWord = index === 0;
+        const isLastLetterInWord = index === transcriptions.length - 1;
+        const isMiddleLetterInWord = !isFirstLetterInWord && !isLastLetterInWord;
+
         const lettersWithSameTranscription = allLeters.filter((letter) =>
           hasTranscription(letter, transcription),
         );
@@ -86,6 +90,13 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
         if (lettersWithSameTranscription.length === 0) {
           return missingLetter;
         }
+
+        const firstLetter = lettersWithSameTranscription.find(
+          (l) => l.useWhenFirstLetterInWord && isFirstLetterInWord,
+        );
+        const middleLetter = lettersWithSameTranscription.find(
+          (l) => l.useWhenInsideWord && isMiddleLetterInWord,
+        );
 
         if (
           lettersWithSameTranscription.length > 1 &&
@@ -96,12 +107,18 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
             preferredLetterIds.some((id) => id === letter.id),
           );
           const preferredLetter = lettersWithSameTranscription.find((letter) => letter.isPreferred);
-          return preferredLetterFromProps || preferredLetter || lettersWithSameTranscription[0];
+          return (
+            firstLetter ||
+            middleLetter ||
+            preferredLetterFromProps ||
+            preferredLetter ||
+            lettersWithSameTranscription[0]
+          );
         }
 
         if (lettersWithSameTranscription.length > 1) {
           const preferredLetter = lettersWithSameTranscription.find((letter) => letter.isPreferred);
-          return preferredLetter || lettersWithSameTranscription[0];
+          return firstLetter || middleLetter || preferredLetter || lettersWithSameTranscription[0];
         }
 
         return lettersWithSameTranscription[0];
