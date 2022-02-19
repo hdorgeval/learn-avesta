@@ -19,6 +19,7 @@ export const AhuraMazda101NamesActivity: FC = () => {
   const [audioPlayOnSart, setAudioPlayOnSart] = useState(false);
   const [names] = useState<AvestaWordOwnProps[]>(names101);
   const [currentName, setCurrentName] = useState<AvestaWordOwnProps | undefined>(undefined);
+  const [currentNameIndex, setCurrentNameIndex] = useState<number>(-1);
   const [timelineInSecondsOfFirstName] = useState<number>(names[0].timeline?.start || 0);
   const [remainingTimingInSecondsBeforeFirstName, setRemainingTimingInSecondsBeforeFirstName] =
     useState(timelineInSecondsOfFirstName);
@@ -83,13 +84,16 @@ export const AhuraMazda101NamesActivity: FC = () => {
   const handleOnAudioProgress = useCallback(
     (progress: AudioProgressEvent) => {
       setCurrentTimeline(progress.playedSeconds);
-      setCurrentName(findCurrentName(progress.playedSeconds));
+      const newCurrentName = findCurrentName(progress.playedSeconds);
+      const newCurrentNameIndex = newCurrentName ? names.indexOf(newCurrentName) : -1;
+      setCurrentName(newCurrentName);
+      setCurrentNameIndex(newCurrentNameIndex);
       setRemainingTimingInSecondsBeforeFirstName(
         getRemainingTimeBeforeFirstName(progress.playedSeconds),
       );
       setCountdownProgress(getCountdownProgress(progress.playedSeconds));
     },
-    [findCurrentName, getCountdownProgress, getRemainingTimeBeforeFirstName],
+    [findCurrentName, getCountdownProgress, getRemainingTimeBeforeFirstName, names],
   );
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleWordSeek = useCallback(
@@ -135,6 +139,11 @@ export const AhuraMazda101NamesActivity: FC = () => {
                 <div className="d-flex flex-row justify-content-around align-items-center text-light">
                   <span className="font-monospace" key={currentName.transcript}>
                     {currentName.translation?.en}
+                  </span>
+                </div>
+                <div className="d-flex flex-row justify-content-around align-items-center text-light">
+                  <span className="badge rounded-pill bg-dark text-light">
+                    {currentNameIndex + 1}
                   </span>
                 </div>
               </>
