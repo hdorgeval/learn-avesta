@@ -56,6 +56,7 @@ export type TranscriptionSymbol =
   | 't'
   | 'θ'
   | 'u'
+  | 'ū'
   | 'v'
   | 'w'
   | 'x'
@@ -78,6 +79,8 @@ export interface Letter {
    * @memberof Letter
    */
   isPreferred?: boolean;
+  useWhenFirstLetterInWord?: boolean;
+  useWhenInsideWord?: boolean;
   additionalDetails?: string;
 
   pronunciation: LetterPronunciation;

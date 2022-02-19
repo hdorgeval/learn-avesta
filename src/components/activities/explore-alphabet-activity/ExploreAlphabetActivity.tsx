@@ -62,6 +62,15 @@ export const ExploreAlphabetActivity: React.FC = () => {
       selectedLetter.additionalDetails.length > 0
     );
   }, [selectedLetter]);
+
+  const shouldBeUsedInsideWord = useMemo(() => {
+    return selectedLetter && selectedLetter.useWhenInsideWord;
+  }, [selectedLetter]);
+
+  const shouldBeUsedAtTheBeginningOfWord = useMemo(() => {
+    return selectedLetter && selectedLetter.useWhenFirstLetterInWord;
+  }, [selectedLetter]);
+
   const otherShapes = useMemo(() => {
     if (!selectedLetter) {
       return [];
@@ -273,6 +282,16 @@ export const ExploreAlphabetActivity: React.FC = () => {
                     </p>
                   </div>
                 ))}
+                {shouldBeUsedInsideWord && (
+                  <div className="text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">
+                    <p className="mb-1">Should be used inside a word.</p>
+                  </div>
+                )}
+                {shouldBeUsedAtTheBeginningOfWord && (
+                  <div className="text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">
+                    <p className="mb-1">Should be used at the beginning of a word.</p>
+                  </div>
+                )}
                 {hasAdditionalDetails && (
                   <div className="text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">
                     <p className="mb-1">{selectedLetter.additionalDetails}</p>
@@ -283,6 +302,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
                     <div className="d-flex flex-row flex-wrap justify-content-start text-start border-bottom border-bottom-1 border-secondary pb-2 mt-2">
                       <p className="mb-1">Sample word : </p>
                       <AvestaWord
+                        key={selectedLetter.id}
                         transcript={selectedLetter.sampleWord?.transcript}
                         zoom={0.5}
                         audioUrl={selectedLetter.sampleWord?.audioUrl}

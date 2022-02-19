@@ -31,6 +31,8 @@ export * from './LetterSSH';
 export * from './LetterT';
 export * from './LetterU';
 export * from './LetterV';
+export * from './LetterV2';
+export * from './LetterV3';
 export * from './LetterX';
 export * from './LetterXv';
 export * from './LetterY';

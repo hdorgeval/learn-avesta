@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import vohuSound from '../../assets/sounds/words/vohu.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
@@ -9,6 +10,12 @@ export const useLetterV = (): Letter => ({
     en: 'like the letter v in voice, five.',
   },
   transcription: 'v',
+  isPreferred: true,
+  useWhenFirstLetterInWord: true,
+  sampleWord: {
+    transcript: 'vohū',
+    audioUrl: vohuSound,
+  },
   render: (props?: LetterOwnProps) => {
     return <LetterV {...props} />;
   },
