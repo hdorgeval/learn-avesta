@@ -90,7 +90,7 @@ export const names101: AvestaWordOwnProps[] = [
     },
   },
   {
-    transcript: 'Abarvaṇd',
+    transcript: 'Abarwaṇd',
     timeline: { start: 46.87, end: 49.36 },
     zoom: 1,
     translation: {

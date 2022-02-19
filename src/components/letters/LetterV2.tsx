@@ -10,6 +10,7 @@ export const useLetterV2 = (): Letter => ({
     en: 'like the letter v in flavour.',
   },
   transcription: 'v',
+  alternateTranscriptions: ['w'],
   useWhenInsideWord: true,
   sampleWord: {
     transcript: 'yāvē',
