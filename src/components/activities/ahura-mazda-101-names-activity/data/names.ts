@@ -97,4 +97,20 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Separate from all - Unique',
     },
   },
+  {
+    transcript: 'Parwaṇdā',
+    timeline: { start: 49.56, end: 51.88 },
+    zoom: 1,
+    translation: {
+      en: 'Connected with everybody',
+    },
+  },
+  {
+    transcript: 'An-aiyāfah',
+    timeline: { start: 51.88, end: 54.2 },
+    zoom: 1,
+    translation: {
+      en: 'Nobody can fathom',
+    },
+  },
 ];
