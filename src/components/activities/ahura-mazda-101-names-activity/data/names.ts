@@ -73,4 +73,28 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Primal cause',
     },
   },
+  {
+    transcript: 'Parjatarah',
+    timeline: { start: 42.45, end: 45.02 },
+    zoom: 1,
+    translation: {
+      en: 'More exalted',
+    },
+  },
+  {
+    transcript: 'Tum-afīk',
+    timeline: { start: 45.02, end: 46.87 },
+    zoom: 1,
+    translation: {
+      en: 'Most innocent',
+    },
+  },
+  {
+    transcript: 'Abarvaṇd',
+    timeline: { start: 46.87, end: 49.36 },
+    zoom: 1,
+    translation: {
+      en: 'Separate from all - Unique',
+    },
+  },
 ];
