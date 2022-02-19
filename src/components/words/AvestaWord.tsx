@@ -108,9 +108,9 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
           );
           const preferredLetter = lettersWithSameTranscription.find((letter) => letter.isPreferred);
           return (
+            preferredLetterFromProps ||
             firstLetter ||
             middleLetter ||
-            preferredLetterFromProps ||
             preferredLetter ||
             lettersWithSameTranscription[0]
           );
