@@ -225,4 +225,36 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'The most Invisible',
     },
   },
+  {
+    transcript: 'Vāsṇā',
+    timeline: { start: 83.4, end: 85.66 },
+    zoom: 1,
+    translation: {
+      en: 'Ever present, omnipresent',
+    },
+  },
+  {
+    transcript: 'Harwastum',
+    timeline: { start: 85.66, end: 88.03 },
+    zoom: 1,
+    translation: {
+      en: 'Complete of complete. All in all',
+    },
+  },
+  {
+    transcript: 'Hu-sǝ̄pās',
+    timeline: { start: 88.88, end: 90.89 },
+    zoom: 1,
+    translation: {
+      en: 'Worthy of being praised and worshiped',
+    },
+  },
+  {
+    transcript: 'Har-hamīd',
+    timeline: { start: 90.89, end: 92.99 },
+    zoom: 1,
+    translation: {
+      en: 'All good natured',
+    },
+  },
 ];

@@ -43,6 +43,7 @@ export type TranscriptionSymbol =
   | 'ṇ'
   | 'ŋ́'
   | 'ŋ'
+  | 'ŋ<raised>v'
   | 'o'
   | 'ō'
   | 'p'
