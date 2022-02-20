@@ -257,4 +257,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'All good natured',
     },
   },
+  {
+    transcript: 'Har-nək-farəh',
+    timeline: { start: 92.99, end: 95.21 },
+    zoom: 0.9,
+    translation: {
+      en: 'Complete kind worthy light, Blessed haloed light',
+    },
+  },
 ];

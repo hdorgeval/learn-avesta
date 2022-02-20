@@ -12,6 +12,8 @@ export interface AudioProgressEvent {
 export interface AudioPlayerOwnProps {
   audioUrl: string;
   autoStart: boolean;
+  forcePause?: boolean;
+  forceContinue?: boolean;
   startTime?: string;
   endTime?: string;
   thumbnailUrl?: string;
@@ -23,10 +25,12 @@ export interface AudioPlayerOwnProps {
 }
 
 export const AudioPlayer: FC<AudioPlayerOwnProps> = ({
-  autoStart,
   audioUrl,
-  startTime,
+  autoStart,
   endTime,
+  forcePause,
+  forceContinue,
+  startTime,
   thumbnailUrl,
   onReady,
   onStart,
@@ -55,11 +59,20 @@ export const AudioPlayer: FC<AudioPlayerOwnProps> = ({
   }, [thumbnailUrl]);
 
   const playing = useMemo(() => {
+    if (forceContinue) {
+      return true;
+    }
+
+    if (forcePause) {
+      return false;
+    }
+
     if (autoStart) {
       return true;
     }
+
     return false;
-  }, [autoStart]);
+  }, [forceContinue, forcePause, autoStart]);
 
   const wrapperClassName = useMemo(() => {
     return isReady ? 'audio-player-wrapper-on-ready' : 'audio-player-wrapper';

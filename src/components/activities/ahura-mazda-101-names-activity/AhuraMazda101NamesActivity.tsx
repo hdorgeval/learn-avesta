@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import { AudioPlayer, AudioProgressEvent } from '../../audio-player';
 import { CountdownTimer } from '../../countdown-timer';
 import { useAnalytics } from '../../hooks';
-import { AvestaWord, AvestaWordOwnProps, TimelineRange } from '../../words';
+import { AvestaWord, AvestaWordOwnProps } from '../../words';
 import audioTrack from './assets/101-names.mp3';
 import previewActivity from './assets/preview-101-names-of-ahura-mazda.png';
 import { names101 } from './data';
@@ -13,6 +13,9 @@ export const AhuraMazda101NamesActivity: FC = () => {
   const [addEvent] = useAnalytics();
   const [isActivityStarted, setIsActivityStarted] = useState(false);
   const [isAudioReady, setIsAudioReady] = useState(false);
+  const [forceAudioToPause, setForceAudioToPause] = useState(false);
+  const [forceAudioToContinue, setForceAudioToContinue] = useState(false);
+  const [audioIsPaused, setAudioIsPaused] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentTimeline, setCurrentTimeline] = useState(-1);
   const [audioPlayerRef, setAudioPlayerRef] = useState<ReactPlayer | null>(null);
@@ -73,6 +76,21 @@ export const AhuraMazda101NamesActivity: FC = () => {
     [timelineInSecondsOfFirstName],
   );
 
+  const handlePauseAudioTrack = useCallback(() => {
+    if (audioIsPaused) {
+      audioPlayerRef?.seekTo(names[currentNameIndex].timeline?.start || 0);
+      setForceAudioToPause(false);
+      setForceAudioToContinue(true);
+      setAudioIsPaused(false);
+      return;
+    }
+
+    setForceAudioToPause(true);
+    setForceAudioToContinue(false);
+    setAudioIsPaused(true);
+    return;
+  }, [audioIsPaused, audioPlayerRef, currentNameIndex, names]);
+
   const handleOnAudioSeek = useCallback(
     (seconds: number) => {
       setCurrentTimeline(seconds);
@@ -95,15 +113,20 @@ export const AhuraMazda101NamesActivity: FC = () => {
     },
     [findCurrentName, getCountdownProgress, getRemainingTimeBeforeFirstName, names],
   );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleWordSeek = useCallback(
-    (progress: TimelineRange) => {
-      setCurrentTimeline(progress.start);
-      setCurrentName(findCurrentName(progress.start));
-      audioPlayerRef?.seekTo(progress.start);
-    },
-    [audioPlayerRef, findCurrentName],
-  );
+
+  const handlePlayPreviousName = useCallback(() => {
+    const newIndex = currentNameIndex - 1;
+    if (newIndex >= 0) {
+      audioPlayerRef?.seekTo(names[newIndex].timeline?.start || 0);
+    }
+  }, [audioPlayerRef, currentNameIndex, names]);
+
+  const handlePlayNextName = useCallback(() => {
+    const newIndex = currentNameIndex + 1;
+    if (newIndex < names.length) {
+      audioPlayerRef?.seekTo(names[newIndex].timeline?.start || 0);
+    }
+  }, [audioPlayerRef, currentNameIndex, names]);
 
   const handleOnClickPreview = useCallback(() => {
     setIsActivityStarted(true);
@@ -146,6 +169,48 @@ export const AhuraMazda101NamesActivity: FC = () => {
                     {currentNameIndex + 1}
                   </span>
                 </div>
+                <div
+                  className="mt-4 btn-group text-light d-flex flex-row justify-content-around align-items-center"
+                  role="group"
+                  aria-label="Word actions"
+                >
+                  <button
+                    className="btn btn-outline-secondary text-light fw-bolder"
+                    onClick={handlePlayPreviousName}
+                  >
+                    <div className="d-flex flex-row justify-content-center align-items-center">
+                      <i className="bi bi-forward icon-flipped text-light me-2"></i>
+                      <span>Previous name</span>
+                    </div>
+                  </button>
+                  <button
+                    className="btn btn-outline-secondary text-light fw-bolder "
+                    onClick={handlePauseAudioTrack}
+                  >
+                    {audioIsPaused ? (
+                      <>
+                        <div className="d-flex flex-row justify-content-center align-items-center">
+                          <i className="bi bi-play-circle text-light me-2"></i>
+                          <span>Play name</span>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="d-flex flex-row justify-content-center align-items-center">
+                        <i className="bi bi-pause-circle text-light me-2"></i>
+                        <span>Pause name</span>
+                      </div>
+                    )}
+                  </button>
+                  <button
+                    className="btn btn-outline-secondary text-light fw-bolder"
+                    onClick={handlePlayNextName}
+                  >
+                    <div className="d-flex flex-row justify-content-center align-items-center">
+                      <i className="bi bi-forward text-light me-2"></i>
+                      <span>Next name</span>
+                    </div>
+                  </button>
+                </div>
               </>
             )}
           </div>
@@ -155,6 +220,8 @@ export const AhuraMazda101NamesActivity: FC = () => {
         autoStart={audioPlayOnSart}
         thumbnailUrl={previewActivity}
         audioUrl={audioTrack}
+        forcePause={forceAudioToPause}
+        forceContinue={forceAudioToContinue}
         onReady={handleOnAudioReady}
         onStart={handleOnAudioStart}
         onSeek={handleOnAudioSeek}
