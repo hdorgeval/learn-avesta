@@ -113,4 +113,68 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Nobody can fathom',
     },
   },
+  {
+    transcript: 'Ham-aiyāfah',
+    timeline: { start: 54.2, end: 57.41 },
+    zoom: 0.8,
+    translation: {
+      en: 'Attainer of all',
+    },
+  },
+  {
+    transcript: 'Ādarō',
+    timeline: { start: 57.41, end: 59.17 },
+    zoom: 1,
+    translation: {
+      en: 'Starter of the start; Just of just',
+    },
+  },
+  {
+    transcript: 'Girā',
+    timeline: { start: 59.17, end: 60.95 },
+    zoom: 1,
+    translation: {
+      en: 'Takes care of everything',
+    },
+  },
+  {
+    transcript: 'A-Cəm',
+    timeline: { start: 60.98, end: 62.64 },
+    zoom: 1,
+    translation: {
+      en: 'Without Cause, The Causeless Cause',
+    },
+  },
+  {
+    transcript: 'Camanā',
+    timeline: { start: 62.64, end: 64.83 },
+    zoom: 1,
+    translation: {
+      en: 'Cause of all Causes',
+    },
+  },
+  {
+    transcript: 'Safanā',
+    timeline: { start: 64.83, end: 66.71 },
+    zoom: 1,
+    translation: {
+      en: 'Increaser',
+    },
+  },
+  {
+    transcript: 'Afazā',
+    timeline: { start: 66.71, end: 68.48 },
+    zoom: 1,
+    translation: {
+      en: 'Helps in progress',
+    },
+  },
+  {
+    transcript: 'Nāṣā',
+    timeline: { start: 68.48, end: 70.28 },
+    zoom: 1,
+    translation: {
+      en: 'Can reach everybody equally',
+    },
+  },
 ];
