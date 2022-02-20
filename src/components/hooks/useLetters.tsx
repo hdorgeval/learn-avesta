@@ -38,6 +38,7 @@ import {
   useLetterY,
   useLetterY2,
   useLetterY3,
+  useLetterY4,
   useLetterZ,
 } from '../letters';
 
@@ -81,6 +82,7 @@ export const useAllLetters = () => {
     useLetterY(),
     useLetterY2(),
     useLetterY3(),
+    useLetterY4(),
   ];
 };
 

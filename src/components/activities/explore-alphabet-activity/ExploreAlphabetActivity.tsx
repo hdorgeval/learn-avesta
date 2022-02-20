@@ -261,7 +261,7 @@ export const ExploreAlphabetActivity: React.FC = () => {
                   </div>
                 )}
                 {hasOtherShapes && (
-                  <div className="card-title h6 text-start border-bottom border-bottom-1 border-secondary pb-2 d-flex justify-content-start align-items-center h-100">
+                  <div className="card-title h6 text-start border-bottom border-bottom-1 border-secondary pb-2 d-flex flex-row flex-wrap justify-content-start align-items-center h-100">
                     Other shape{hasMulitpleOtherShapes && <>s</>} :{' '}
                     {otherShapes.map((letter: Letter, index) => (
                       <span

@@ -38,6 +38,7 @@ export * from './LetterXv';
 export * from './LetterY';
 export * from './LetterY2';
 export * from './LetterY3';
+export * from './LetterY4';
 export * from './LetterZ';
 export * from './MissingLetter';
 export * from './ParagraphSeparator';
