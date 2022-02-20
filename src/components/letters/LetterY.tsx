@@ -10,6 +10,7 @@ export const useLetterY = (): Letter => ({
     en: 'like the letter y in yes ;',
   },
   transcription: 'y',
+  useWhenFirstLetterInWord: true,
   render: (props?: LetterOwnProps) => {
     return <LetterY {...props} />;
   },

@@ -26,10 +26,11 @@ import {
   LetterT,
   LetterU,
   LetterV,
-  LetterV3,
   LetterX,
   LetterXv,
   LetterY,
+  LetterY2,
+  LetterY3,
   LetterZ,
   MissingLetter,
   ParagraphSeparator,
@@ -101,7 +102,10 @@ export const Carrier: React.FC = () => {
       <LetterN3 fill="#f5a425" />
       <LetterN2 fill="#f5a425" />
       <LetterA fill="#f5a425" />
-      <LetterV3 fill="#f5a425" />
+      <LetterY3 fill="#f5a425" />
+      <LetterA fill="#f5a425" />
+      <LetterE fill="#f5a425" />
+      <LetterY2 fill="#f5a425" />
       <LetterA fill="#f5a425" />
     </div>
   );
