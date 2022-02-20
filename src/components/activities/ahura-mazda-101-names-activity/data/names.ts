@@ -177,4 +177,52 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Can reach everybody equally',
     },
   },
+  {
+    transcript: 'Parwarā',
+    timeline: { start: 70.28, end: 72.62 },
+    zoom: 1,
+    translation: {
+      en: 'Nourisher, Sustainer',
+    },
+  },
+  {
+    transcript: 'Iyānah',
+    timeline: { start: 72.62, end: 74.66 },
+    zoom: 1,
+    translation: {
+      en: 'Divine Protector',
+    },
+  },
+  {
+    transcript: 'Āin-āenah',
+    timeline: { start: 74.66, end: 76.8 },
+    zoom: 1,
+    translation: {
+      en: 'One and the same all the time, Never changing',
+    },
+  },
+  {
+    transcript: 'An-ainah',
+    timeline: { start: 76.8, end: 79.02 },
+    zoom: 1,
+    translation: {
+      en: 'Without Shape, Having no form',
+    },
+  },
+  {
+    transcript: 'Xrōṣīd-tum',
+    timeline: { start: 79.02, end: 81.2 },
+    zoom: 1,
+    translation: {
+      en: 'The firmest of the firm',
+    },
+  },
+  {
+    transcript: 'Mīnō-tum',
+    timeline: { start: 81.2, end: 83.4 },
+    zoom: 1,
+    translation: {
+      en: 'The most Invisible',
+    },
+  },
 ];
