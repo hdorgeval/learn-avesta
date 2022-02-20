@@ -318,6 +318,12 @@ export const ExploreAlphabetActivity: React.FC = () => {
                     </p>
                   </>
                 )}
+                {hasOtherShapes && (
+                  <p className="text-start mb-1 fst-italic">
+                    <i className="bi bi-lightbulb"></i>Tip : you can click on any other shapes to
+                    guess what could be the difference in shapes usage;
+                  </p>
+                )}
                 <p className="text-start mb-1 fst-italic">
                   <i className="bi bi-lightbulb"></i>Tip : you can click on the character on the
                   left to get it's sound;
