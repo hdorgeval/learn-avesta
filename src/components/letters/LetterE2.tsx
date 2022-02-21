@@ -29,7 +29,7 @@ export const LetterE2: FC<LetterOwnProps> = ({
   const props: LetterRendererOwnProps = {
     disableTranslate,
     disableSound,
-    textToSpeech: '/ey/',
+    textToSpeech: '/eh/',
     style: {
       marginLeft: '4px',
     },
