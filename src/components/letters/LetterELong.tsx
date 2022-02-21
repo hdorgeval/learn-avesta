@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
-export const useLetterEh = (): Letter => ({
+export const useLetterELong = (): Letter => ({
   id: 'ē',
   pronunciation: {
     fr: 'long é, like the sequence eh.',
