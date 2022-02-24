@@ -8,7 +8,6 @@ import {
   LetterD,
   LetterDj,
   LetterE,
-  LetterE2,
   LetterELong,
   LetterF,
   LetterG,
@@ -23,6 +22,7 @@ import {
   LetterOLong,
   LetterR,
   LetterS,
+  LetterSH,
   LetterSSH,
   LetterT,
   LetterU,
@@ -98,15 +98,14 @@ export const Carrier: React.FC = () => {
       <LetterV fill="#f5a425" />
       <LetterOLong fill="#f5a425" />
       <LetterR fill="#f5a425" />
-      <LetterU fill="#f5a425" />
       <LetterN3 fill="#f5a425" />
       <LetterN2 fill="#f5a425" />
-      <LetterA fill="#f5a425" />
       <LetterY3 fill="#f5a425" />
       <LetterALong fill="#f5a425" />
       <LetterT fill="#f5a425" />
-      <LetterE2 fill="#f5a425" />
-      <LetterN2 fill="#f5a425" />
+      <LetterA fill="#f5a425" />
+      <LetterSH fill="#f5a425" />
+      <LetterU fill="#f5a425" />
     </div>
   );
 };
