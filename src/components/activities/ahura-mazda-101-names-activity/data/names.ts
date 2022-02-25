@@ -273,4 +273,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Vanquisher of all kinds of afflictions and diseases',
     },
   },
+  {
+    transcript: 'Tarō-nīš',
+    timeline: { start: 97.62, end: 99.61 },
+    zoom: 1,
+    translation: {
+      en: 'Victory over all evil',
+    },
+  },
 ];
