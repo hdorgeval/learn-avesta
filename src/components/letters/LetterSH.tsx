@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import letterSHSound from '../../assets/sounds/letter-sh.mp3';
-import ushtaSound from '../../assets/sounds/words/ushta.mp3';
+import letterSHSound from './assets/sounds/letter-sh.mp3';
+import ushtaSound from './assets/sounds/words/ushta.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterSH = (): Letter => ({

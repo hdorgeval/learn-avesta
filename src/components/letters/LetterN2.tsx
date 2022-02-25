@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import naroiSound from '../../assets/sounds/words/naroi.mp3';
+import naroiSound from './assets/sounds/words/naroi.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterN2 = (): Letter => ({

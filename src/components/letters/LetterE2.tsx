@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import ahuremSound from '../../assets/sounds/words/ahurem.mp3';
+import ahuremSound from './assets/sounds/words/ahurem.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterE2 = (): Letter => ({

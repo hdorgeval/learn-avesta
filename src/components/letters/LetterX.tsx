@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import letterXSound from '../../assets/sounds/letter-x.mp3';
+import letterXSound from './assets/sounds/letter-x.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 

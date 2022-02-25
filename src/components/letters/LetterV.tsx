@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import vohuSound from '../../assets/sounds/words/vohu.mp3';
+import vohuSound from './assets/sounds/words/vohu.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 

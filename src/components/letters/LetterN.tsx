@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import wordSampleSound from '../../assets/sounds/words/spentaa.mp3';
+import wordSampleSound from './assets/sounds/words/spentaa.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterN = (): Letter => ({

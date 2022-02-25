@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import nemanghaaSound from '../../assets/sounds/words/nemanghaa.mp3';
+import nemanghaaSound from './assets/sounds/words/nemanghaa.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 export const useLetterNg = (): Letter => ({

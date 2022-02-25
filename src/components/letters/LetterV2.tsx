@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import yavéSound from '../../assets/sounds/words/yavé.mp3';
+import yavéSound from './assets/sounds/words/yavé.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
