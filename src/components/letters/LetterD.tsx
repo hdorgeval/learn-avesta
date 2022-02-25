@@ -1,7 +1,7 @@
 import { FC } from 'react';
+import dahadSound from './assets/sounds/words/dahad.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
-
 export const useLetterD = (): Letter => ({
   id: 'd',
   pronunciation: {
@@ -9,7 +9,7 @@ export const useLetterD = (): Letter => ({
     en: 'like the letter d in dad.',
   },
   transcription: 'd',
-
+  sampleWord: { transcript: 'dahad', audioUrl: dahadSound },
   render: (props?: LetterOwnProps) => {
     return <LetterD {...props} />;
   },
