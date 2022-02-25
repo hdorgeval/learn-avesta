@@ -289,4 +289,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Everlasting, Immortal',
     },
   },
+  {
+    transcript: 'Farasak',
+    timeline: { start: 101.53, end: 103.31 },
+    zoom: 1,
+    translation: {
+      en: 'Complier of wish, Fulfiller of desires',
+    },
+  },
 ];
