@@ -265,4 +265,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Complete kind worthy light, Blessed haloed light',
     },
   },
+  {
+    transcript: 'Bǝ̄š taranā',
+    timeline: { start: 95.21, end: 97.62 },
+    zoom: 1,
+    translation: {
+      en: 'Vanquisher of all kinds of afflictions and diseases',
+    },
+  },
 ];

@@ -160,7 +160,7 @@ export const AhuraMazda101NamesActivity: FC = () => {
                   />
                 </div>
                 <div className="d-flex flex-row justify-content-around align-items-center text-light">
-                  <span className="font-monospace" key={currentName.transcript}>
+                  <span className="font-monospace mx-2" key={currentName.transcript}>
                     {currentName.translation?.en}
                   </span>
                 </div>
