@@ -281,4 +281,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Victory over all evil',
     },
   },
+  {
+    transcript: 'An-aoṣak',
+    timeline: { start: 99.61, end: 101.53 },
+    zoom: 1,
+    translation: {
+      en: 'Everlasting, Immortal',
+    },
+  },
 ];
