@@ -449,4 +449,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'The most exalted one',
     },
   },
+  {
+    transcript: 'Ham-cun',
+    timeline: { start: 142.05, end: 144.28 },
+    zoom: 1,
+    translation: {
+      en: 'Always the same',
+    },
+  },
 ];
