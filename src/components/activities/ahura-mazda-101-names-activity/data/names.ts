@@ -377,4 +377,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'One without duality',
     },
   },
+  {
+    transcript: 'Kąmǝ̄-rad',
+    timeline: { start: 124.62, end: 126.49 },
+    zoom: 1,
+    translation: {
+      en: 'Lord of wishes',
+    },
+  },
 ];
