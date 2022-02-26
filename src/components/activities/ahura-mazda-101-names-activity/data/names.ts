@@ -417,4 +417,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'All encompassing Accountant',
     },
   },
+  {
+    transcript: 'Sanāeā',
+    timeline: { start: 134.23, end: 136.63 },
+    zoom: 1,
+    translation: {
+      en: 'Worthy to know, knower',
+    },
+  },
 ];
