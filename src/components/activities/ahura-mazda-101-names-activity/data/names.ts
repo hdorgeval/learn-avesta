@@ -321,4 +321,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Forgiver and Giver of all good Inclinations. Merciful and compassionate Bestower',
     },
   },
+  {
+    transcript: 'Abarzā',
+    timeline: { start: 109.65, end: 111.74 },
+    zoom: 1,
+    translation: {
+      en: 'Bountiful Bestower',
+    },
+  },
 ];
