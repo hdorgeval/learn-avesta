@@ -401,4 +401,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Without body',
     },
   },
+  {
+    transcript: 'A-farǝ̄mōš',
+    timeline: { start: 130.43, end: 132.47 },
+    zoom: 1,
+    translation: {
+      en: 'Never forgetting',
+    },
+  },
 ];
