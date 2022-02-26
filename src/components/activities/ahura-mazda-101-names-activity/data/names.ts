@@ -345,4 +345,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Independent. All free',
     },
   },
+  {
+    transcript: 'Varuna',
+    timeline: { start: 115.71, end: 117.56 },
+    zoom: 1,
+    translation: {
+      en: 'Deliverer from evil',
+    },
+  },
 ];
