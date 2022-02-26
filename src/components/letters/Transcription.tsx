@@ -26,7 +26,7 @@ const transcriptionRecords: Partial<Record<TranscriptionSymbol, ReactElement<any
   ǝ̄: (
     <>
       <span>&#601;</span>
-      <span className="position-absolute" style={{ marginTop: '-0.01em', marginLeft: '-0.42em' }}>
+      <span className="position-absolute" style={{ marginTop: '-0.01em', marginLeft: '-0.5rem' }}>
         &#713;
       </span>
     </>
