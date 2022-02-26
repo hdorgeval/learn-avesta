@@ -409,4 +409,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Never forgetting',
     },
   },
+  {
+    transcript: 'Hamāranā',
+    timeline: { start: 132.47, end: 134.23 },
+    zoom: 1,
+    translation: {
+      en: 'All encompassing Accountant',
+    },
+  },
 ];
