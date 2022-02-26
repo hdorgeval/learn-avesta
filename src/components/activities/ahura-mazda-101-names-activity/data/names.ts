@@ -393,4 +393,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'His will is Law',
     },
   },
+  {
+    transcript: 'Āex-tan',
+    timeline: { start: 128.3, end: 130.43 },
+    zoom: 1,
+    translation: {
+      en: 'Without body',
+    },
+  },
 ];
