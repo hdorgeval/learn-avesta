@@ -457,4 +457,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Always the same',
     },
   },
+  {
+    transcript: 'Mīnō-stīh-gar',
+    timeline: { start: 144.28, end: 146.72 },
+    zoom: 0.7,
+    translation: {
+      en: 'Possessor of the key to all the mysteries of the Cosmos',
+    },
+  },
 ];
