@@ -433,4 +433,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Without Fear',
     },
   },
+  {
+    transcript: 'A-bīš',
+    timeline: { start: 138.25, end: 140.07 },
+    zoom: 1,
+    translation: {
+      en: 'Devoid of Pain-sufferings',
+    },
+  },
 ];
