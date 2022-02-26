@@ -385,4 +385,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Lord of wishes',
     },
   },
+  {
+    transcript: 'Farmān-Kąm',
+    timeline: { start: 126.49, end: 128.3 },
+    zoom: 1,
+    translation: {
+      en: 'His will is Law',
+    },
+  },
 ];
