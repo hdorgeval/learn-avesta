@@ -369,4 +369,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Never Deceived',
     },
   },
+  {
+    transcript: 'A-dui',
+    timeline: { start: 122.88, end: 124.53 },
+    zoom: 1,
+    translation: {
+      en: 'One without duality',
+    },
+  },
 ];
