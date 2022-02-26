@@ -337,4 +337,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Unconquerable',
     },
   },
+  {
+    transcript: 'Raxōh',
+    timeline: { start: 114.01, end: 115.71 },
+    zoom: 1,
+    translation: {
+      en: 'Independent. All free',
+    },
+  },
 ];
