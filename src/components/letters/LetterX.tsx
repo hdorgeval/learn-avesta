@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import letterXSound from './assets/sounds/letter-x.mp3';
+import XwāfarSound from './assets/sounds/words/kwafar.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
 
@@ -11,6 +12,7 @@ export const useLetterX = (): Letter => ({
     de: 'like the sequence ch in nach.',
   },
   transcription: 'x',
+  sampleWord: { transcript: 'Xwāfar', audioUrl: XwāfarSound },
   render: (props?: LetterOwnProps) => {
     return <LetterX {...props} />;
   },
