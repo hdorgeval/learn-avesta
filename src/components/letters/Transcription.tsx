@@ -23,6 +23,14 @@ const transcriptionRecords: Partial<Record<TranscriptionSymbol, ReactElement<any
       </span>
     </>
   ),
+  ǝ̄: (
+    <>
+      <span>&#601;</span>
+      <span className="position-absolute" style={{ marginTop: '-0.01em', marginLeft: '-0.45em' }}>
+        &#713;
+      </span>
+    </>
+  ),
   'x<raised>v': (
     <>
       <span>x</span>
@@ -35,13 +43,18 @@ const transcriptionRecords: Partial<Record<TranscriptionSymbol, ReactElement<any
 
 export interface EncodedHtmlTranscriptionOwnProps {
   symbol: TranscriptionSymbol;
+  noSpan?: boolean;
 }
 
 export const EncodedHtmlTranscription: React.FC<EncodedHtmlTranscriptionOwnProps> = ({
   symbol,
+  noSpan,
 }) => {
   if (transcriptionRecords[symbol]) {
     return transcriptionRecords[symbol] || null;
+  }
+  if (noSpan) {
+    return <>{symbol}</>;
   }
 
   return <span>{symbol}</span>;

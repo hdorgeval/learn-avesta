@@ -361,4 +361,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Never Deceiving',
     },
   },
+  {
+    transcript: 'Bǝ̄-farǝ̄fah',
+    timeline: { start: 119.7, end: 122.88 },
+    zoom: 1,
+    translation: {
+      en: 'Never Deceived',
+    },
+  },
 ];

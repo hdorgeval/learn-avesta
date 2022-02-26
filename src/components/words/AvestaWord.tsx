@@ -2,7 +2,9 @@ import { useCallback, useMemo, useState } from 'react';
 import { splitTranscript } from '../../tools/common/transcript';
 import { useAllLetters, useAudioFromUrl } from '../hooks';
 import {
+  EncodedHtmlTranscription,
   hasTranscription,
+  TranscriptionSymbol,
   useMissingLetter,
   useParagraphSeparator,
   useSentenceSeparator,
@@ -175,7 +177,9 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
           onClick={handleClick}
         >
           {transcriptedLetters.map((letter, index) => (
-            <span key={`${letter}-${index}`}>{letter}</span>
+            <span key={`${letter}-${index}`}>
+              <EncodedHtmlTranscription symbol={letter as TranscriptionSymbol} noSpan={true} />
+            </span>
           ))}
         </div>
       ) : (
