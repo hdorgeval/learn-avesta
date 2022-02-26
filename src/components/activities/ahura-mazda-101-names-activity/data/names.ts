@@ -425,4 +425,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Worthy to know, knower',
     },
   },
+  {
+    transcript: 'A-tars',
+    timeline: { start: 136.63, end: 138.25 },
+    zoom: 1,
+    translation: {
+      en: 'Without Fear',
+    },
+  },
 ];
