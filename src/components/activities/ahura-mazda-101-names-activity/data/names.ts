@@ -329,4 +329,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Bountiful Bestower',
     },
   },
+  {
+    transcript: 'A-Satōh',
+    timeline: { start: 111.74, end: 114.01 },
+    zoom: 1,
+    translation: {
+      en: 'Unconquerable',
+    },
+  },
 ];
