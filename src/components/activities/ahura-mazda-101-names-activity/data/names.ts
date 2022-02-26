@@ -297,4 +297,20 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Complier of wish, Fulfiller of desires',
     },
   },
+  {
+    transcript: 'Pajōh-dahad',
+    timeline: { start: 103.31, end: 105.78 },
+    zoom: 0.8,
+    translation: {
+      en: 'Producer of Divine characteristics',
+    },
+  },
+  {
+    transcript: 'Xwāfar',
+    timeline: { start: 105.78, end: 107.68 },
+    zoom: 1,
+    translation: {
+      en: 'The Supreme Judge',
+    },
+  },
 ];
