@@ -45,7 +45,7 @@ export const LetterR: FC<LetterOwnProps> = ({
         scaleX: 0.3,
         scaleY: 0.3,
         translateX: 0,
-        translateY: -20,
+        translateY: -30,
         strokeWidth: 1,
       },
     },

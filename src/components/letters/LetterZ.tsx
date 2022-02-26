@@ -1,7 +1,7 @@
 import { FC } from 'react';
+import abarzaSound from './assets/sounds/words/abarza.mp3';
 import { Letter, LetterOwnProps } from './letter.models';
 import { LetterRenderer, LetterRendererOwnProps } from './LetterRenderer';
-
 export const useLetterZ = (): Letter => ({
   id: 'z',
   pronunciation: {
@@ -9,6 +9,7 @@ export const useLetterZ = (): Letter => ({
     en: 'like the letter z in zoo.',
   },
   transcription: 'z',
+  sampleWord: { transcript: 'Abarzā', audioUrl: abarzaSound },
   render: (props?: LetterOwnProps) => {
     return <LetterZ {...props} />;
   },
@@ -45,7 +46,7 @@ export const LetterZ: FC<LetterOwnProps> = ({
         scaleX: 0.3,
         scaleY: 0.3,
         translateX: 0,
-        translateY: 0,
+        translateY: 30,
         strokeWidth: 1,
       },
     },

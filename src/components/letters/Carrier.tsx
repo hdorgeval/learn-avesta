@@ -22,7 +22,6 @@ import {
   LetterOLong,
   LetterR,
   LetterS,
-  LetterSH,
   LetterSSH,
   LetterT,
   LetterU,
@@ -30,7 +29,6 @@ import {
   LetterX,
   LetterXv,
   LetterY,
-  LetterY3,
   LetterZ,
   MissingLetter,
   ParagraphSeparator,
@@ -100,12 +98,12 @@ export const Carrier: React.FC = () => {
       <LetterR fill="#f5a425" />
       <LetterN3 fill="#f5a425" />
       <LetterN2 fill="#f5a425" />
-      <LetterY3 fill="#f5a425" />
       <LetterALong fill="#f5a425" />
-      <LetterT fill="#f5a425" />
+      <LetterZ fill="#f5a425" />
+      <LetterR fill="#f5a425" />
       <LetterA fill="#f5a425" />
-      <LetterSH fill="#f5a425" />
-      <LetterU fill="#f5a425" />
+      <LetterB fill="#f5a425" />
+      <LetterA fill="#f5a425" />
     </div>
   );
 };
