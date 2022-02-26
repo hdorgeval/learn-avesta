@@ -353,4 +353,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Deliverer from evil',
     },
   },
+  {
+    transcript: 'A-farəfah',
+    timeline: { start: 117.56, end: 119.7 },
+    zoom: 1,
+    translation: {
+      en: 'Never Deceiving',
+    },
+  },
 ];
