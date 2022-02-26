@@ -441,4 +441,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Devoid of Pain-sufferings',
     },
   },
+  {
+    transcript: 'Afrāzdum',
+    timeline: { start: 140.07, end: 142.05 },
+    zoom: 1,
+    translation: {
+      en: 'The most exalted one',
+    },
+  },
 ];
