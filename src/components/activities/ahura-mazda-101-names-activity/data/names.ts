@@ -313,4 +313,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'The Supreme Judge',
     },
   },
+  {
+    transcript: 'Afaxṣīāǝ̄ā',
+    timeline: { start: 107.68, end: 109.65 },
+    zoom: 0.8,
+    translation: {
+      en: 'Forgiver and Giver of all good Inclinations. Merciful and compassionate Bestower',
+    },
+  },
 ];
