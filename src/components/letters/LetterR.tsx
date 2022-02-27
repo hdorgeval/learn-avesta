@@ -9,6 +9,7 @@ export const useLetterR = (): Letter => ({
     en: 'like the letter r in red, try.',
   },
   transcription: 'r',
+  isPreferred: true,
   render: (props?: LetterOwnProps) => {
     return <LetterR {...props} />;
   },
