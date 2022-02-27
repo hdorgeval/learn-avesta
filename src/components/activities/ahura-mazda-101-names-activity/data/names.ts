@@ -473,4 +473,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Creator of all spiritual Elements',
     },
   },
+  {
+    transcript: 'Mīnō-nahab',
+    timeline: { start: 148.74, end: 151.89 },
+    zoom: 0.9,
+    translation: {
+      en: 'Hidden Invisible Spirit in Mind',
+    },
+  },
 ];
