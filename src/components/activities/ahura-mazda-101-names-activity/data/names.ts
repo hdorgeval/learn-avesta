@@ -481,4 +481,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Hidden Invisible Spirit in Mind',
     },
   },
+  {
+    transcript: 'Ādar-bād-gar',
+    timeline: { start: 152.46, end: 154.53 },
+    zoom: 0.8,
+    translation: {
+      en: 'Transmuter of Fire into Air',
+    },
+  },
 ];
