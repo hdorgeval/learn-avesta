@@ -465,4 +465,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Possessor of the key to all the mysteries of the Cosmos',
     },
   },
+  {
+    transcript: 'A-mīnō-gar',
+    timeline: { start: 146.72, end: 148.74 },
+    zoom: 0.9,
+    translation: {
+      en: 'Creator of all spiritual Elements',
+    },
+  },
 ];
