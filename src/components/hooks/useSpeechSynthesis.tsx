@@ -67,6 +67,11 @@ export const phoneticSpeechSynthesis: Record<string, SpeechRequest> = {
     pitch: 1,
     rate: 1,
   },
+  '/l/': {
+    text: 'l',
+    pitch: 1,
+    rate: 1,
+  },
   '/m/': {
     text: 'm',
     pitch: 1,
