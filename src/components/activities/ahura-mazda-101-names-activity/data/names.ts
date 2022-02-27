@@ -505,4 +505,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Transmuter of Air into Fire',
     },
   },
+  {
+    transcript: 'Bād-nam-gar',
+    timeline: { start: 158.9, end: 161.28 },
+    zoom: 0.8,
+    translation: {
+      en: 'Transmuter of Air into Water',
+    },
+  },
 ];
