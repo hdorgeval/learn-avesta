@@ -601,4 +601,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Master Craftsmen',
     },
   },
+  {
+    transcript: 'Gar-ā-gar-gar',
+    timeline: { start: 183.98, end: 186.08 },
+    zoom: 0.8,
+    translation: {
+      en: 'Master Craftsmen',
+    },
+  },
 ];
