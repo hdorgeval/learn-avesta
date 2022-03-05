@@ -649,4 +649,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Without Sleep',
     },
   },
+  {
+    transcript: 'A-mast',
+    timeline: { start: 196.07, end: 197.78 },
+    zoom: 1,
+    translation: {
+      en: 'Ever-intelligent',
+    },
+  },
 ];
