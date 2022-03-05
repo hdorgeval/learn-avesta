@@ -721,4 +721,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Can reach all creation',
     },
   },
+  {
+    transcript: 'Vaspār',
+    timeline: { start: 215.79, end: 217.52 },
+    zoom: 1,
+    translation: {
+      en: 'Bringer of All things',
+    },
+  },
 ];
