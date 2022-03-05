@@ -689,4 +689,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Lord of the Universe',
     },
   },
+  {
+    transcript: 'Ahur-mazd',
+    timeline: { start: 206.55, end: 208.5 },
+    zoom: 1,
+    translation: {
+      en: 'Lord of Knowledge and Wisdom',
+    },
+  },
 ];
