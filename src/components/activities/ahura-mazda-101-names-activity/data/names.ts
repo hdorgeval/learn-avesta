@@ -563,10 +563,18 @@ export const names101: AvestaWordOwnProps[] = [
   },
   {
     transcript: 'Gəl-vād-gar',
-    timeline: { start: 174.0, end: 177.91 },
+    timeline: { start: 174.0, end: 175.9 },
     zoom: 0.8,
     translation: {
       en: 'Transmuter of Earth into Air',
+    },
+  },
+  {
+    transcript: 'Gəl-nam-gar',
+    timeline: { start: 175.9, end: 178.51 },
+    zoom: 0.8,
+    translation: {
+      en: 'Transmuter of Earth into Water',
     },
   },
 ];
