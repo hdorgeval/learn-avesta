@@ -545,4 +545,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Creator of Air everywhere',
     },
   },
+  {
+    transcript: 'Āb-tum',
+    timeline: { start: 170.17, end: 171.94 },
+    zoom: 1,
+    translation: {
+      en: 'Creator of abundance water',
+    },
+  },
 ];
