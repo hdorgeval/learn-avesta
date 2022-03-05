@@ -641,4 +641,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Ageless - Timeless',
     },
   },
+  {
+    transcript: 'A-Xuąn',
+    timeline: { start: 194.3, end: 196.07 },
+    zoom: 1,
+    translation: {
+      en: 'Without Sleep',
+    },
+  },
 ];
