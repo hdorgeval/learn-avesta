@@ -665,4 +665,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Ever protecting',
     },
   },
+  {
+    transcript: 'Padmānī',
+    timeline: { start: 199.95, end: 201.55 },
+    zoom: 1,
+    translation: {
+      en: 'Balancer-Moderator of all things',
+    },
+  },
 ];
