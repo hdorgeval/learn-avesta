@@ -633,4 +633,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Undoubted - Above doubt',
     },
   },
+  {
+    transcript: 'A-zamąn',
+    timeline: { start: 192.51, end: 194.3 },
+    zoom: 1,
+    translation: {
+      en: 'Ageless - Timeless',
+    },
+  },
 ];
