@@ -673,4 +673,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Balancer-Moderator of all things',
     },
   },
+  {
+    transcript: 'Fīrōzgar',
+    timeline: { start: 201.55, end: 203.5 },
+    zoom: 1,
+    translation: {
+      en: 'Ever Triumphant',
+    },
+  },
 ];
