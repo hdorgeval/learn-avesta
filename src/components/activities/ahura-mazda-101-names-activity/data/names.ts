@@ -537,4 +537,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Changer of Fire into Precious Stone',
     },
   },
+  {
+    transcript: 'Bād-gar-jāe',
+    timeline: { start: 167.53, end: 170.17 },
+    zoom: 0.8,
+    translation: {
+      en: 'Creator of Air everywhere',
+    },
+  },
 ];
