@@ -705,4 +705,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Best preserver of the original (Seed) of the Universe',
     },
   },
+  {
+    transcript: 'Abarīn-nō-tawąn',
+    timeline: { start: 211.09, end: 214.0 },
+    zoom: 0.6,
+    translation: {
+      en: 'Best creator in creating new origin',
+    },
+  },
 ];
