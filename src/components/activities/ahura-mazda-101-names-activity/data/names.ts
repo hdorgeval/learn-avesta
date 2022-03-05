@@ -526,6 +526,14 @@ export const names101: AvestaWordOwnProps[] = [
     timeline: { start: 163.17, end: 165.21 },
     zoom: 0.8,
     translation: {
+      en: 'Transformer of air into girad',
+    },
+  },
+  {
+    transcript: 'Ādar-kībarīt-tum',
+    timeline: { start: 165.21, end: 167.53 },
+    zoom: 0.7,
+    translation: {
       en: 'Changer of Fire into Precious Stone',
     },
   },

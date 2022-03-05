@@ -150,7 +150,7 @@ export const AhuraMazda101NamesActivity: FC = () => {
             {currentName && (
               <>
                 <div className="d-flex flex-row justify-content-around align-items-center">
-                  <AvestaWord key={currentName.transcript} {...currentName} />
+                  <AvestaWord key={currentName.transcript} {...currentName} shrink={true} />
                 </div>
                 <div className="d-flex flex-row justify-content-around align-items-center text-light">
                   <AvestaWord
