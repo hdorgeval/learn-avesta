@@ -185,7 +185,7 @@ export const AvestaWord: React.FC<AvestaWordOwnProps> = ({
       ) : (
         <div
           className={`ms-2 avesta-word cursor-pointer ${isOntrack ? 'outline-2-info' : ''} ${
-            shrink ? 'd-flex flex-nowrap' : ''
+            shrink ? 'text-nowrap' : ''
           }`}
           onClick={handleClick}
         >

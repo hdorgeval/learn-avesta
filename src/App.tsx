@@ -237,12 +237,12 @@ export const App: FC = () => {
           </a>
         </div>
       </footer>
-      {/* <Carrier />
-      <div className="bg-dark">
-        <AvestaWord transcript="Abalzā" zoom={0.5} preferredLetterIds={['r2']} />
+      {/* <Carrier /> */}
+      {/* <div className="bg-dark">
+        <AvestaWord transcript="Gəl-ādar-gar" zoom={0.8} preferredLetterIds={['r2']} />
         <Sentence transcript="yānīm manō yānīm vacō" zoom={0.5} />
-      </div>
-      <div className="bg-dark text-light">
+      </div> */}
+      {/* <div className="bg-dark text-light">
         <AvestaWord transcript="Bǝ̄-farǝ̄fah" zoom={1.0} renderTranscriptOnly={true} />
       </div> */}
     </>

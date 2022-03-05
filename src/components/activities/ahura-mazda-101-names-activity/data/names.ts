@@ -553,4 +553,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Creator of abundance water',
     },
   },
+  {
+    transcript: 'Gəl-ādar-gar',
+    timeline: { start: 171.94, end: 174.0 },
+    zoom: 0.8,
+    translation: {
+      en: 'Transmuter of Earth into Fire',
+    },
+  },
 ];
