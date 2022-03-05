@@ -681,4 +681,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Ever Triumphant',
     },
   },
+  {
+    transcript: 'Xudāwaṇd',
+    timeline: { start: 203.5, end: 205.66 },
+    zoom: 1,
+    translation: {
+      en: 'Lord of the Universe',
+    },
+  },
 ];
