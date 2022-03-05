@@ -697,4 +697,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Lord of Knowledge and Wisdom',
     },
   },
+  {
+    transcript: 'Abarīn-kōhun-tawąn',
+    timeline: { start: 208.5, end: 211.09 },
+    zoom: 0.6,
+    translation: {
+      en: 'Best preserver of the original (Seed) of the Universe',
+    },
+  },
 ];
