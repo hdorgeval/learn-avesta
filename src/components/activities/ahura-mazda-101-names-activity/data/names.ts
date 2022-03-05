@@ -729,4 +729,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Bringer of All things',
     },
   },
+  {
+    transcript: 'Xāwar',
+    timeline: { start: 217.62, end: 219.32 },
+    zoom: 1,
+    translation: {
+      en: 'Most Merciful',
+    },
+  },
 ];
