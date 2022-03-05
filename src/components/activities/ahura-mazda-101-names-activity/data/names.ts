@@ -657,4 +657,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Ever-intelligent',
     },
   },
+  {
+    transcript: 'Faṣutanā',
+    timeline: { start: 197.78, end: 199.95 },
+    zoom: 1,
+    translation: {
+      en: 'Ever protecting',
+    },
+  },
 ];
