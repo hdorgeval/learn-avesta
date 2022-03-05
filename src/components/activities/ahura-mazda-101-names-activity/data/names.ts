@@ -713,4 +713,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Best creator in creating new origin',
     },
   },
+  {
+    transcript: 'Vaspąn',
+    timeline: { start: 214.26, end: 215.79 },
+    zoom: 1,
+    translation: {
+      en: 'Can reach all creation',
+    },
+  },
 ];
