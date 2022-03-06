@@ -745,4 +745,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Lord of Existence',
     },
   },
+  {
+    transcript: 'Awaxṣīdār',
+    timeline: { start: 220.67, end: 222.97 },
+    zoom: 0.9,
+    translation: {
+      en: 'Lord of Existence',
+    },
+  },
 ];
