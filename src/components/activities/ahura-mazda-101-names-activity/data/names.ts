@@ -737,4 +737,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Most Merciful',
     },
   },
+  {
+    transcript: 'Ahu',
+    timeline: { start: 219.32, end: 220.67 },
+    zoom: 1,
+    translation: {
+      en: 'Lord of Existence',
+    },
+  },
 ];
