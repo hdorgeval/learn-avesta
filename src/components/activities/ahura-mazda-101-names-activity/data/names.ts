@@ -801,4 +801,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'The Liberator',
     },
   },
+  {
+    transcript: 'Fraṣō-gar',
+    timeline: { start: 234.69, end: 237.0 },
+    zoom: 1,
+    translation: {
+      en: 'Divine Renovator, Awakener of Eternity',
+    },
+  },
 ];
