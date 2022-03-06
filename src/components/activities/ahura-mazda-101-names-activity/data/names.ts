@@ -777,4 +777,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Full of Light abundant',
     },
   },
+  {
+    transcript: 'Dāwar',
+    timeline: { start: 228.61, end: 230.69 },
+    zoom: 1,
+    translation: {
+      en: 'The Lord of justice',
+    },
+  },
 ];
