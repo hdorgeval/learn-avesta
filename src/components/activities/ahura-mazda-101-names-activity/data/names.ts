@@ -761,4 +761,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Divine creator of justice',
     },
   },
+  {
+    transcript: 'Rayōmaṇd',
+    timeline: { start: 225.02, end: 226.83 },
+    zoom: 1,
+    translation: {
+      en: 'Full of lusterous splendour',
+    },
+  },
 ];
