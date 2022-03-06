@@ -793,4 +793,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'Master of Righteousness, Virtue',
     },
   },
+  {
+    transcript: 'Bōxtār',
+    timeline: { start: 232.72, end: 234.69 },
+    zoom: 1,
+    translation: {
+      en: 'The Liberator',
+    },
+  },
 ];
