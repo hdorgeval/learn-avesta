@@ -750,7 +750,15 @@ export const names101: AvestaWordOwnProps[] = [
     timeline: { start: 220.67, end: 222.97 },
     zoom: 0.9,
     translation: {
-      en: 'Lord of Existence',
+      en: 'Just Bestower',
+    },
+  },
+  {
+    transcript: 'Dādār',
+    timeline: { start: 222.97, end: 225.02 },
+    zoom: 1,
+    translation: {
+      en: 'Divine creator of justice',
     },
   },
 ];
