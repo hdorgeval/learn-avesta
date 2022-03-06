@@ -785,4 +785,12 @@ export const names101: AvestaWordOwnProps[] = [
       en: 'The Lord of justice',
     },
   },
+  {
+    transcript: 'Kərfǝ̄gar',
+    timeline: { start: 230.69, end: 232.72 },
+    zoom: 1,
+    translation: {
+      en: 'Master of Righteousness, Virtue',
+    },
+  },
 ];

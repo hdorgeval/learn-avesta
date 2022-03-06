@@ -239,7 +239,9 @@ export const App: FC = () => {
       </footer>
       {/* <Carrier /> */}
       {/* <div className="bg-dark">
-        <AvestaWord transcript="Gəl-ādar-gar" zoom={0.8} preferredLetterIds={['r2']} />
+        <AvestaWord transcript="Kərfǝ̄gar" zoom={1} preferredLetterIds={['r']} />
+        <AvestaWord transcript="Kərfǝ̄gar" zoom={0.5} preferredLetterIds={['r']} />
+        <AvestaWord transcript="fərā" zoom={1} preferredLetterIds={['r']} />
         <Sentence transcript="yānīm manō yānīm vacō" zoom={0.5} />
       </div> */}
       {/* <div className="bg-dark text-light">
