@@ -243,7 +243,7 @@ export const names101: AvestaWordOwnProps[] = [
   },
   {
     transcript: 'Hu-sǝ̄pās',
-    timeline: { start: 88.88, end: 90.89 },
+    timeline: { start: 88.93, end: 90.89 },
     zoom: 1,
     translation: {
       en: 'Worthy of being praised and worshiped',

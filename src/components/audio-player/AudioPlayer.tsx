@@ -18,6 +18,8 @@ export interface AudioPlayerOwnProps {
   endTime?: string;
   thumbnailUrl?: string;
   onClickPreview?: () => void;
+  onPause?: () => void;
+  onPlay?: () => void;
   onReady?: (player: ReactPlayer | null) => void;
   onStart?: () => void;
   onSeek?: (seconds: number) => void;
@@ -28,15 +30,17 @@ export const AudioPlayer: FC<AudioPlayerOwnProps> = ({
   audioUrl,
   autoStart,
   endTime,
-  forcePause,
   forceContinue,
+  forcePause,
   startTime,
   thumbnailUrl,
-  onReady,
-  onStart,
-  onSeek,
-  onProgress,
   onClickPreview,
+  onPause,
+  onPlay,
+  onProgress,
+  onReady,
+  onSeek,
+  onStart,
 }) => {
   const [isReady, setIsReady] = useState(false);
   const reactPlayerRef = useRef<ReactPlayer>(null);
@@ -108,6 +112,8 @@ export const AudioPlayer: FC<AudioPlayerOwnProps> = ({
           onSeek={onSeek}
           onProgress={onProgress}
           onClickPreview={handleOnClickPreview}
+          onPause={onPause}
+          onPlay={onPlay}
         />
       </div>
     </div>
